@@ -1,4 +1,5 @@
-var someStore = () => {
+
+var panelStoreClass = function() {
 
   this.state = {
     panels: [
@@ -12,3 +13,10 @@ var someStore = () => {
   }
 
 }
+
+var panelStore = new panelStoreClass()
+
+var panelState = panelStore.state
+var panelMutat = panelStore.mutations
+
+export { panelState, panelMutat }

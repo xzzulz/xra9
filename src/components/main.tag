@@ -1,8 +1,9 @@
-import './codebox.tag'
+import './codepanel.tag'
 
 <main>
 
-  <codebox></codebox>
+  <!--Main code panel-->
+  <codepanel></codepanel>
 
 
 
