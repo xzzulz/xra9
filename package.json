@@ -5,10 +5,11 @@
   "main": "webpack.config.js",
   "scripts": {
     "html": "cpy ./src/index.html ./build/",
+    "css": "cpy ./src/css/index.css ./build/css/",
     "bundle": "webpack -p -d --progress --colors",
-    "build": "npm-run-all html bundle",
+    "build": "npm-run-all html css bundle",
     "serve": "webpack-dev-server --hot",
-    "dev": "npm-run-all html serve"
+    "dev": "npm-run-all html css serve"
   },
   "author": "nzonbi",
   "license": "No license",
