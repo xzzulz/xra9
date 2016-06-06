@@ -23,6 +23,7 @@ module.exports = {
       { test: /\.js|\.tag$/, exclude: /node_modules/, include: /src/, loader: 'babel-loader', query: {modules: 'common'} }
     ]
   },
+  devtool: 'source-map',
   devServer: {
     contentBase: './build/',
     port: 55555,
