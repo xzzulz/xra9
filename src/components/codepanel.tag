@@ -1,7 +1,6 @@
-// Main node for the code area of the editor
-
 import { panelState } from '../stores/panelStore.js'
 import './code.tag'
+
 
 <codepanel>
 

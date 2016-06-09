@@ -1,7 +1,15 @@
-// There is one <code> node for each code view
-// The <codepanel> creates <code> tags for each of the code views
+import { codeState } from '../stores/codeStore.js'
+import './line.tag'
+
+
+
+
 
 <code style="top:{y}%; left:{x}%; width: {w}%; height: {h}%;" >
+
+  <div></div>
+  <line each={ lines }></line>
+
 
   <style scoped>
     :scope {
@@ -12,7 +20,7 @@
   </style>
 
   <script>
-
+    this.lines = codeState.lines
   </script>
 
 </code>
