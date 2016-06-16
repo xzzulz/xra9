@@ -8,14 +8,14 @@ import './line.tag'
 <code style="top:{y}%; left:{x}%; width: {w}%; height: {h}%;" >
 
   <div></div>
-  <line each={ lines }></line>
+    <line each={ lines }></line>
 
 
   <style scoped>
     :scope {
       position: absolute;
       background-color: #07080a;
-
+      overflow: auto;
     }
   </style>
 

@@ -1,14 +1,13 @@
-import './token.tag'
+import './cell.tag'
 
 <line>
 
-  <div>this is a line</div>
-  <token each={ tokens }></token>
+
+  <cell each={ tokens }></cell>
 
   <style scoped>
     :scope {
-      width: 400px;
-      height: 100px;
+      display: block;
     }
 
   </style>
