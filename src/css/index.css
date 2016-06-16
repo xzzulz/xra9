@@ -1,7 +1,12 @@
 
 body{
-  font-family: sans-serif;
+  font: 15px ubuntu;
   background-color: #131719;
   margin:0;
-  color: #415480;
+  color: #748396;
+  overflow: hidden;
+}
+
+codepanel {
+  font: 10.6px "ubuntu mono";
 }
