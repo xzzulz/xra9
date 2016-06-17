@@ -2,16 +2,14 @@ import './token.tag'
 
 <cell>
 
-  <!--<div>{ name }</div>-->
-  <div style="position: relative; top: 6px;">{ name }</div>
-
+  <token if={ id > 0 } ></token>
 
   <style scoped>
     :scope {
       width: 56px;
-      height: 54px;
-      background-image: url('assets/img/tk90.svg');
+      height: 56px;
       display: inline-block;
+
     }
 
   </style>

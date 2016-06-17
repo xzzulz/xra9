@@ -7,9 +7,9 @@ import './line.tag'
 
 <code style="top:{y}%; left:{x}%; width: {w}%; height: {h}%;" >
 
-  <div></div>
+  <div style="width: {lines[0].tokens.length * 56}px;">
     <line each={ lines }></line>
-
+  </div>
 
   <style scoped>
     :scope {

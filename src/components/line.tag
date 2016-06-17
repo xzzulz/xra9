@@ -5,9 +5,10 @@ import './cell.tag'
 
   <cell each={ tokens }></cell>
 
-  <style scoped>
-    :scope {
+  <style>
+    line {
       display: block;
+      height: 56px;
     }
 
   </style>

@@ -14,16 +14,21 @@ var scopes = [
 
 var line0 = new lineClass(
   [
-    new tokenClass( 0, 'WM_WMWMW' ),
+    new tokenClass( 2, 'WM_WMWMW' ),
     new tokenClass( 3, 'EXAMPLE8' ),
     new tokenClass( 1, 'example4' ),
-    new tokenClass( 2, 'Simple' ),
+    new tokenClass( 0, 'Simple' ),
     new tokenClass( 5, 'QUESTION' ),
     new tokenClass( 1, 'Motion55' ),
-    new tokenClass( 4, 'fast' ),
+    new tokenClass( 6, 'fast' ),
     new tokenClass( 0, '12345678' ),
     new tokenClass( 4, '00000000' ),
     new tokenClass( 3, 'XXXXXXXX' ),
+    new tokenClass( 6, 'Quicker2' ),
+    new tokenClass( 6, 'Website' ),
+    new tokenClass( 0, '12345678' ),
+    new tokenClass( 4, '00000000' ),
+    new tokenClass( 6, 'XXXXXXXX' ),
     new tokenClass( 3, 'Quicker2' ),
     new tokenClass( 2, 'Website' )
   ],
@@ -40,21 +45,21 @@ var line0 = new lineClass(
 var line1 = new lineClass(
   [
     new tokenClass( 0, 'abcdefgh' ),
-    new tokenClass( 3, '1234' ),
+    new tokenClass( 6, '1234' ),
     new tokenClass( 1, 'some' ),
     new tokenClass( 2, 'go' ),
     new tokenClass( 3, 'perfect' ),
     new tokenClass( 1, 'well' ),
     new tokenClass( 0, 'lets-see' ),
     new tokenClass( 3, 'WM_WMWMW' ),
-    new tokenClass( 3, 'WM_WMWMW' ),
+    new tokenClass( 6, 'WM_WMWMW' ),
     new tokenClass( 2, 'WM_WMWMW' ),
     new tokenClass( 3, 'WM_WMWMW' ),
     new tokenClass( 1, 'WM_WMWMW' ),
     new tokenClass( 0, 'WM_WMWMW' ),
     new tokenClass( 1, 'WM_WMWMW' ),
     new tokenClass( 0, 'WM_WMWMW' ),
-    new tokenClass( 2, 'WM_WMWMW' ),
+    new tokenClass( 6, 'WM_WMWMW' ),
     new tokenClass( 2, 'WM_WMWMW' ),
     new tokenClass( 1, 'WM_WMWMW' ),
     new tokenClass( 0, 'WM_WMWMW' ),
@@ -62,9 +67,9 @@ var line1 = new lineClass(
     new tokenClass( 3, 'WM_WMWMW' ),
     new tokenClass( 0, 'WM_WMWMW' ),
     new tokenClass( 2, 'WM_WMWMW' ),
-    new tokenClass( 3, 'WM_WMWMW' ),
+    new tokenClass( 6, 'WM_WMWMW' ),
     new tokenClass( 1, 'WM_WMWMW' ),
-    new tokenClass( 2, 'WM_WMWMW' ),
+    new tokenClass( 2, 'WM_WMWMW' )
   ],
   []
 )
@@ -76,7 +81,7 @@ var lineE = new lineClass(
 )
 
 var lines = [
-  line0,
+  line1,
   line0,
   line1,
   line1,
