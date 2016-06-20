@@ -1,6 +1,7 @@
 import { lines, scopes, floats } from '../sampleData/sampleCodeData.js'
 import { scopeClass, lineClass, tokenClass, stepClass, floatClass, floatTokenClass } from '../stores/codeClasses.js'
 
+
 var codeStoreClass = function() {
 
   this.state = {
@@ -11,7 +12,8 @@ var codeStoreClass = function() {
 
   var state = this.state
 
-  
+  this.signal = riot.observable()
+  var signal = this.signal
 
   this.mutations = {
     setData( lines, scopes, floats ) {
@@ -30,6 +32,7 @@ var codeStoreClass = function() {
         )
       state.floats.push(float)
       state.lines[ loc.y ].tokens[ loc.x ] = new tokenClass( 0, '' )
+      signal.trigger('floatsUpdate')
     }
   }
 
@@ -44,5 +47,6 @@ codeStore.mutations.setData( lines, scopes, floats )
 
 var codeState = codeStore.state
 var codeDo = codeStore.do
+var signal = codeStore.signal
 
-export { codeState, codeDo }
+export { codeState, codeDo, signal }
