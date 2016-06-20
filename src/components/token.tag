@@ -1,13 +1,39 @@
+import { codeDo } from '../stores/codeStore.js'
 import { codeInfo } from '../stores/codeInfo.js'
 
-<token style="{ bkPos() }">
+<token style="{ bkPos() }" draggable="true" ondragstart={ dragstart } ondrag={ drag }>
 
-  <div id="tt0">exmpl</div>
+  <div id="tt0">{name}</div>
   <div id="tt1"></div>
   <div id="tt2"></div>
 
   <script>
+
+    this.on("mount", () => {
+      //console.log('pos:', this.col, this.opts.row)
+    })
+
     this.bkPos = () => 'background-position:' + codeInfo[ this.id ].loc.x + 'px ' + codeInfo[ this.id ].loc.y + 'px'
+
+
+    this.dragstart = (e) => {
+      //console.log('drag start: ', e)
+      e.preventUpdate = true
+      e.dataTransfer.setDragImage(new Image(), 10, 10);
+      e.dataTransfer.setData("text/plain", '10');
+      var loc = { x: e.target.offsetLeft/56, y: e.target.offsetTop/56 }
+      codeDo({
+        action: 'startDrag',
+        data: loc
+      })
+      return true
+    }
+
+    this.drag = (e) => {
+      console.log('drag')
+      return true
+    }
+
   </script>
 
 

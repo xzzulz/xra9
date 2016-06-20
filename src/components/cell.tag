@@ -9,10 +9,7 @@ import './token.tag'
       width: 56px;
       height: 56px;
       display: inline-block;
-
     }
-
   </style>
-
 
 </cell>

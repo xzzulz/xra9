@@ -85,6 +85,28 @@ var tokenClass = function( id, name ) {
 
 
 
+// floating set of tokens
+//
+//
+var floatClass = function( x, y, width, height, floatTokens ) {
+  this.w = width
+  this.h = height
+  this.x = x
+  this.y = y
+  this.floatTokens = floatTokens
+}
+
+
+// floating set of tokens
+//
+//
+var floatTokenClass = function( token, x, y ) {
+  //this.token = token
+  Object.assign(this, token)
+  this.x = x
+  this.y = y
+}
+
 
 // Step object creator
 //
@@ -95,4 +117,4 @@ var stepClass = function( stepId ) {
 }
 
 ////////////////////////////////////////////////////////////
-export { scopeClass, lineClass, tokenClass, stepClass }
+export { scopeClass, lineClass, tokenClass, stepClass, floatClass, floatTokenClass }
