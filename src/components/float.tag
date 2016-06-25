@@ -4,6 +4,7 @@ import './floattoken.tag'
 
   <floattoken each={ floatTokens }></floattoken>
 
+  <div id="cover" style="width:{w*56}px; height:{h*56}px;"></div>
 
   <style scoped>
     :scope {
@@ -11,6 +12,10 @@ import './floattoken.tag'
       background: #9cf071;
     }
     token {
+      position: absolute;
+    }
+    #cover {
+      background-color: rgba(120,200,0,.2);
       position: absolute;
     }
   </style>
