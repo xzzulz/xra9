@@ -1,6 +1,6 @@
 import { codeState, signal } from '../stores/codeStore.js'
 import './line.tag'
-import './float.tag'
+import './floats.tag'
 
 
 
@@ -10,17 +10,11 @@ import './float.tag'
     <line each={ lines }></line>
   </div>
 
-  <div id="floats">
-    <float each={ floats }></float>
-  </div>
+  <floats></floats>
 
   <script>
     this.lines = codeState.lines
     this.floats = codeState.floats
-
-    signal.on('floatsUpdate', () => {
-      console.log(' code update floats')
-    })
   </script>
 
   <style scoped>

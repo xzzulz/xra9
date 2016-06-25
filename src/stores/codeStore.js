@@ -23,9 +23,8 @@ var codeStoreClass = function() {
     },
 
     startDrag( loc ) {
-      console.log( loc )
       var tokenData = state.lines[ loc.y ].tokens[ loc.x ]
-      var float = new floatClass( loc.x, loc.y, 1, 1,
+      var float = new floatClass( loc.x*56, loc.y*56, 1, 1,
           [
             new floatTokenClass( new tokenClass( tokenData.id, tokenData.name ), 0 ,0 )
           ]

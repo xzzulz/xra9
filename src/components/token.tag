@@ -16,7 +16,7 @@ import { codeInfo } from '../stores/codeInfo.js'
 
 
     this.dragstart = (e) => {
-      //console.log('drag start: ', e)
+      console.log('drag start: ', e)
       e.preventUpdate = true
       e.dataTransfer.setDragImage(new Image(), 10, 10);
       e.dataTransfer.setData("text/plain", '10');
@@ -29,7 +29,6 @@ import { codeInfo } from '../stores/codeInfo.js'
     }
 
     this.drag = (e) => {
-      console.log('drag')
       return true
     }
 
