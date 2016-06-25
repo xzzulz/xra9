@@ -41,10 +41,10 @@ import { codeInfo } from '../stores/codeInfo.js'
     token {
       width: 56px;
       height: 56px;
-      display: block;
+      display: inline-block;
       background-image: url('assets/img/tk90.svg');
       background-size: 1120px 432px;
-      position: absolute;
+      position: relative;
     }
 
     token #tt0 {

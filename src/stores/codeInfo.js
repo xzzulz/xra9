@@ -1,5 +1,10 @@
 export var codeInfo = {
-
+  0: {
+    name: "",
+    loc: { x: -672, y: 0 },
+    padding: { dx: 9, dy: 10 },
+    size: { w: 36, h: 36 },
+  },
   1: {
     name: "true",
     loc: { x: 0, y: 0 },
