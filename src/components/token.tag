@@ -1,7 +1,7 @@
 import { codeDo } from '../stores/codeStore.js'
 import { codeInfo } from '../stores/codeInfo.js'
 
-<token style="{ bkPos() }" draggable="true" ondragstart={ dragstart } ondrag={ drag }>
+<token  draggable="true" ondragstart={ dragstart } ondrag={ drag }>
 
   <div id="tt0">{name}</div>
   <div id="tt1"></div>
@@ -11,9 +11,8 @@ import { codeInfo } from '../stores/codeInfo.js'
 
     this.on("mount", () => {
       //console.log('pos:', this.col, this.opts.row)
+      this.root.style.backgroundPosition = codeInfo[ this.id ].loc.x + 'px ' + codeInfo[ this.id ].loc.y + 'px'
     })
-
-    this.bkPos = () => 'background-position:' + codeInfo[ this.id ].loc.x + 'px ' + codeInfo[ this.id ].loc.y + 'px'
 
 
     this.dragstart = (e) => {
