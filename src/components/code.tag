@@ -1,4 +1,4 @@
-import { codeState, signal } from '../stores/codeStore.js'
+import { codeState } from '../stores/codeStore.js'
 import './line.tag'
 import './floats.tag'
 

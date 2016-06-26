@@ -1,5 +1,6 @@
 import { codeDo } from '../stores/codeStore.js'
 import { codeInfo } from '../stores/codeInfo.js'
+import { dragstart } from './drag.js'
 
 <token  draggable="true" ondragstart={ dragstart } ondrag={ drag }>
 
@@ -16,19 +17,23 @@ import { codeInfo } from '../stores/codeInfo.js'
 
 
     this.dragstart = (e) => {
-      console.log('drag start: ', e)
+
       e.preventUpdate = true
-      e.dataTransfer.setDragImage(new Image(), 10, 10);
+      //e.dataTransfer.setDragImage(new Image(), 0, 0);
       e.dataTransfer.setData("text/plain", '10');
-      var loc = { x: e.target.offsetLeft/56, y: e.target.offsetTop/56 }
-      codeDo({
+      //var loc = { x: e.target.offsetLeft/56, y: e.target.offsetTop/56 }
+      /*codeDo({
         action: 'startDrag',
         data: loc
       })
+      dragstart( e, this )*/
       return true
     }
 
     this.drag = (e) => {
+      e.preventUpdate = true
+      //var loc = { x: e.target.offsetLeft, y: e.target.offsetTop }
+
       return true
     }
 
