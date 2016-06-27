@@ -22,17 +22,6 @@ var codeStoreClass = function() {
       state.floats = floats
     },
 
-    startDrag( loc ) {
-      var tokenData = state.lines[ loc.y ].tokens[ loc.x ]
-      var float = new floatClass( loc.x*56, loc.y*56, 1, 1,
-          [
-            new floatTokenClass( new tokenClass( tokenData.id, tokenData.name ), 0 ,0 )
-          ]
-        )
-      state.floats.push(float)
-      state.lines[ loc.y ].tokens[ loc.x ] = new tokenClass( 0, '' )
-      signal.trigger('floatsUpdate')
-    }
   }
 
   this.do = ( action ) => {
