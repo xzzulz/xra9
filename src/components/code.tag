@@ -16,10 +16,9 @@ import './floats.tag'
     this.lines = codeState.lines
     this.floats = codeState.floats
     var tag = this
-    signal.on('updateTokens', ( tokenLocs ) => {
-      tokenLocs.forEach( (loc) => {
-        var tokenTag = tag.tags.line[ loc.y ].tags.token[ loc.x ]
-        tag.tags.line[ loc.y ].update()
+    signal.on('updateLines', ( lines ) => {
+      lines.forEach( ( lineNumber ) => {
+        tag.tags.line[ lineNumber ].update()
       })
     })
   </script>

@@ -37,7 +37,7 @@ var codeStoreClass = function() {
 
     moveToken( moveData ) {
       this.putToken( moveData.to, this.grabToken( moveData.from ) )
-      signal.trigger('updateTokens', [ moveData.from, moveData.to ])
+      signal.trigger('updateLines', [ moveData.from.y, moveData.to.y ])
     }
 
   }
