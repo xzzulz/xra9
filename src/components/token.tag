@@ -1,8 +1,8 @@
 import { codeDo } from '../stores/codeStore.js'
 import { codeInfo } from '../stores/codeInfo.js'
-import { dragstart } from './drag.js'
+import drag from './drag.js'
 
-<token  draggable="true" ondragstart={ dragstart } ondrag={ drag }>
+<token  draggable="true" ondragstart={ dragstart } ondrag={ drag } ondrop={ drop }  ondragover="return false">
 
   <div id="tt0">{name}</div>
   <div id="tt1"></div>
@@ -10,30 +10,26 @@ import { dragstart } from './drag.js'
 
   <script>
 
-    this.on("mount", () => {
-      //console.log('pos:', this.col, this.opts.row)
+    this.on("update", () => {
       this.root.style.backgroundPosition = codeInfo[ this.id ].loc.x + 'px ' + codeInfo[ this.id ].loc.y + 'px'
     })
 
 
     this.dragstart = (e) => {
-
       e.preventUpdate = true
-      //e.dataTransfer.setDragImage(new Image(), 0, 0);
       e.dataTransfer.setData("text/plain", '10');
-      //var loc = { x: e.target.offsetLeft/56, y: e.target.offsetTop/56 }
-      /*codeDo({
-        action: 'startDrag',
-        data: loc
-      })
-      dragstart( e, this )*/
+      drag.dragStart( e, this )
       return true
     }
 
     this.drag = (e) => {
       e.preventUpdate = true
-      //var loc = { x: e.target.offsetLeft, y: e.target.offsetTop }
+      return true
+    }
 
+    this.drop = (e) => {
+      e.preventUpdate = true
+      drag.dragEnd( e )
       return true
     }
 

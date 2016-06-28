@@ -1,4 +1,4 @@
-import { codeState } from '../stores/codeStore.js'
+import { codeState, signal } from '../stores/codeStore.js'
 import './line.tag'
 import './floats.tag'
 
@@ -6,7 +6,7 @@ import './floats.tag'
 
 <code style="top:{y}%; left:{x}%; width: {w}%; height: {h}%;">
 
-  <div style="width: {lines[0].tokens.length * 56}px;">
+  <div class="codescroll" style="width: {lines[0].tokens.length*56}px;">
     <line each={ lines }></line>
   </div>
 
@@ -15,6 +15,13 @@ import './floats.tag'
   <script>
     this.lines = codeState.lines
     this.floats = codeState.floats
+    var tag = this
+    signal.on('updateTokens', ( tokenLocs ) => {
+      tokenLocs.forEach( (loc) => {
+        var tokenTag = tag.tags.line[ loc.y ].tags.token[ loc.x ]
+        tag.tags.line[ loc.y ].update()
+      })
+    })
   </script>
 
   <style scoped>

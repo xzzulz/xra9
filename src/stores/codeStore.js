@@ -22,6 +22,24 @@ var codeStoreClass = function() {
       state.floats = floats
     },
 
+    grabToken( loc ) {
+      var token = state.lines[ loc.y ].tokens[ loc.x ]
+      var tokenData = { id: token.id, name: token.name }
+      token.id = 0
+      token.name = ''
+      return tokenData
+    },
+
+    putToken( loc, tokenData ) {
+      state.lines[ loc.y ].tokens[ loc.x ].id = tokenData.id
+      state.lines[ loc.y ].tokens[ loc.x ].name = tokenData.name
+    },
+
+    moveToken( moveData ) {
+      this.putToken( moveData.to, this.grabToken( moveData.from ) )
+      signal.trigger('updateTokens', [ moveData.from, moveData.to ])
+    }
+
   }
 
   this.do = ( action ) => {

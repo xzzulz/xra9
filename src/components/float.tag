@@ -9,13 +9,13 @@ import './floattoken.tag'
   <style scoped>
     :scope {
       position: absolute;
-      background: #9cf071;
+      background-color: rgba(10,100,10,.85);
     }
     token {
       position: absolute;
     }
     #cover {
-      background-color: rgba(120,200,0,.2);
+      background-color: rgba(40,180,40,.05);
       position: absolute;
     }
   </style>

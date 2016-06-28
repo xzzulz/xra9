@@ -1,32 +1,51 @@
-import { codeState, signal } from '../stores/codeStore.js'
+import { codeState, codeDo } from '../stores/codeStore.js'
 
+var drag = {}
 
-var currentCodeTag = null
-var currentEl = null
-var mouseMove = function( e ) {
+var currentCodeElem = null
+var currentPanelElem = null
+var tokenFromLoc = null
+var mouseGrabDeltaTokenXY = null
 
-  var x = e.pageX - currentCodeTag.parent.root.offsetLeft
-  var y = e.pageY - currentCodeTag.parent.root.offsetTop
+drag.dragStart = ( e, tag ) => {
 
-  codeState.floats[ codeState.floats.length -1 ].x = x
-  codeState.floats[ codeState.floats.length -1 ].y = y
-  signal.trigger('floatsUpdate')
-  //currentEl.style.position = 'absolute'
-  //currentEl.style.left = x + 'px'
-  //currentEl.style.top = y + 'px'
-  if (e.buttons == 0) currentCodeTag.root.onmousemove = null
+  currentCodeElem = e.target.parentElement.parentElement.parentElement
+  currentPanelElem = currentCodeElem.parentElement
+
+  var scrollX = currentCodeElem.scrollLeft
+  var scrollY = currentCodeElem.scrollTop
+  var offsetX = currentCodeElem.offsetLeft + currentPanelElem.offsetLeft
+  var offsetY = currentCodeElem.offsetTop + currentPanelElem.offsetTop
+
+  var x = e.clientX + scrollX - offsetX
+  var y = e.clientY + scrollY - offsetY
+
+  tokenFromLoc = { x: Math.floor( x/56 ), y: Math.floor( y/56 ) }
+  mouseGrabDeltaTokenXY = { x: e.offsetX, y: e.offsetY }
+
+}
+
+drag.dragEnd = ( e ) => {
+
+  var scrollX = currentCodeElem.scrollLeft
+  var scrollY = currentCodeElem.scrollTop
+  var offsetX = currentCodeElem.offsetLeft + currentPanelElem.offsetLeft
+  var offsetY = currentCodeElem.offsetTop + currentPanelElem.offsetTop
+
+  var x = e.clientX + scrollX - offsetX
+  var y = e.clientY + scrollY - offsetY
+
+  var xy = { x: x, y: y }
+
+  var toCol = Math.floor( (x+28-mouseGrabDeltaTokenXY.x)/56 )
+  var toRow = Math.floor( (y+28-mouseGrabDeltaTokenXY.y)/56 )
+  var toLoc = { x: toCol, y: toRow }
+
+  codeDo({
+    action: 'moveToken',
+    data: { from: tokenFromLoc, to: toLoc }
+  })
 }
 
 
-var dragstart = function( e, tag ) {
-  var tokenRowCol = { x: e.target.offsetLeft/56, y: e.target.offsetTop/56 }
-  var mouseTokenXY = { x: e.layerX, y: e.layerY }
-
-  var code = tag.parent.parent
-  currentEl = tag.root
-  currentCodeTag = code
-  code.root.onmousemove = mouseMove
-}
-
-
-export { dragstart }
+export default drag
