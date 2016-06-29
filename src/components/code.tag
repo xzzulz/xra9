@@ -1,10 +1,11 @@
 import { codeState, signal } from '../stores/codeStore.js'
+import scroll from './scroll.js'
 import './line.tag'
 import './floats.tag'
 
 
 
-<code style="top:{y}%; left:{x}%; width: {w}%; height: {h}%;">
+<code style="top:{y}%; left:{x}%; width: {w}%; height: {h}%;" onmousedown={ onmousedown }>
 
   <div class="codescroll" style="width: {lines[0].tokens.length*56}px;">
     <line each={ lines }></line>
@@ -21,6 +22,12 @@ import './floats.tag'
         tag.tags.line[ lineNumber ].update()
       })
     })
+
+    this.onmousedown = ( e ) => {
+      e.preventUpdate = true
+      scroll.start( e )
+      return true
+    }
   </script>
 
   <style scoped>
