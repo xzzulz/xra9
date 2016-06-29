@@ -1,10 +1,15 @@
 import './codepanel.tag'
+import './toolbox.tag'
 
 <main>
 
-  <!--Main code panel-->
+
   <codepanel></codepanel>
 
+  <toolbox></toolbox>
 
+  <style scoped>
+
+  </style>
 
 </main>

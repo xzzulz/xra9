@@ -17,9 +17,9 @@ import './code.tag'
   <style scoped>
     :scope {
       position: absolute;
-      left: 10vw;
+      left: 5vw;
       top: 0px;
-      width: 90vw;
+      width: 81vw;
       height: 100vh;
       background-color: #1b2022;
     }

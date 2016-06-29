@@ -383,7 +383,7 @@ var floats = [
     ]
   )
 ]
-
+floats = []
 
 
 export { lines, scopes, floats }
