@@ -22,4 +22,21 @@ cursor.click = ( e ) => {
 
 }
 
-export default cursor.click
+cursor.key = ( code ) => {
+  switch (code) {
+    case 'ArrowUp':
+      codeDo({ action: 'moveCursorUp' })
+      break
+    case 'ArrowDown':
+      codeDo({ action: 'moveCursorDown' })
+      break
+    case 'ArrowLeft':
+      codeDo({ action: 'moveCursorLeft' })
+      break
+    case 'ArrowRight':
+      codeDo({ action: 'moveCursorRight' })
+      break
+  }
+}
+
+export default cursor

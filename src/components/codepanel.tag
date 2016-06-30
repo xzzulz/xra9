@@ -1,5 +1,6 @@
 import { panelState } from '../stores/panelStore.js'
 import './code.tag'
+import keys from './keys.js'
 
 
 <codepanel>
@@ -11,6 +12,11 @@ import './code.tag'
 
     // Array of code views
     this.codes = panelState.panels
+
+    var tag = this
+    keys.code = ( code ) => {
+      tag.tags.code[ panelState.active ].key( code )
+    }
 
   </script>
 

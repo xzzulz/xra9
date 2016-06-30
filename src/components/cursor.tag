@@ -38,7 +38,7 @@ import { codeState } from '../stores/codeStore.js'
       position: absolute;
       display: block;
       box-sizing: border-box;
-      border: 1px solid #0059a5;
+      border: 1px solid #1292ff;
       border-style: solid none;
     }
   </style>

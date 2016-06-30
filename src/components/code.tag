@@ -3,7 +3,7 @@ import scroll from './scroll.js'
 import './line.tag'
 import './floats.tag'
 import './cursor.tag'
-import cursorClick from './cursor.js'
+import cursor from './cursor.js'
 
 
 
@@ -26,7 +26,7 @@ import cursorClick from './cursor.js'
       })
     })
 
-    signal.on('updateCursor', ( loc ) => {
+    signal.on('updateCursor', () => {
       tag.tags.cursor.update()
     })
 
@@ -38,7 +38,11 @@ import cursorClick from './cursor.js'
 
     this.onclick = ( e ) => {
       e.preventUpdate = true
-      cursorClick( e )
+      cursor.click( e )
+    }
+
+    this.key = ( code ) => {
+      cursor.key( code )
     }
   </script>
 

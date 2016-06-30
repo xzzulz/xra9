@@ -1,5 +1,6 @@
 import './codepanel.tag'
 import './toolbox.tag'
+import './keys.js'
 
 <main>
 
@@ -7,6 +8,13 @@ import './toolbox.tag'
   <codepanel></codepanel>
 
   <toolbox></toolbox>
+
+
+  <script>
+
+
+
+  </script>
 
   <style scoped>
 

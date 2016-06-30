@@ -46,8 +46,36 @@ var codeStoreClass = function() {
     moveCursor( loc ) {
       state.cursor.x = loc.x
       state.cursor.y = loc.y
-      signal.trigger( 'updateCursor', loc )
-    }
+      signal.trigger( 'updateCursor' )
+    },
+
+    moveCursorUp() {
+      if ( state.cursor.y > 0 ) {
+        state.cursor.y--
+        signal.trigger( 'updateCursor' )
+      }
+    },
+
+    moveCursorDown() {
+      if ( state.cursor.y < state.lines.length - 1 ) {
+        state.cursor.y++
+        signal.trigger( 'updateCursor' )
+      }
+    },
+
+    moveCursorLeft() {
+      if ( state.cursor.x > 0 ) {
+        state.cursor.x--
+        signal.trigger( 'updateCursor' )
+      }
+    },
+
+    moveCursorRight() {
+      if ( state.cursor.x < state.lines[0].tokens.length - 1 ) {
+        state.cursor.x++
+        signal.trigger( 'updateCursor' )
+      }
+    },
 
   }
 
