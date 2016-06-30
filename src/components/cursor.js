@@ -1,6 +1,8 @@
-import { codeDo } from '../stores/codeStore.js'
+import { codeDo, codeState } from '../stores/codeStore.js'
+import { panelState } from '../stores/panelStore.js'
 
 var cursor = {}
+
 
 cursor.click = ( e ) => {
 
@@ -37,6 +39,29 @@ cursor.key = ( code ) => {
       codeDo({ action: 'moveCursorRight' })
       break
   }
+
+  cursor.scroll()
 }
+
+
+cursor.scroll = () => {
+
+  //var cur = document.getElementsByTagName("cursor")[0]
+  //cur.scrollIntoView() too rough scrolling on chrome
+
+  var cursorLoc = { x: codeState.cursor.x*56, y: codeState.cursor.y*56 }
+  var code = document.getElementsByTagName('code')[ panelState.active ]
+
+  var size = { w: code.clientWidth, h: code.clientHeight }
+  var scroll = { l: code.scrollLeft, t: code.scrollTop }
+
+  if ( cursorLoc.x - 56 < scroll.l ) code.scrollLeft = cursorLoc.x - 56
+  if ( cursorLoc.x + 112 > scroll.l + size.w ) code.scrollLeft = cursorLoc.x + 112 - size.w
+  if ( cursorLoc.y - 56 < scroll.t ) code.scrollTop = cursorLoc.y - 56
+  if ( cursorLoc.y + 112 > scroll.t + size.h ) code.scrollTop = cursorLoc.y + 112 - size.h
+
+}
+
+
 
 export default cursor
