@@ -8,6 +8,7 @@ var codeStoreClass = function() {
     lines: [],
     floats: [],
     scopes: [],
+    cursor: { x: 0, y: 0 }
   }
 
   var state = this.state
@@ -40,6 +41,12 @@ var codeStoreClass = function() {
         this.putToken( moveData.to, this.grabToken( moveData.from ) )
         signal.trigger('updateLines', [ moveData.from.y, moveData.to.y ])
       }
+    },
+
+    moveCursor( loc ) {
+      state.cursor.x = loc.x
+      state.cursor.y = loc.y
+      signal.trigger( 'updateCursor', loc )
     }
 
   }

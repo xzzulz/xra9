@@ -2,16 +2,19 @@ import { codeState, signal } from '../stores/codeStore.js'
 import scroll from './scroll.js'
 import './line.tag'
 import './floats.tag'
+import './cursor.tag'
+import cursorClick from './cursor.js'
 
 
 
-<code style="top:{y}%; left:{x}%; width: {w}%; height: {h}%;" onmousedown={ onmousedown }>
+<code style="top:{y}%; left:{x}%; width: {w}%; height: {h}%;" onmousedown={ onmousedown } onclick={ onclick } >
 
   <div class="codescroll" style="width: {lines[0].tokens.length*56}px;">
     <line each={ lines }></line>
   </div>
 
   <floats></floats>
+  <cursor></cursor>
 
   <script>
     this.lines = codeState.lines
@@ -23,10 +26,19 @@ import './floats.tag'
       })
     })
 
+    signal.on('updateCursor', ( loc ) => {
+      tag.tags.cursor.update()
+    })
+
     this.onmousedown = ( e ) => {
       e.preventUpdate = true
       scroll.start( e )
       return true
+    }
+
+    this.onclick = ( e ) => {
+      e.preventUpdate = true
+      cursorClick( e )
     }
   </script>
 
