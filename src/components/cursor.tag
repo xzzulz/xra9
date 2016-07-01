@@ -12,23 +12,6 @@ import { codeState } from '../stores/codeStore.js'
       this.root.style.top = this.y*56+'px'
     })
 
-    var tag = this
-    var visible = true
-    var anim = function() {
-      if (visible) {
-        tag.root.style.opacity = 0.5
-        visible = false
-      } else {
-        tag.root.style.opacity = 1
-        visible = true
-      }
-    }
-
-    setInterval( function() {
-      anim()
-    }, 500)
-
-
   </script>
 
   <style scoped>
@@ -38,9 +21,11 @@ import { codeState } from '../stores/codeStore.js'
       position: absolute;
       display: block;
       box-sizing: border-box;
-      border: 1px solid #1292ff;
+      border: 2px solid #1292ff;
       border-style: solid none;
+      animation: .5s linear 0s infinite alternate cursorcolor;
     }
+    @keyframes cursorcolor { from { border-color: #00007a; } to { border-color: #0069e7; }  }
   </style>
 
 </cursor>
