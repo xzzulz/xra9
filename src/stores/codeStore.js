@@ -23,6 +23,13 @@ var codeStoreClass = function() {
       state.floats = floats
     },
 
+    setToken( data ) {
+      var token = state.lines[ state.cursor.y ].tokens[ state.cursor.x ]
+      token.id = data.id
+      token.name = data.name
+      signal.trigger('updateLines', [ state.cursor.y ])
+    },
+
     grabToken( loc ) {
       var token = state.lines[ loc.y ].tokens[ loc.x ]
       var tokenData = { id: token.id, name: token.name }

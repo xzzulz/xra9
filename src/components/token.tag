@@ -42,7 +42,7 @@ import drag from './drag.js'
       height: 56px;
       display: inline-block;
       background-image: url('assets/img/tk90.svg');
-      background-size: 1120px 432px;
+      background-size: 560px 560px;
       position: relative;
     }
 

@@ -25,7 +25,7 @@ import keys from './keys.js'
       position: absolute;
       left: 5vw;
       top: 0px;
-      width: 81vw;
+      right: 24.8vh;
       height: 100vh;
       background-color: #1b2022;
     }

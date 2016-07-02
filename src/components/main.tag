@@ -1,5 +1,5 @@
 import './codepanel.tag'
-import './toolbox.tag'
+import './codekit.tag'
 
 
 <main>
@@ -7,7 +7,7 @@ import './toolbox.tag'
 
   <codepanel></codepanel>
 
-  <toolbox></toolbox>
+  <codekit></codekit>
 
 
   <script>

@@ -17,8 +17,8 @@
       bottom: 0;
       width: 14vw;
       height: 28vw;
-      background: #1c1f2a;
-      border: 2px solid #272d43;
+      background: #1d2233;
+      border: 2px solid #1d2233;
       box-sizing: border-box;
     }
   </style>
