@@ -1,10 +1,12 @@
 import './toolkit.tag'
+import './datakit.tag'
 
 
 <codekit>
 
 
   <toolkit></toolkit>
+  <datakit></datakit>
 
   <script>
 

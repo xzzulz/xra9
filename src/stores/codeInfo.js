@@ -31,12 +31,12 @@ export var codeInfo = {
 
   6: {
     name: "object",
-    loc: { x: -280, y: 0 },
+    loc: { x: -336, y: 0 },
   },
 
   7: {
     name: "array",
-    loc: { x: -280, y: 0 },
+    loc: { x: -392, y: 0 },
   },
 
 
