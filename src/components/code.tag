@@ -38,7 +38,7 @@ import cursor from './cursor.js'
 
     this.onclick = ( e ) => {
       e.preventUpdate = true
-      cursor.click( e )
+      if ( e.button == 0 ) cursor.click( e )
     }
 
     this.key = ( code ) => {
