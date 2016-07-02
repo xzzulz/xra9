@@ -1,6 +1,6 @@
 import './codepanel.tag'
 import './toolbox.tag'
-import './keys.js'
+
 
 <main>
 
