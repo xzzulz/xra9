@@ -23,7 +23,7 @@ import keys from './keys.js'
   <style scoped>
     :scope {
       position: absolute;
-      left: 5vw;
+      left: 8vh;
       top: 0px;
       right: 24.8vh;
       height: 100vh;

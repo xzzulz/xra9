@@ -1,12 +1,12 @@
-import { codeInfo } from '../stores/codeInfo.js'
+import { utilInfo } from '../stores/utilInfo.js'
 import { codeDo } from '../stores/codeStore.js'
 
-<tool onclick={ onclick }>
+<util onclick={ onclick }>
 
   <script>
 
     this.on("update", () => {
-      this.root.style.backgroundPosition = codeInfo[ this.id ].loc.x/56*7 + 'vh ' + codeInfo[ this.id ].loc.y/56*7 + 'vh'
+      this.root.style.backgroundPosition = utilInfo[ this.id ].loc.x*(-7) + 'vh ' + utilInfo[ this.id ].loc.y*(-7) + 'vh'
     })
 
     this.onclick = ( e ) => {
@@ -23,9 +23,9 @@ import { codeDo } from '../stores/codeStore.js'
     :scope {
       width: 7vh;
       height: 7vh;
-      background-image: url('assets/img/tk90.svg');
-      background-size: 70vh 70vh;
+      background-image: url('assets/img/util01.svg');
+      background-size: 56vh 28vh;
     }
   </style>
 
-</tool>
+</util>
