@@ -1,24 +1,21 @@
-import { toolbarState } from '../stores/toolbarStore.js'
+import { toolbarState } from '../../stores/toolbarStore.js'
 import './tool.tag'
 
-<datakit>
+<toolkit>
 
   <tool each={ tools }></tool>
 
 
   <script>
-    this.tools = toolbarState.datakit
+    this.tools = toolbarState.toolkit
   </script>
 
 
   <style scoped>
     :scope {
-      position: absolute;
-      right: 0;
-      top: 68vh;
-      width: 24.8vh;
+
       padding: 1.5vh;
-      height: 32vh;
+
       background: #151821;
       border: .4vh solid #1d2233;
       box-sizing: border-box;
@@ -30,4 +27,4 @@ import './tool.tag'
   </style>
 
 
-</datakit>
+</toolkit>

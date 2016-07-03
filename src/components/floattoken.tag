@@ -1,4 +1,4 @@
-import './token.tag'
+import './tokens/token.tag'
 
 <floattoken style="left: {x*56}px; top:{y*56}px;">
 

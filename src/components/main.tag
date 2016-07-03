@@ -1,6 +1,6 @@
 import './utilkit.tag'
 import './codepanel.tag'
-import './codekit.tag'
+import './codekit/codekit.tag'
 
 
 <main>

@@ -1,9 +1,9 @@
-import { codeDo } from '../stores/codeStore.js'
-import { codeInfo } from '../stores/codeInfo.js'
+import { codeDo } from '../../stores/codeStore.js'
+import { codeInfo } from '../../stores/codeInfo.js'
 
 
 
-<token>
+<tknfunc>
 
   <div id="tt0">{name}</div>
   <div id="tt1"></div>
@@ -18,8 +18,8 @@ import { codeInfo } from '../stores/codeInfo.js'
   </script>
 
 
-  <style>
-    token {
+  <style scoped>
+    :scope {
       width: 56px;
       height: 56px;
       display: inline-block;
@@ -28,19 +28,19 @@ import { codeInfo } from '../stores/codeInfo.js'
       position: relative;
     }
 
-    token #tt0 {
+    :scope #tt0 {
       width: 56px;
       text-align: center;
       position: absolute;
       top: 5px;
       margin: 0;
     }
-    token #tt1 {
+    :scope #tt1 {
       width: 56px;
       text-align: center;
       margin: 0;
     }
-    token #tt2 {
+    :scope #tt2 {
       width: 56px;
       text-align: center;
       position: relative;
@@ -51,4 +51,4 @@ import { codeInfo } from '../stores/codeInfo.js'
   </style>
 
 
-</token>
+</tknfunc>
