@@ -1,9 +1,9 @@
-import './token.tag'
+import './cell.tag'
 
 <line>
 
 
-  <token each={ tokens }></token>
+  <cell each={ tokens }></cell>
 
   <style>
     line {
