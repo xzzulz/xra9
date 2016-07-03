@@ -84,12 +84,36 @@ var codeStoreClass = function() {
       }
     },
 
+    util( data ) {
+      if ( data.id == 0 ) {// save
+        var stateString = JSON.stringify( state )
+        console.log( stateString )
+        download('code.json', stateString)
+        //var uriContent = "data:text/plain," + encodeURIComponent( stateString )
+        //newWindow = window.open(uriContent, 'save file')
+      }
+    },
+
   }
 
   this.do = ( action ) => {
     if ( this.mutations[ action.action ] ) this.mutations[ action.action ]( action.data )
   }
 }
+
+
+
+function download(filename, text) {
+  var element = document.createElement('a')
+  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text))
+  element.setAttribute('download', filename)
+  element.style.display = 'none'
+  document.body.appendChild(element)
+  element.click()
+  document.body.removeChild(element)
+}
+
+
 
 var codeStore = new codeStoreClass()
 

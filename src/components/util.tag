@@ -6,14 +6,14 @@ import { codeDo } from '../stores/codeStore.js'
   <script>
 
     this.on("update", () => {
-      this.root.style.backgroundPosition = utilInfo[ this.id ].loc.x*(-7) + 'vh ' + utilInfo[ this.id ].loc.y*(-7) + 'vh'
+      this.root.style.backgroundPosition = utilInfo[ this.id ].loc.x*(-6) + 'vh ' + utilInfo[ this.id ].loc.y*(-6) + 'vh'
     })
 
     this.onclick = ( e ) => {
       e.preventUpdate = true
       codeDo({
-        action: 'setToken',
-        data: { id: this.id, name: '' }
+        action: 'util',
+        data: { id: this.id }
       })
     }
 
@@ -21,10 +21,10 @@ import { codeDo } from '../stores/codeStore.js'
 
   <style scoped>
     :scope {
-      width: 7vh;
-      height: 7vh;
+      width: 6vh;
+      height: 6vh;
       background-image: url('assets/img/util01.svg');
-      background-size: 56vh 28vh;
+      background-size: 48vh 24vh;
     }
   </style>
 

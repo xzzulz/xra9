@@ -19,10 +19,10 @@ import './util.tag'
       left: 0;
       top: 0;
       width: 8vh;
+      padding: 1vh;
       height: 100vh;
       display: flex;
       flex-direction: column;
-
     }
   </style>
 
