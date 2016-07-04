@@ -8,7 +8,11 @@ var codeStoreClass = function() {
     lines: [],
     floats: [],
     scopes: [],
-    cursor: { x: 0, y: 0 }
+    cursor: { x: 0, y: 0 },
+    optionToken: {
+      loc: { x: 0, y: 0 },
+      group: null
+    }
   }
 
   var state = this.state
@@ -25,6 +29,7 @@ var codeStoreClass = function() {
 
     setToken( data ) {
       var token = state.lines[ state.cursor.y ].tokens[ state.cursor.x ] = new tokenClass( data.id, data.name )
+      this.setOptionToken()
       signal.trigger('updateLines', [ state.cursor.y ])
     },
 
@@ -51,12 +56,14 @@ var codeStoreClass = function() {
     moveCursor( loc ) {
       state.cursor.x = loc.x
       state.cursor.y = loc.y
+      this.setOptionToken()
       signal.trigger( 'updateCursor' )
     },
 
     moveCursorUp() {
       if ( state.cursor.y > 0 ) {
         state.cursor.y--
+        this.setOptionToken()
         signal.trigger( 'updateCursor' )
       }
     },
@@ -64,6 +71,7 @@ var codeStoreClass = function() {
     moveCursorDown() {
       if ( state.cursor.y < state.lines.length - 1 ) {
         state.cursor.y++
+        this.setOptionToken()
         signal.trigger( 'updateCursor' )
       }
     },
@@ -71,6 +79,7 @@ var codeStoreClass = function() {
     moveCursorLeft() {
       if ( state.cursor.x > 0 ) {
         state.cursor.x--
+        this.setOptionToken()
         signal.trigger( 'updateCursor' )
       }
     },
@@ -78,6 +87,7 @@ var codeStoreClass = function() {
     moveCursorRight() {
       if ( state.cursor.x < state.lines[0].tokens.length - 1 ) {
         state.cursor.x++
+        this.setOptionToken()
         signal.trigger( 'updateCursor' )
       }
     },
@@ -92,41 +102,49 @@ var codeStoreClass = function() {
       }
     },
 
+    setOptionToken() {
+      if ( state.lines[ state.cursor.y ].tokens[ state.cursor.x ].id != 0 ) {
+        state.optionToken.loc = { x: state.cursor.x, y: state.cursor.y }
+        state.optionToken.group = state.lines[ state.cursor.y ].tokens[ state.cursor.x ].group
+        signal.trigger( 'updateOptionToken' )
+      }
+    },
+
     functionPoints( data ) {
-      if ( state.lines[ state.cursor.y ].tokens[ state.cursor.x ].id == 10 ) {
-        state.lines[ state.cursor.y ].tokens[ state.cursor.x ].options.points = data
-        signal.trigger('updateLines', [ state.cursor.y ])
+      if ( state.optionToken.group == 'function' ) {
+        state.lines[ state.optionToken.loc.y ].tokens[ state.optionToken.loc.x ].options.points = data
+        signal.trigger('updateLines', [ state.optionToken.loc.y ])
       }
     },
 
     functionBubble() {
-      var token = state.lines[ state.cursor.y ].tokens[ state.cursor.x ]
-      if ( token.id == 10 ) {
+      var token = state.lines[ state.optionToken.loc.y ].tokens[ state.optionToken.loc.x ]
+      if ( state.optionToken.group == 'function' ) {
         token.options.bubble = ! token.options.bubble
         if ( token.options.bubble ) {
           token.options.parLen = 0
         }
-        signal.trigger('updateLines', [ state.cursor.y ])
+        signal.trigger('updateLines', [ state.optionToken.loc.y ])
       }
     },
 
     functionParPoints( data ) {
-      var token = state.lines[ state.cursor.y ].tokens[ state.cursor.x ]
-      if ( token.id == 10 && !token.options.bubble ) {
+      var token = state.lines[ state.optionToken.loc.y ].tokens[ state.optionToken.loc.x ]
+      if ( state.optionToken.group == 'function' && !token.options.bubble ) {
 
         if ( token.options.parPoints === data ) token.options.parLen++
         else {
           token.options.parPoints = data
           token.options.parLen = 1
         }
-        signal.trigger('updateLines', [ state.cursor.y ])
+        signal.trigger('updateLines', [ state.optionToken.loc.y ])
       }
     },
 
     functionParX() {
-      if ( state.lines[ state.cursor.y ].tokens[ state.cursor.x ].id == 10 ) {
-        state.lines[ state.cursor.y ].tokens[ state.cursor.x ].options.parLen = 0
-        signal.trigger('updateLines', [ state.cursor.y ])
+      if ( state.optionToken.group == 'function' ) {
+        state.lines[ state.optionToken.loc.y ].tokens[ state.optionToken.loc.x ].options.parLen = 0
+        signal.trigger('updateLines', [ state.optionToken.loc.y ])
       }
     },
 
