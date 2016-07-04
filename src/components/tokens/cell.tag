@@ -8,9 +8,9 @@ import './tknvar.tag'
 
 
 
-  <token if={ id < 2 || id == 8 || id == 9 || id > 10 }></token>
-  <tknvar if={ id > 2 && id < 8 }></tknvar>
-  <tknfunc if={ id == 10 }></tknfunc>
+  <token if={ group == 'token' }></token>
+  <tknvar if={ group == 'var' }></tknvar>
+  <tknfunc if={ group == 'function' }></tknfunc>
 
   <script>
 
