@@ -23,6 +23,7 @@ import { codeState } from '../stores/codeStore.js'
       box-sizing: border-box;
       border: 2px solid #1292ff;
       border-style: solid none;
+      z-index: 100;
       animation: .5s linear 0s infinite alternate cursorcolor;
     }
     @keyframes cursorcolor { from { border-color: #00007a; } to { border-color: #0069e7; }  }

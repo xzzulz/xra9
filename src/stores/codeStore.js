@@ -148,6 +148,14 @@ var codeStoreClass = function() {
       }
     },
 
+    varBubble() {
+      var token = state.lines[ state.optionToken.loc.y ].tokens[ state.optionToken.loc.x ]
+      if ( token.group == 'var' ) {
+        token.options.bubble = ! token.options.bubble
+        signal.trigger('updateLines', [ state.optionToken.loc.y ])
+      }
+    }
+
   }
 
   this.do = ( action ) => {
