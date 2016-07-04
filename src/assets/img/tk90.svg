@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="3.959798"
-     inkscape:cx="169.88574"
-     inkscape:cy="399.3024"
+     inkscape:zoom="5.6"
+     inkscape:cx="391.15466"
+     inkscape:cy="489.00534"
      inkscape:document-units="px"
      inkscape:current-layer="layer2"
      showgrid="false"
@@ -43,7 +43,7 @@
      inkscape:snap-bbox="true"
      inkscape:bbox-nodes="true"
      inkscape:snap-page="true"
-     inkscape:snap-global="true"
+     inkscape:snap-global="false"
      units="px"
      inkscape:bbox-paths="false" />
   <metadata
@@ -1124,5 +1124,21 @@
        cx="149.9471"
        id="path5852-9-5-3-5"
        style="display:inline;opacity:1;fill:none;fill-opacity:1;stroke:#c3a2ff;stroke-width:3.76699996;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <rect
+       transform="scale(-1,1)"
+       y="27.135262"
+       x="-489.10706"
+       height="20"
+       width="27"
+       id="rect4182-01-7-1-2-8-6-3-6-8-3-63-5-7-9-8-5-0-1-9-5-8-7-9-2-4-9-6"
+       style="display:inline;opacity:1;fill:#69788b;fill-opacity:1;stroke:none;stroke-opacity:1" />
+    <rect
+       transform="scale(-1,1)"
+       y="18.384922"
+       x="-489.10706"
+       height="5"
+       width="27"
+       id="rect4182-01-7-1-2-8-6-3-6-8-3-63-5-7-9-8-5-0-1-9-5-8-7-9-2-4-9-6-8"
+       style="display:inline;opacity:1;fill:#aaa24a;fill-opacity:1;stroke:none;stroke-opacity:1" />
   </g>
 </svg>

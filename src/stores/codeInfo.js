@@ -39,6 +39,10 @@ export var codeInfo = {
     loc: { x: -392, y: 0 },
   },
 
+  8: {
+    name: "var",
+    loc: { x: -448, y: 0 },
+  },
 
   10: {
     name: "function",

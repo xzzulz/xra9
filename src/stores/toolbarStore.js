@@ -38,6 +38,10 @@ var toolbarStoreClass = function() {
       { id: 6 },
       { id: 7 },
       { id: 70 },
+
+      { id: 8 },
+      { id: 0 },
+      { id: 0 },
     ],
 
     utilkit: [
