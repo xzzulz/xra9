@@ -3,7 +3,12 @@ import { codeInfo } from '../../stores/codeInfo.js'
 
 
 
-<token>
+<tknvar>
+
+  <div id="tt0">{name}</div>
+  <div id="tt1"></div>
+  <div id="tt2"></div>
+
 
   <script>
 
@@ -19,12 +24,30 @@ import { codeInfo } from '../../stores/codeInfo.js'
       width: 56px;
       height: 56px;
       display: inline-block;
+      position: relative;
       background-image: url('assets/img/tk90.svg');
       background-size: 560px 560px;
+    }
+    :scope #tt0 {
+      width: 56px;
+      text-align: center;
+      position: absolute;
+      top: 5px;
+      margin: 0;
+    }
+    :scope #tt1 {
+      width: 56px;
+      text-align: center;
+      margin: 0;
+    }
+    :scope #tt2 {
+      width: 56px;
+      text-align: center;
       position: relative;
-      z-index: 10;
+      top: -2px;
+      margin: 0;
     }
   </style>
 
 
-</token>
+</tknfunc>

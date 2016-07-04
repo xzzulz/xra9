@@ -81,8 +81,22 @@ var lineClass = function( tokens, chains ) {
 var tokenClass = function( id, name ) {
   this.id = id
   this.name = name
+  switch ( id ) {
+    case 10: this.options = new functionTokenClass(); break
+    default: this.options = {}; break
+  }
 }
 
+
+// Token object creator
+//
+// name: (string) text name
+var functionTokenClass = function( points, parPoints, parLen, bubble ) {
+  this.points = points ? points : 0
+  this.parPoints = parPoints ? parPoints : 0
+  this.parLen = parLen ? parLen : 0
+  this.bubble = bubble ? bubble : false
+}
 
 
 // floating set of tokens

@@ -24,9 +24,7 @@ var codeStoreClass = function() {
     },
 
     setToken( data ) {
-      var token = state.lines[ state.cursor.y ].tokens[ state.cursor.x ]
-      token.id = data.id
-      token.name = data.name
+      var token = state.lines[ state.cursor.y ].tokens[ state.cursor.x ] = new tokenClass( data.id, data.name )
       signal.trigger('updateLines', [ state.cursor.y ])
     },
 
@@ -91,6 +89,44 @@ var codeStoreClass = function() {
         download('code.json', stateString)
         //var uriContent = "data:text/plain," + encodeURIComponent( stateString )
         //newWindow = window.open(uriContent, 'save file')
+      }
+    },
+
+    functionPoints( data ) {
+      if ( state.lines[ state.cursor.y ].tokens[ state.cursor.x ].id == 10 ) {
+        state.lines[ state.cursor.y ].tokens[ state.cursor.x ].options.points = data
+        signal.trigger('updateLines', [ state.cursor.y ])
+      }
+    },
+
+    functionBubble() {
+      var token = state.lines[ state.cursor.y ].tokens[ state.cursor.x ]
+      if ( token.id == 10 ) {
+        token.options.bubble = ! token.options.bubble
+        if ( token.options.bubble ) {
+          token.options.parLen = 0
+        }
+        signal.trigger('updateLines', [ state.cursor.y ])
+      }
+    },
+
+    functionParPoints( data ) {
+      var token = state.lines[ state.cursor.y ].tokens[ state.cursor.x ]
+      if ( token.id == 10 && !token.options.bubble ) {
+
+        if ( token.options.parPoints === data ) token.options.parLen++
+        else {
+          token.options.parPoints = data
+          token.options.parLen = 1
+        }
+        signal.trigger('updateLines', [ state.cursor.y ])
+      }
+    },
+
+    functionParX() {
+      if ( state.lines[ state.cursor.y ].tokens[ state.cursor.x ].id == 10 ) {
+        state.lines[ state.cursor.y ].tokens[ state.cursor.x ].options.parLen = 0
+        signal.trigger('updateLines', [ state.cursor.y ])
       }
     },
 

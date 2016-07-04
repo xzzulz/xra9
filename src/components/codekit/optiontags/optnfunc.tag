@@ -1,24 +1,39 @@
-
+import { codeDo } from '../../../stores/codeStore.js'
 
 <optnfunc>
 
 
-  <div id="optfuncpointup" class="optfuncpoint"></div>
-  <div id="optfuncpointdown" class="optfuncpoint"></div>
-  <div id="optfuncpointleft" class="optfuncpoint"></div>
-  <div id="optfuncpointright" class="optfuncpoint"></div>
+  <div id="optfuncpointup" onclick={ up } class="optfuncpoint"></div>
+  <div id="optfuncpointdown" onclick={ down } class="optfuncpoint"></div>
+  <div id="optfuncpointleft" onclick={ left } class="optfuncpoint"></div>
+  <div id="optfuncpointright" onclick={ right } class="optfuncpoint"></div>
 
-  <div id="optfuncdef" ></div>
+  <div id="optfuncdef" onclick={ bubble } ></div>
 
   <div id="optfuncpar"></div>
-  <div id="optfuncparup" class="optfuncpar"></div>
-  <div id="optfuncpardown" class="optfuncpar"></div>
-  <div id="optfuncparleft" class="optfuncpar"></div>
-  <div id="optfuncparright" class="optfuncpar"></div>
+  <div id="optfuncparup" onclick={ parup } class="optfuncpar"></div>
+  <div id="optfuncpardown" onclick={ pardown } class="optfuncpar"></div>
+  <div id="optfuncparleft" onclick={ parleft } class="optfuncpar"></div>
+  <div id="optfuncparright" onclick={ parright } class="optfuncpar"></div>
 
-  <div id="optfuncparx"></div>
+  <div id="optfuncparx" onclick={ nopar }></div>
+
 
   <script>
+
+    this.up = () => codeDo({ action: 'functionPoints', data: 3 })
+    this.down = () => codeDo({ action: 'functionPoints', data: 1 })
+    this.left = () => codeDo({ action: 'functionPoints', data: 2 })
+    this.right = () => codeDo({ action: 'functionPoints', data: 0 })
+
+    this.bubble = () => codeDo({ action: 'functionBubble' })
+
+    this.parup = () => codeDo({ action: 'functionParPoints', data: 3 })
+    this.pardown = () => codeDo({ action: 'functionParPoints', data: 1 })
+    this.parleft = () => codeDo({ action: 'functionParPoints', data: 2 })
+    this.parright = () => codeDo({ action: 'functionParPoints', data: 0 })
+
+    this.nopar = () => codeDo({ action: 'functionParX' })
 
   </script>
 

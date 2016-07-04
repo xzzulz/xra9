@@ -12,13 +12,14 @@ var code = ''
 
 window.onkeydown = function( e ) {
   code = e.code
-  if ( keymap[ code ] ) keys[ keymap[ code ] ] ( code )
+  if ( keymap[ code ] )
+    keys[ keymap[ code ] ] ( e )
 }
 
 
 var keys = {}
 
-keys.code = ( key ) => {
+keys.code = ( e ) => {
 
 }
 

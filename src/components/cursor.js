@@ -24,8 +24,9 @@ cursor.click = ( e ) => {
 
 }
 
-cursor.key = ( code ) => {
-  switch (code) {
+cursor.key = ( e ) => {
+  e.preventDefault()
+  switch ( e.code ) {
     case 'ArrowUp':
       codeDo({ action: 'moveCursorUp' })
       break
