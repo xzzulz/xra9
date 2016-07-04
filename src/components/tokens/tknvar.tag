@@ -27,6 +27,7 @@ import { codeInfo } from '../../stores/codeInfo.js'
       position: relative;
       background-image: url('assets/img/tk90.svg');
       background-size: 560px 560px;
+      z-index: 10;
     }
     :scope #tt0 {
       width: 56px;
