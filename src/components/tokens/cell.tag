@@ -1,14 +1,16 @@
 import drag from '../drag.js'
 import './token.tag'
 import './tknfunc.tag'
+import './tknvar.tag'
 
 
 <cell  draggable="true" ondragstart={ dragstart } ondrag={ drag } ondrop={ drop } ondragover="return false">
 
 
-  <tknfunc if={ id == 10 }></tknfunc>
-  <token if={ id != 10 }></token>
 
+  <token if={ id < 2 || id == 8 || id == 9 || id > 10 }></token>
+  <tknvar if={ id > 2 && id < 8 }></tknvar>
+  <tknfunc if={ id == 10 }></tknfunc>
 
   <script>
 

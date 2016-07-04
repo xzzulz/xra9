@@ -50,4 +50,4 @@ import { codeInfo } from '../../stores/codeInfo.js'
   </style>
 
 
-</tknfunc>
+</tknvar>
