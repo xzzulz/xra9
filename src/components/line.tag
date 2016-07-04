@@ -1,4 +1,4 @@
-import './cell.tag'
+import './tokens/cell.tag'
 
 <line>
 

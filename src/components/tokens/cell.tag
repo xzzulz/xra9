@@ -1,6 +1,6 @@
-import drag from './drag.js'
-import './tokens/token.tag'
-import './tokens/tknfunc.tag'
+import drag from '../drag.js'
+import './token.tag'
+import './tknfunc.tag'
 
 
 <cell  draggable="true" ondragstart={ dragstart } ondrag={ drag } ondrop={ drop } ondragover="return false">
