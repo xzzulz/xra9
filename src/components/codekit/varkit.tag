@@ -1,4 +1,5 @@
-import { codeState } from '../../stores/codeStore.js'
+import { codeState, signal } from '../../stores/codeStore.js'
+import { toolbarSignal } from '../../stores/toolbarStore.js'
 import '../tokens/tknvar.tag'
 
 
@@ -18,23 +19,21 @@ import '../tokens/tknvar.tag'
     this.tags.tknvar.id = 0
 
     this.change = ( e ) => {
-      e.preventUpdate = true
-      console.log( e )
-      //this.name1.textContent = varname1.value.substring(0,8)
-      //this.name2.textContent = varname1.value.substring(8,16)
-      //this.tags.tknvar.name = varname1.value.substring(0,8)
-      //this.tags.tknvar.update()
-
       codeState.lines[ codeState.cursor.y ].tokens[ codeState.cursor.x ].options.tx1 = varname1.value.substring(0,8)
       codeState.lines[ codeState.cursor.y ].tokens[ codeState.cursor.x ].options.tx2 = varname1.value.substring(8,16)
-      this.update()
+      signal.trigger('updateLines', [ codeState.cursor.y ])
     }
 
     this.on('update', () => {
       Object.assign( this.tags.tknvar, codeState.lines[ codeState.cursor.y ].tokens[ codeState.cursor.x ] )
     })
 
-
+    var token
+    toolbarSignal.on('varkitVisible', () => {
+      token = codeState.lines[ codeState.cursor.y ].tokens[ codeState.cursor.x ]
+      this.varname1.value = token.options.tx1 + token.options.tx2
+      this.varname1.focus()
+    })
 
   </script>
 
