@@ -9,10 +9,6 @@ var codeStoreClass = function() {
     floats: [],
     scopes: [],
     cursor: { x: 0, y: 0 },
-    optionToken: {
-      loc: { x: 0, y: 0 },
-      group: null
-    }
   }
 
   var state = this.state
@@ -29,8 +25,8 @@ var codeStoreClass = function() {
 
     setToken( data ) {
       var token = state.lines[ state.cursor.y ].tokens[ state.cursor.x ] = new tokenClass( data.id, data.name )
-      this.setOptionToken()
       signal.trigger('updateLines', [ state.cursor.y ])
+      signal.trigger( 'updateCursor' )
     },
 
     grabToken( loc ) {
@@ -56,14 +52,12 @@ var codeStoreClass = function() {
     moveCursor( loc ) {
       state.cursor.x = loc.x
       state.cursor.y = loc.y
-      this.setOptionToken()
       signal.trigger( 'updateCursor' )
     },
 
     moveCursorUp() {
       if ( state.cursor.y > 0 ) {
         state.cursor.y--
-        this.setOptionToken()
         signal.trigger( 'updateCursor' )
       }
     },
@@ -71,7 +65,6 @@ var codeStoreClass = function() {
     moveCursorDown() {
       if ( state.cursor.y < state.lines.length - 1 ) {
         state.cursor.y++
-        this.setOptionToken()
         signal.trigger( 'updateCursor' )
       }
     },
@@ -79,7 +72,6 @@ var codeStoreClass = function() {
     moveCursorLeft() {
       if ( state.cursor.x > 0 ) {
         state.cursor.x--
-        this.setOptionToken()
         signal.trigger( 'updateCursor' )
       }
     },
@@ -87,7 +79,6 @@ var codeStoreClass = function() {
     moveCursorRight() {
       if ( state.cursor.x < state.lines[0].tokens.length - 1 ) {
         state.cursor.x++
-        this.setOptionToken()
         signal.trigger( 'updateCursor' )
       }
     },
@@ -99,14 +90,6 @@ var codeStoreClass = function() {
         download('code.json', stateString)
         //var uriContent = "data:text/plain," + encodeURIComponent( stateString )
         //newWindow = window.open(uriContent, 'save file')
-      }
-    },
-
-    setOptionToken() {
-      if ( state.lines[ state.cursor.y ].tokens[ state.cursor.x ].id != 0 ) {
-        state.optionToken.loc = { x: state.cursor.x, y: state.cursor.y }
-        state.optionToken.group = state.lines[ state.cursor.y ].tokens[ state.cursor.x ].group
-        signal.trigger( 'updateOptionToken' )
       }
     },
 

@@ -1,4 +1,7 @@
+import { codeState } from '../../stores/codeStore.js'
 import '../tokens/tknvar.tag'
+
+
 
 <varkit>
 
@@ -11,6 +14,9 @@ import '../tokens/tknvar.tag'
 
 
   <script>
+
+    this.tags.tknvar.id = 0
+
     this.change = ( e ) => {
       e.preventUpdate = true
       console.log( e )
@@ -20,7 +26,10 @@ import '../tokens/tknvar.tag'
       this.tags.tknvar.update()
     }
 
-    this.tags.tknvar.id = 3
+    this.on('update', () => {
+      Object.assign( this.tags.tknvar, codeState.lines[ codeState.cursor.y ].tokens[ codeState.cursor.x ] )
+    })
+
 
 
   </script>

@@ -12,11 +12,10 @@ import { codeState, signal } from '../../stores/codeStore.js'
   <script>
 
     this.on('update', () => {
-      this.tokenLoc = codeState.optionToken.loc
-      this.group = codeState.optionToken.group
+      this.group = codeState.lines[ codeState.cursor.y ].tokens[ codeState.cursor.x ].group
     })
 
-    signal.on( 'updateOptionToken', () => {
+    signal.on( 'updateCursor', () => {
       console.log('updateOptionToken')
       this.update()
     })
