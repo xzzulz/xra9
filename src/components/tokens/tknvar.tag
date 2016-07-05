@@ -42,7 +42,7 @@ import { codeInfo } from '../../stores/codeInfo.js'
       width: 56px;
       text-align: center;
       position: absolute;
-      top: 5px;
+      top: 10px;
       margin: 0;
       z-index: 10;
     }

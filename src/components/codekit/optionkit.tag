@@ -16,7 +16,6 @@ import { codeState, signal } from '../../stores/codeStore.js'
     })
 
     signal.on( 'updateCursor', () => {
-      console.log('updateOptionToken')
       this.update()
     })
 
