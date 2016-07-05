@@ -93,9 +93,9 @@ var codeStoreClass = function() {
       }
     },
 
-    functionPoints( data ) {
+    tokenPoints( data ) {
       var token = state.lines[ state.cursor.y ].tokens[ state.cursor.x ]
-      if ( token.group == 'function' ) {
+      if ( token.group == 'function' || token.group == 'arrow' ) {
         token.options.points = data
         signal.trigger('updateLines', [ state.cursor.y ])
       }

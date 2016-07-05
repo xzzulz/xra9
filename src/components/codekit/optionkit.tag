@@ -1,12 +1,16 @@
+import { codeState, signal } from '../../stores/codeStore.js'
 import './optiontags/optnfunc.tag'
 import './optiontags/optnvar.tag'
-import { codeState, signal } from '../../stores/codeStore.js'
+import './optiontags/optnarrw.tag'
+
 
 
 <optionkit>
 
+
   <optnvar if={ group == 'var' }></optnvar>
   <optnfunc if={ group == 'function' }></optnfunc>
+  <optnarrw if={ group == 'arrow' }></optnarrw>
 
 
   <script>

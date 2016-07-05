@@ -24,10 +24,10 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
 
   <script>
 
-    this.up = () => codeDo({ action: 'functionPoints', data: 3 })
-    this.down = () => codeDo({ action: 'functionPoints', data: 1 })
-    this.left = () => codeDo({ action: 'functionPoints', data: 2 })
-    this.right = () => codeDo({ action: 'functionPoints', data: 0 })
+    this.up = () => codeDo({ action: 'tokenPoints', data: 3 })
+    this.down = () => codeDo({ action: 'tokenPoints', data: 1 })
+    this.left = () => codeDo({ action: 'tokenPoints', data: 2 })
+    this.right = () => codeDo({ action: 'tokenPoints', data: 0 })
 
     this.bubble = () => codeDo({ action: 'functionBubble' })
 
