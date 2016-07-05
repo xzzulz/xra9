@@ -1,7 +1,9 @@
 import { codeDo } from '../../../stores/codeStore.js'
+import { toolbarDo } from '../../../stores/toolbarStore.js'
+
+
 
 <optnfunc>
-
 
   <div id="optfuncpointup" onclick={ up } class="optfuncpoint"></div>
   <div id="optfuncpointdown" onclick={ down } class="optfuncpoint"></div>
@@ -36,7 +38,7 @@ import { codeDo } from '../../../stores/codeStore.js'
 
     this.nopar = () => codeDo({ action: 'functionParX' })
 
-    this.name = () => console.log('func name')
+    this.name = () => toolbarDo({ action: 'varkitVisible' })
 
   </script>
 
