@@ -1,15 +1,16 @@
 import { codeDo } from '../../../stores/codeStore.js'
+import { toolbarDo } from '../../../stores/toolbarStore.js'
 
 <optnvar>
 
 
   <div id="optvarbubble" onclick={ bubble }></div>
-
+  <div id="optvarname" onclick={ name }></div>
 
   <script>
 
     this.bubble = () => codeDo({ action: 'varBubble' })
-
+    this.name = () => toolbarDo({ action: 'varkitVisible' })
 
   </script>
 
@@ -22,14 +23,24 @@ import { codeDo } from '../../../stores/codeStore.js'
     }
 
     #optvarbubble {
-      left: 3vh;
-      top: 3vh;
+      left: 7vh;
+      top: 2vh;
       width: 15vh;
       height: 15vh;
       position: absolute;
       background-image: url('assets/img/options/optvarbubble.svg');
       background-size: 100% 100%;
       cursor: pointer;
+    }
+
+    #optvarname {
+      left: 2vh;
+      top: 14vh;
+      width: 4vh;
+      height: 4vh;
+      position: absolute;
+      background-image: url('assets/img/options/optname.svg');
+      background-size: 100% 100%;
     }
 
   </style>

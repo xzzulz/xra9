@@ -9,6 +9,7 @@ import { codeDo } from '../../../stores/codeStore.js'
   <div id="optfuncpointright" onclick={ right } class="optfuncpoint"></div>
 
   <div id="optfuncdef" onclick={ bubble } ></div>
+  <div id="optfuncname" onclick={ name }></div>
 
   <div id="optfuncpar"></div>
   <div id="optfuncparup" onclick={ parup } class="optfuncpar"></div>
@@ -35,6 +36,8 @@ import { codeDo } from '../../../stores/codeStore.js'
 
     this.nopar = () => codeDo({ action: 'functionParX' })
 
+    this.name = () => console.log('func name')
+
   </script>
 
 
@@ -47,14 +50,23 @@ import { codeDo } from '../../../stores/codeStore.js'
     }
 
     #optfuncdef {
-      left: 1vh;
-      top: 12vh;
-      width: 7vh;
-      height: 7vh;
+      left: .5vh;
+      top: 10.5vh;
+      width: 6vh;
+      height: 6vh;
       position: absolute;
       background-image: url('assets/img/options/optfuncdef.svg');
       background-size: 100% 100%;
-      cursor: pointer;
+    }
+
+    #optfuncname {
+      left: 6.5vh;
+      top: 16.5vh;
+      width: 3vh;
+      height: 3vh;
+      position: absolute;
+      background-image: url('assets/img/options/optname.svg');
+      background-size: 100% 100%;
     }
 
     .optfuncpoint {
@@ -63,7 +75,6 @@ import { codeDo } from '../../../stores/codeStore.js'
       position: absolute;
       background-image: url('assets/img/options/optfuncpinup.svg');
       background-size: 100% 100%;
-      cursor: pointer;
     }
 
     #optfuncpointup {
@@ -106,7 +117,6 @@ import { codeDo } from '../../../stores/codeStore.js'
       position: absolute;
       background-image: url('assets/img/options/optfuncparup.svg');
       background-size: 100% 100%;
-      cursor: pointer;
     }
 
     #optfuncparup {
@@ -138,7 +148,6 @@ import { codeDo } from '../../../stores/codeStore.js'
       position: absolute;
       background-image: url('assets/img/options/optfuncparx.svg');
       background-size: 100% 100%;
-      cursor: pointer;
       left: 18.7vh;
       top: 9.5vh;
 

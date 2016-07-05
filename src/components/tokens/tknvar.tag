@@ -26,8 +26,8 @@ import { codeInfo } from '../../stores/codeInfo.js'
     :scope {
       width: 56px;
       height: 56px;
-      display: inline-block;
-      position: relative;
+      display: block;
+      position: absolute;
     }
     #bk {
       width: 56px;

@@ -38,22 +38,35 @@ var toolbarStoreClass = function() {
       { id: 6 },
       { id: 7 },
       { id: 70 },
-
-      { id: 8 },
-      { id: 0 },
-      { id: 0 },
     ],
 
     utilkit: [
       { id: 0 },
       { id: 1 },
-    ]
+    ],
+
+    varkit: {
+      visible: false
+    }
 
   }
 
   var state = this.state
 
+  this.signal = riot.observable()
+  var signal = this.signal
+
   this.mutations = {
+
+    varkitVisible() {
+      state.varkit.visible = ! state.varkit.visible
+      signal.trigger('varkitVisible')
+    }
+
+  }
+
+  this.do = ( action ) => {
+    if ( this.mutations[ action.action ] ) this.mutations[ action.action ]( action.data )
   }
 
 }
@@ -61,6 +74,7 @@ var toolbarStoreClass = function() {
 var toolbarStore = new toolbarStoreClass()
 
 var toolbarState = toolbarStore.state
+var toolbarDo = toolbarStore.do
+var toolbarSignal = toolbarStore.signal
 
-
-export { toolbarState }
+export { toolbarState, toolbarDo, toolbarSignal }
