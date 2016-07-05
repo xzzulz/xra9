@@ -1,3 +1,5 @@
+import { codeState } from './codeStore.js'
+
 
 var toolbarStoreClass = function() {
 
@@ -59,7 +61,21 @@ var toolbarStoreClass = function() {
   this.mutations = {
 
     varkitVisible() {
-      state.varkit.visible = ! state.varkit.visible
+      if ( ! state.varkit.visible ) this.openVarkit()
+      else this.closeVarkit()
+      signal.trigger('varkitVisible')
+    },
+
+    openVarkit() {
+      var group = codeState.lines[ codeState.cursor.y ].tokens[ codeState.cursor.x ].group
+      if ( group == 'var' || group == 'function' ) {
+        state.varkit.visible = true
+        signal.trigger('varkitVisible')
+      }
+    },
+
+    closeVarkit() {
+      state.varkit.visible = false
       signal.trigger('varkitVisible')
     }
 
