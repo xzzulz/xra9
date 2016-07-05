@@ -65,11 +65,13 @@ var tokenClass = function( id, name ) {
 // Token object creator
 //
 // name: (string) text name
-var functionTokenClass = function( points, parPoints, parLen, bubble ) {
+var functionTokenClass = function( points, parPoints, parLen, bubble, tx1, tx2 ) {
   this.points = points ? points : 0
   this.parPoints = parPoints ? parPoints : 0
   this.parLen = parLen ? parLen : 0
   this.bubble = bubble ? bubble : false
+  this.tx1 = tx1 ? tx1 : ''
+  this.tx2 = tx2 ? tx2 : ''
 }
 
 

@@ -7,9 +7,9 @@ import { codeInfo } from '../../stores/codeInfo.js'
 
   <div id="parBar"></div>
 
-  <div id="tt0">{name}</div>
-  <div id="tt1"></div>
-  <div id="tt2"></div>
+  <div id="tt0" if={ ! options.tx2 }>{ options.tx1 }</div>
+  <div id="tt1" if={ options.tx2 }>{ options.tx1 }</div>
+  <div id="tt2" if={ options.tx2 }>{ options.tx2 }</div>
 
   <div id="bk"></div>
 
@@ -54,24 +54,29 @@ import { codeInfo } from '../../stores/codeInfo.js'
       z-index: 10;
     }
 
-    :scope #tt0 {
+    #tt0 {
       width: 56px;
       text-align: center;
       position: absolute;
       top: 5px;
       margin: 0;
+      z-index: 10;
     }
-    :scope #tt1 {
+    #tt1 {
+      position: absolute;
+      top: 2px;
       width: 56px;
       text-align: center;
       margin: 0;
+      z-index: 10;
     }
-    :scope #tt2 {
+    #tt2 {
+      position: absolute;
       width: 56px;
       text-align: center;
-      position: relative;
-      top: -2px;
+      top: 12px;
       margin: 0;
+      z-index: 10;
     }
 
     #parBar {

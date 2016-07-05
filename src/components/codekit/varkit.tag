@@ -22,8 +22,12 @@ import '../tokens/tknvar.tag'
       console.log( e )
       //this.name1.textContent = varname1.value.substring(0,8)
       //this.name2.textContent = varname1.value.substring(8,16)
-      this.tags.tknvar.name = varname1.value.substring(0,8)
-      this.tags.tknvar.update()
+      //this.tags.tknvar.name = varname1.value.substring(0,8)
+      //this.tags.tknvar.update()
+
+      codeState.lines[ codeState.cursor.y ].tokens[ codeState.cursor.x ].options.tx1 = varname1.value.substring(0,8)
+      codeState.lines[ codeState.cursor.y ].tokens[ codeState.cursor.x ].options.tx2 = varname1.value.substring(8,16)
+      this.update()
     }
 
     this.on('update', () => {
