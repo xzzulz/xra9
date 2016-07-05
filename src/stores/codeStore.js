@@ -94,48 +94,50 @@ var codeStoreClass = function() {
     },
 
     functionPoints( data ) {
-      if ( state.optionToken.group == 'function' ) {
-        state.lines[ state.optionToken.loc.y ].tokens[ state.optionToken.loc.x ].options.points = data
-        signal.trigger('updateLines', [ state.optionToken.loc.y ])
+      var token = state.lines[ state.cursor.y ].tokens[ state.cursor.x ]
+      if ( token.group == 'function' ) {
+        token.options.points = data
+        signal.trigger('updateLines', [ state.cursor.y ])
       }
     },
 
     functionBubble() {
-      var token = state.lines[ state.optionToken.loc.y ].tokens[ state.optionToken.loc.x ]
-      if ( state.optionToken.group == 'function' ) {
+      var token = state.lines[ state.cursor.y ].tokens[ state.cursor.x ]
+      if ( token.group == 'function' ) {
         token.options.bubble = ! token.options.bubble
         if ( token.options.bubble ) {
           token.options.parLen = 0
         }
-        signal.trigger('updateLines', [ state.optionToken.loc.y ])
+        signal.trigger('updateLines', [ state.cursor.y ])
       }
     },
 
     functionParPoints( data ) {
-      var token = state.lines[ state.optionToken.loc.y ].tokens[ state.optionToken.loc.x ]
-      if ( state.optionToken.group == 'function' && !token.options.bubble ) {
+      var token = state.lines[ state.cursor.y ].tokens[ state.cursor.x ]
+      if ( token.group == 'function' && !token.options.bubble ) {
 
         if ( token.options.parPoints === data ) token.options.parLen++
         else {
           token.options.parPoints = data
           token.options.parLen = 1
         }
-        signal.trigger('updateLines', [ state.optionToken.loc.y ])
+        signal.trigger('updateLines', [ state.cursor.y ])
       }
     },
 
     functionParX() {
-      if ( state.optionToken.group == 'function' ) {
-        state.lines[ state.optionToken.loc.y ].tokens[ state.optionToken.loc.x ].options.parLen = 0
-        signal.trigger('updateLines', [ state.optionToken.loc.y ])
+      var token = state.lines[ state.cursor.y ].tokens[ state.cursor.x ]
+      if ( token.group == 'function' ) {
+        token.options.parLen = 0
+        signal.trigger('updateLines', [ state.cursor.y ])
       }
     },
 
     varBubble() {
-      var token = state.lines[ state.optionToken.loc.y ].tokens[ state.optionToken.loc.x ]
+      var token = state.lines[ state.cursor.y ].tokens[ state.cursor.x ]
       if ( token.group == 'var' ) {
         token.options.bubble = ! token.options.bubble
-        signal.trigger('updateLines', [ state.optionToken.loc.y ])
+        signal.trigger('updateLines', [ state.cursor.y ])
       }
     }
 
