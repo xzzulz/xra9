@@ -1,6 +1,6 @@
 import { toolbarDo } from '../stores/toolbarStore.js'
 
-
+/*
 var keymap = {
   ArrowUp: 'code',
   ArrowDown: 'code',
@@ -36,5 +36,23 @@ keys.here = ( e ) => {
     toolbarDo({ action: 'varkitVisible' })
   }
 }
+*/
+var keySource = riot.observable()
+export default keySource
 
-export default keys
+var code
+window.onkeydown = function( e ) {
+  code = e.code
+  switch ( code ) {
+    case 'ArrowUp':
+    case 'ArrowDown':
+    case 'ArrowLeft':
+    case 'ArrowRight':
+      keySource.trigger( 'arrow', e ); break
+    case 'Enter':
+    case 'NumpadEnter':
+      keySource.trigger( 'enter', e ); break
+    case 'Space':
+      keySource.trigger( 'space', e ); break
+  }
+}

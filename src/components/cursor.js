@@ -1,5 +1,8 @@
 import { codeDo, codeState } from '../stores/codeStore.js'
 import { panelState } from '../stores/panelStore.js'
+import keySource from './keys.js'
+
+
 
 var cursor = {}
 
@@ -24,7 +27,7 @@ cursor.click = ( e ) => {
 
 }
 
-cursor.key = ( e ) => {
+keySource.on( 'arrow', ( e ) => {
   e.preventDefault()
   switch ( e.code ) {
     case 'ArrowUp':
@@ -42,7 +45,7 @@ cursor.key = ( e ) => {
   }
 
   cursor.scroll()
-}
+})
 
 
 cursor.scroll = () => {

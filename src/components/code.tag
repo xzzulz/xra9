@@ -41,9 +41,6 @@ import cursor from './cursor.js'
       if ( e.button == 0 ) cursor.click( e )
     }
 
-    this.key = ( code ) => {
-      cursor.key( code )
-    }
   </script>
 
   <style scoped>
