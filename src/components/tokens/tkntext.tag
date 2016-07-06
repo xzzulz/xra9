@@ -41,7 +41,7 @@
     }
     #tt0 {
       max-width: 48px;
-      max-height: 46px;
+      max-height: 42px;
       line-height: 98%;
       color: #ffdc92;
       word-wrap: break-word;

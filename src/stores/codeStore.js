@@ -139,7 +139,17 @@ var codeStoreClass = function() {
         token.options.bubble = ! token.options.bubble
         signal.trigger('updateLines', [ state.cursor.y ])
       }
-    }
+    },
+
+    commWidth( data ) {
+      var token = state.lines[ state.cursor.y ].tokens[ state.cursor.x ]
+      if ( token.group == 'comment' ) {
+        token.options.width += data
+        if ( token.options.width < 1 ) token.options.width = 1
+        if ( token.options.width > 8 ) token.options.width = 8
+        signal.trigger('updateLines', [ state.cursor.y ])
+      }
+    },
 
   }
 

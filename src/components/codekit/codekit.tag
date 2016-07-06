@@ -33,7 +33,6 @@ import './textkit.tag'
     })
 
     toolbarSignal.on('textkitVisible', () => {
-      console.log('toolbarSignal.on(textkitVisible')
       this.textkitVisible = toolbarState.textkit.visible
       this.update()
     })
