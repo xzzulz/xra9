@@ -2,7 +2,7 @@
 
 
 
-<tknnum>
+<tkntext>
 
 
   <div id="tt0">{ options.value }</div>
@@ -11,7 +11,7 @@
   <script>
 
     this.on("update", () => {
-      if ( this.id != 90 ) return
+      if ( this.id != 91 ) return
       var length = this.options.value.toString().length
       var size = 280
       if ( length == 3 ) size = 210
@@ -36,17 +36,18 @@
       align-items: center;
       flex-direction: row;
       z-index: 10;
-      padding: 9px 0px 0px;
+      padding: 6px 0px 0px;
       box-sizing: padding-box;
     }
     #tt0 {
       max-width: 48px;
+      max-height: 46px;
       line-height: 98%;
-      color: #74d661;
+      color: #ffdc92;
       word-wrap: break-word;
-      text-align: right;
+      overflow: hidden;
     }
   </style>
 
 
-</tknnum>
+</tkntext>

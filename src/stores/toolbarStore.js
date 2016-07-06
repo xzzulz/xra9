@@ -52,6 +52,9 @@ var toolbarStoreClass = function() {
     },
     numkit: {
       visible: false
+    },
+    textkit: {
+      visible: false
     }
 
   }
@@ -67,18 +70,19 @@ var toolbarStoreClass = function() {
       var group = codeState.lines[ codeState.cursor.y ].tokens[ codeState.cursor.x ].group
       if ( group == 'var' || group == 'function' ) this.varkitVisible()
       else if ( group == 'number' ) this.numkitVisible()
+      else if ( group == 'text' ) this.textkitVisible()
     },
 
     openInputKit() {
       var group = codeState.lines[ codeState.cursor.y ].tokens[ codeState.cursor.x ].group
       if ( group == 'var' || group == 'function' ) this.openVarkit()
       else if ( group == 'number' ) this.openNumkit()
+      else if ( group == 'text' ) this.openTextkit()
     },
 
     varkitVisible() {
       if ( ! state.varkit.visible ) this.openVarkit()
       else this.closeVarkit()
-      signal.trigger('varkitVisible')
     },
 
     openVarkit() {
@@ -98,7 +102,6 @@ var toolbarStoreClass = function() {
     numkitVisible() {
       if ( ! state.numkit.visible ) this.openNumkit()
       else this.closeNumkit()
-      signal.trigger('numkitVisible')
     },
 
     openNumkit() {
@@ -112,7 +115,26 @@ var toolbarStoreClass = function() {
     closeNumkit() {
       state.numkit.visible = false
       signal.trigger('numkitVisible')
-    }
+    },
+
+
+    textkitVisible() {
+      if ( ! state.textkit.visible ) this.openTextkit()
+      else this.closeTextkit()
+    },
+
+    openTextkit() {
+      var group = codeState.lines[ codeState.cursor.y ].tokens[ codeState.cursor.x ].group
+      if ( group == 'text' ) {
+        state.textkit.visible = true
+        signal.trigger('textkitVisible')
+      }
+    },
+
+    closeTextkit() {
+      state.textkit.visible = false
+      signal.trigger('textkitVisible')
+    },
 
   }
 

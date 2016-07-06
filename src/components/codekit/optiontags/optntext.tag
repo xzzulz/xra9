@@ -3,14 +3,14 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
 
 
 
-<optnnum>
+<optntext>
 
 
-  <div id="optnum" onclick={ num }></div>
+  <div id="opttex" onclick={ edit }></div>
 
 
   <script>
-    this.num = () => toolbarDo({ action: 'numkitVisible' })
+    this.edit = () => toolbarDo({ action: 'textkitVisible' })
   </script>
 
 
@@ -20,16 +20,16 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
       height: 100%;
       display: block;
     }
-    #optnum {
+    #opttex {
       left: 3vh;
       top: 3vh;
       width: 15vh;
       height: 15vh;
       position: absolute;
-      background-image: url('assets/img/options/optnum.svg');
+      background-image: url('assets/img/options/opttex.svg');
       background-size: 100% 100%;
     }
   </style>
 
 
-</optnnum>
+</optntext>

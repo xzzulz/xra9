@@ -3,6 +3,7 @@ import './optiontags/optnfunc.tag'
 import './optiontags/optnvar.tag'
 import './optiontags/optnarrw.tag'
 import './optiontags/optnnum.tag'
+import './optiontags/optntext.tag'
 
 
 
@@ -13,6 +14,7 @@ import './optiontags/optnnum.tag'
   <optnfunc if={ group == 'function' }></optnfunc>
   <optnarrw if={ group == 'arrow' }></optnarrw>
   <optnnum if={ group == 'number' }></optnnum>
+  <optntext if={ group == 'text' }></optntext>
 
 
   <script>
