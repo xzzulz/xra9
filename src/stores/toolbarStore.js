@@ -49,6 +49,9 @@ var toolbarStoreClass = function() {
 
     varkit: {
       visible: false
+    },
+    numkit: {
+      visible: false
     }
 
   }
@@ -59,6 +62,18 @@ var toolbarStoreClass = function() {
   var signal = this.signal
 
   this.mutations = {
+
+    inputKitVisible() {
+      var group = codeState.lines[ codeState.cursor.y ].tokens[ codeState.cursor.x ].group
+      if ( group == 'var' || group == 'function' ) this.varkitVisible()
+      else if ( group == 'number' ) this.numkitVisible()
+    },
+
+    openInputKit() {
+      var group = codeState.lines[ codeState.cursor.y ].tokens[ codeState.cursor.x ].group
+      if ( group == 'var' || group == 'function' ) this.openVarkit()
+      else if ( group == 'number' ) this.openNumkit()
+    },
 
     varkitVisible() {
       if ( ! state.varkit.visible ) this.openVarkit()
@@ -77,6 +92,26 @@ var toolbarStoreClass = function() {
     closeVarkit() {
       state.varkit.visible = false
       signal.trigger('varkitVisible')
+    },
+
+
+    numkitVisible() {
+      if ( ! state.numkit.visible ) this.openNumkit()
+      else this.closeNumkit()
+      signal.trigger('numkitVisible')
+    },
+
+    openNumkit() {
+      var group = codeState.lines[ codeState.cursor.y ].tokens[ codeState.cursor.x ].group
+      if ( group == 'number' ) {
+        state.numkit.visible = true
+        signal.trigger('numkitVisible')
+      }
+    },
+
+    closeNumkit() {
+      state.numkit.visible = false
+      signal.trigger('numkitVisible')
     }
 
   }

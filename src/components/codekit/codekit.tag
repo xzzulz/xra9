@@ -4,6 +4,7 @@ import './optionkit.tag'
 import './toolkit.tag'
 import './datakit.tag'
 import './varkit.tag'
+import './numkit.tag'
 
 
 <codekit>
@@ -12,20 +13,27 @@ import './varkit.tag'
   <toolkit></toolkit>
   <datakit></datakit>
   <varkit if={ varkitVisible }></varkit>
+  <numkit if={ numkitVisible }></numkit>
 
   <script>
     this.varkitVisible = false
+    this.numkitVisible = false
 
     toolbarSignal.on('varkitVisible', () => {
       this.varkitVisible = toolbarState.varkit.visible
       this.update()
     })
 
+    toolbarSignal.on('numkitVisible', () => {
+      this.numkitVisible = toolbarState.numkit.visible
+      this.update()
+    })
+
     keySource.on( 'enter', ( e ) => {
-      toolbarDo({ action: 'varkitVisible' })
+      toolbarDo({ action: 'inputKitVisible' })
     })
     keySource.on( 'space', ( e ) => {
-      toolbarDo({ action: 'openVarkit' })
+      toolbarDo({ action: 'openInputKit' })
     })
 
   </script>
