@@ -3,6 +3,7 @@ import './token.tag'
 import './tknfunc.tag'
 import './tknvar.tag'
 import './tknarrw.tag'
+import './tknnum.tag'
 
 
 <cell  draggable="true" ondragstart={ dragstart } ondrag={ drag } ondrop={ drop } ondragover="return false">
@@ -13,6 +14,7 @@ import './tknarrw.tag'
   <tknvar if={ group == 'var' }></tknvar>
   <tknfunc if={ group == 'function' }></tknfunc>
   <tknarrw if={ group == 'arrow' }></tknarrw>
+  <tknnum if={ group == 'number' }></tknnum>
 
   <script>
 

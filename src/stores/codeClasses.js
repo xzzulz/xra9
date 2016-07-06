@@ -56,6 +56,8 @@ var tokenClass = function( id, name ) {
       this.options = new varTokenClass(); this.group = 'var'; break
     case 10:
       this.options = new functionTokenClass(); this.group = 'function'; break
+    case 90:
+      this.options = new numberTokenClass(); this.group = 'number'; break
     case 94:
       this.options = new arrowTokenClass(); this.group = 'arrow'; break
     default:
@@ -82,6 +84,13 @@ var functionTokenClass = function( points, parPoints, parLen, bubble, tx1, tx2 )
 // name: (string) text name
 var arrowTokenClass = function( points ) {
   this.points = points ? points : 0
+}
+
+// Token object creator
+//
+// name: (string) text name
+var numberTokenClass = function( value ) {
+  this.value = value ? value : 0
 }
 
 

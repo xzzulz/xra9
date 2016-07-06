@@ -2,6 +2,7 @@ import { codeState, signal } from '../../stores/codeStore.js'
 import './optiontags/optnfunc.tag'
 import './optiontags/optnvar.tag'
 import './optiontags/optnarrw.tag'
+import './optiontags/optnnum.tag'
 
 
 
@@ -11,6 +12,7 @@ import './optiontags/optnarrw.tag'
   <optnvar if={ group == 'var' }></optnvar>
   <optnfunc if={ group == 'function' }></optnfunc>
   <optnarrw if={ group == 'arrow' }></optnarrw>
+  <optnnum if={ group == 'number' }></optnnum>
 
 
   <script>

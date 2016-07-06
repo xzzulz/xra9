@@ -15,27 +15,27 @@ export var codeInfo = {
   },
 
   3: {
-    name: "boolean",
+    name: "boolean var",
     loc: { x: -168, y: 0 },
   },
 
   4: {
-    name: "number",
+    name: "number var",
     loc: { x: -224, y: 0 },
   },
 
   5: {
-    name: "string",
+    name: "string var",
     loc: { x: -280, y: 0 },
   },
 
   6: {
-    name: "object",
+    name: "object var",
     loc: { x: -336, y: 0 },
   },
 
   7: {
-    name: "array",
+    name: "array var",
     loc: { x: -392, y: 0 },
   },
 
