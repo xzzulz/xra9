@@ -114,7 +114,7 @@ var codeStoreClass = function() {
 
     functionParPoints( data ) {
       var token = state.lines[ state.cursor.y ].tokens[ state.cursor.x ]
-      if ( token.group == 'function' && !token.options.bubble || token.group == 'operator' ) {
+      if ( token.group == 'function' && !token.options.bubble || token.group == 'operator' || token.group == 'loop' ) {
 
         if ( token.options.parPoints === data ) token.options.parLen++
         else {
@@ -127,7 +127,7 @@ var codeStoreClass = function() {
 
     functionParX() {
       var token = state.lines[ state.cursor.y ].tokens[ state.cursor.x ]
-      if ( token.group == 'function' || token.group == 'operator' ) {
+      if ( token.group == 'function' || token.group == 'operator' || token.group == 'loop' ) {
         token.options.parLen = 0
         signal.trigger('updateLines', [ state.cursor.y ])
       }

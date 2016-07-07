@@ -57,6 +57,8 @@ var tokenClass = function( id, name ) {
       this.options = new varTokenClass(); this.group = 'var'; break
     case 10:
       this.options = new functionTokenClass(); this.group = 'function'; break
+    case 30:
+      this.options = new operatorTokenClass(); this.group = 'loop'; break
     case 40:
       this.options = new operatorTokenClass(); this.group = 'operator'; break
     case 90:
@@ -125,6 +127,13 @@ var commentTokenClass = function( value, width ) {
   this.width = width ? width : 1
 }
 
+// Token object creator
+//
+// name: (string) text name
+var loopTokenClass = function( parPoints, parLen ) {
+  this.parPoints = parPoints ? parPoints : 0
+  this.parLen = parLen ? parLen : 0
+}
 
 // Token object creator
 //
