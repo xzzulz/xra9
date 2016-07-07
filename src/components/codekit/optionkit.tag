@@ -7,6 +7,7 @@ import './optiontags/optntext.tag'
 import './optiontags/optncomm.tag'
 import './optiontags/optnop.tag'
 import './optiontags/optnloop.tag'
+import './optiontags/optnif.tag'
 
 
 
@@ -21,6 +22,7 @@ import './optiontags/optnloop.tag'
   <optncomm if={ group == 'comment' }></optncomm>
   <optnop if={ group == 'operator' }></optnop>
   <optnloop if={ group == 'loop' }></optnloop>
+  <optnif if={ group == 'if' }></optnif>
 
 
   <script>

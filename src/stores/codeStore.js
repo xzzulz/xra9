@@ -167,6 +167,24 @@ var codeStoreClass = function() {
       }
     },
 
+    ifRotate( data ) {
+      var token = state.lines[ state.cursor.y ].tokens[ state.cursor.x ]
+      if ( token.group == 'if' ) {
+        var freeSlot = 0, opt = token.options
+
+        if ( opt.cond != 0 && opt.o != 0 && opt.x != 0 ) freeSlot = 0
+        else if ( opt.cond != 1 && opt.o != 1 && opt.x != 1 ) freeSlot = 1
+        else if ( opt.cond != 2 && opt.o != 2 && opt.x != 2 ) freeSlot = 2
+        else if ( opt.cond != 3 && opt.o != 3 && opt.x != 3 ) freeSlot = 3
+
+        if ( data == 'cond' ) opt.cond = freeSlot
+        else if ( data == 'o' ) opt.o = freeSlot
+        else if ( data == 'x' ) opt.x = freeSlot
+
+        signal.trigger('updateLines', [ state.cursor.y ])
+      }
+    },
+
   }
 
   this.do = ( action ) => {

@@ -57,8 +57,10 @@ var tokenClass = function( id, name ) {
       this.options = new varTokenClass(); this.group = 'var'; break
     case 10:
       this.options = new functionTokenClass(); this.group = 'function'; break
+    case 22:
+      this.options = new ifTokenClass(); this.group = 'if'; break
     case 30:
-      this.options = new operatorTokenClass(); this.group = 'loop'; break
+      this.options = new loopTokenClass(); this.group = 'loop'; break
     case 40:
       this.options = new operatorTokenClass(); this.group = 'operator'; break
     case 90:
@@ -96,6 +98,15 @@ var operatorTokenClass = function( id, def, points, parPoints, parLen ) {
   this.parPoints = parPoints ? parPoints : 0
   this.parLen = parLen ? parLen : 0
   this.def = def ? def : false
+}
+
+// Token object creator
+//
+// name: (string) text name
+var ifTokenClass = function( o, x, cond ) {
+  this.o = o ? o : 0
+  this.x = x ? x : 1
+  this.cond = cond ? cond : 2
 }
 
 // Token object creator
