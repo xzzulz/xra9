@@ -6,6 +6,7 @@ import './tknarrw.tag'
 import './tknnum.tag'
 import './tkntext.tag'
 import './tkncomm.tag'
+import './tknop.tag'
 
 
 
@@ -20,7 +21,8 @@ import './tkncomm.tag'
   <tknnum if={ group == 'number' }></tknnum>
   <tkntext if={ group == 'text' }></tkntext>
   <tkncomm if={ group == 'comment' }></tkncomm>
-  
+  <tknop if={ group == 'operator' }></tknop>
+
 
   <script>
 

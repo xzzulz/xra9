@@ -95,7 +95,7 @@ var codeStoreClass = function() {
 
     tokenPoints( data ) {
       var token = state.lines[ state.cursor.y ].tokens[ state.cursor.x ]
-      if ( token.group == 'function' || token.group == 'arrow' ) {
+      if ( token.group == 'function' || token.group == 'arrow' || token.group == 'operator' ) {
         token.options.points = data
         signal.trigger('updateLines', [ state.cursor.y ])
       }
@@ -114,7 +114,7 @@ var codeStoreClass = function() {
 
     functionParPoints( data ) {
       var token = state.lines[ state.cursor.y ].tokens[ state.cursor.x ]
-      if ( token.group == 'function' && !token.options.bubble ) {
+      if ( token.group == 'function' && !token.options.bubble || token.group == 'operator' ) {
 
         if ( token.options.parPoints === data ) token.options.parLen++
         else {
@@ -127,7 +127,7 @@ var codeStoreClass = function() {
 
     functionParX() {
       var token = state.lines[ state.cursor.y ].tokens[ state.cursor.x ]
-      if ( token.group == 'function' ) {
+      if ( token.group == 'function' || token.group == 'operator' ) {
         token.options.parLen = 0
         signal.trigger('updateLines', [ state.cursor.y ])
       }
@@ -147,6 +147,22 @@ var codeStoreClass = function() {
         token.options.width += data
         if ( token.options.width < 1 ) token.options.width = 1
         if ( token.options.width > 8 ) token.options.width = 8
+        signal.trigger('updateLines', [ state.cursor.y ])
+      }
+    },
+
+    opDef() {
+      var token = state.lines[ state.cursor.y ].tokens[ state.cursor.x ]
+      if ( token.group == 'operator' ) {
+        token.options.def = !token.options.def
+        signal.trigger('updateLines', [ state.cursor.y ])
+      }
+    },
+
+    setOp( id ) {
+      var token = state.lines[ state.cursor.y ].tokens[ state.cursor.x ]
+      if ( token.group == 'operator' ) {
+        token.options.id = id
         signal.trigger('updateLines', [ state.cursor.y ])
       }
     },

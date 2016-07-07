@@ -42,7 +42,7 @@
     #tt0 {
       max-width: 48px;
       line-height: 98%;
-      color: #74d661;
+      color: #00f46e;
       word-wrap: break-word;
       text-align: right;
     }

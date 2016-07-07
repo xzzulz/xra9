@@ -56,7 +56,9 @@ var toolbarStoreClass = function() {
     textkit: {
       visible: false
     },
-
+    opkit: {
+      visible: false
+    },
   }
 
   var state = this.state
@@ -71,6 +73,7 @@ var toolbarStoreClass = function() {
       if ( group == 'var' || group == 'function' ) this.varkitVisible()
       else if ( group == 'number' ) this.numkitVisible()
       else if ( group == 'text' || group == 'comment' ) this.textkitVisible()
+      else if ( group == 'operator' ) this.opkitVisible()
     },
 
     openInputKit() {
@@ -78,6 +81,7 @@ var toolbarStoreClass = function() {
       if ( group == 'var' || group == 'function' ) this.openVarkit()
       else if ( group == 'number' ) this.openNumkit()
       else if ( group == 'text' || group == 'comment' ) this.openTextkit()
+      else if ( group == 'operator' ) this.openOpkit()
     },
 
     varkitVisible() {
@@ -135,6 +139,26 @@ var toolbarStoreClass = function() {
       state.textkit.visible = false
       signal.trigger('textkitVisible')
     },
+
+
+    opkitVisible() {
+      if ( ! state.opkit.visible ) this.openOpkit()
+      else this.closeOpkit()
+    },
+
+    openOpkit() {
+      var group = codeState.lines[ codeState.cursor.y ].tokens[ codeState.cursor.x ].group
+      if ( group == 'operator' ) {
+        state.opkit.visible = true
+        signal.trigger('opkitVisible')
+      }
+    },
+
+    closeOpkit() {
+      state.opkit.visible = false
+      signal.trigger('opkitVisible')
+    },
+
 
   }
 

@@ -1,5 +1,6 @@
 import { codeInfo } from '../../stores/codeInfo.js'
 import { codeDo } from '../../stores/codeStore.js'
+import { toolbarDo } from '../../stores/toolbarStore.js'
 
 <tool onclick={ onclick }>
 
@@ -15,6 +16,8 @@ import { codeDo } from '../../stores/codeStore.js'
         action: 'setToken',
         data: { id: this.id, name: '' }
       })
+      if ( this.id == 40 )
+        toolbarDo({ action: 'inputKitVisible' })
     }
 
   </script>

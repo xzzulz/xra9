@@ -47,6 +47,7 @@ var tokenClass = function( id, name ) {
     case 5:
     case 6:
     case 7:
+    case 81:
     case 70:
     case 71:
     case 72:
@@ -56,6 +57,8 @@ var tokenClass = function( id, name ) {
       this.options = new varTokenClass(); this.group = 'var'; break
     case 10:
       this.options = new functionTokenClass(); this.group = 'function'; break
+    case 40:
+      this.options = new operatorTokenClass(); this.group = 'operator'; break
     case 90:
       this.options = new numberTokenClass(); this.group = 'number'; break
     case 91:
@@ -82,6 +85,16 @@ var functionTokenClass = function( points, parPoints, parLen, bubble, tx1, tx2 )
   this.tx2 = tx2 ? tx2 : ''
 }
 
+// Token object creator
+//
+// name: (string) text name
+var operatorTokenClass = function( id, def, points, parPoints, parLen ) {
+  this.id = id ? id : 20
+  this.points = points ? points : 0
+  this.parPoints = parPoints ? parPoints : 0
+  this.parLen = parLen ? parLen : 0
+  this.def = def ? def : false
+}
 
 // Token object creator
 //
