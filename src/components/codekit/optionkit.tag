@@ -38,6 +38,10 @@ import './optiontags/optnflag.tag'
       this.update()
     })
 
+    signal.on( 'updateOptionkit', () => {
+      this.update()
+    })
+
   </script>
 
 

@@ -25,8 +25,8 @@ var codeStoreClass = function() {
 
     setToken( data ) {
       var token = state.lines[ state.cursor.y ].tokens[ state.cursor.x ] = new tokenClass( data.id, data.name )
-      signal.trigger('updateLines', [ state.cursor.y ])
-      //signal.trigger( 'updateCursor' )
+      signal.trigger( 'updateLines', [ state.cursor.y ] )
+      signal.trigger( 'updateOptionkit' )
     },
 
     grabToken( loc ) {
