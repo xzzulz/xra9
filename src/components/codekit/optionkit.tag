@@ -15,7 +15,7 @@ import './optiontags/optnflag.tag'
 <optionkit>
 
 
-  <optnvar if={ group == 'var' }></optnvar>
+  <optnvar if={ group == 'var' || group == 'object' }></optnvar>
   <optnfunc if={ group == 'function' }></optnfunc>
   <optnarrw if={ group == 'arrow' }></optnarrw>
   <optnnum if={ group == 'number' }></optnnum>

@@ -45,7 +45,6 @@ var tokenClass = function( id, name ) {
     case 3:
     case 4:
     case 5:
-    case 6:
     case 7:
     case 81:
     case 70:
@@ -55,6 +54,8 @@ var tokenClass = function( id, name ) {
     case 80:
     case 81:
       this.options = new varTokenClass(); this.group = 'var'; break
+    case 6:
+      this.options = new objectTokenClass(); this.group = 'object'; break
     case 10:
       this.options = new functionTokenClass(); this.group = 'function'; break
     case 22:
@@ -80,6 +81,15 @@ var tokenClass = function( id, name ) {
   }
 }
 
+
+// Token object creator
+//
+// name: (string) text name
+var objectTokenClass = function( tx1, tx2, bubble ) {
+  this.tx1 = tx1 ? tx1 : ''
+  this.tx2 = tx2 ? tx2 : ''
+  this.bubble = bubble ? bubble : false
+}
 
 // Token object creator
 //
