@@ -23,50 +23,22 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
 
 
   <script>
-    this.def = ( e ) => {
-      e.preventUpdate = true
-      codeDo({ action: 'opDef' })
-    }
-    this.up = ( e ) => {
-      e.preventUpdate = true
-      codeDo({ action: 'tokenPoints', data: 3 })
-    }
-    this.down = ( e ) => {
-      e.preventUpdate = true
-      codeDo({ action: 'tokenPoints', data: 1 })
-    }
-    this.left = ( e ) => {
-      e.preventUpdate = true
-      codeDo({ action: 'tokenPoints', data: 2 })
-    }
-    this.right = ( e ) => {
-      e.preventUpdate = true
-      codeDo({ action: 'tokenPoints', data: 0 })
-    }
-    this.parup = ( e ) => {
-      e.preventUpdate = true
-      codeDo({ action: 'functionParPoints', data: 3 })
-    }
-    this.pardown = ( e ) => {
-      e.preventUpdate = true
-      codeDo({ action: 'functionParPoints', data: 1 })
-    }
-    this.parleft = ( e ) => {
-      e.preventUpdate = true
-      codeDo({ action: 'functionParPoints', data: 2 })
-    }
-    this.parright = ( e ) => {
-      e.preventUpdate = true
-      codeDo({ action: 'functionParPoints', data: 0 })
-    }
-    this.nopar = ( e ) => {
-      e.preventUpdate = true
-      codeDo({ action: 'functionParX' })
-    }
-    this.opkit = ( e ) => {
-      e.preventUpdate = true
-      toolbarDo({ action: 'opkitVisible' })
-    }
+    this.def = () => codeDo({ action: 'opDef' })
+
+    this.up = () => codeDo({ action: 'tokenPoints', data: 3 })
+    this.down = () => codeDo({ action: 'tokenPoints', data: 1 })
+    this.left = () => codeDo({ action: 'tokenPoints', data: 2 })
+    this.right = () => codeDo({ action: 'tokenPoints', data: 0 })
+
+    this.parup = () => codeDo({ action: 'functionParPoints', data: 3 })
+    this.pardown = () => codeDo({ action: 'functionParPoints', data: 1 })
+    this.parleft = () => codeDo({ action: 'functionParPoints', data: 2 })
+    this.parright = () => codeDo({ action: 'functionParPoints', data: 0 })
+
+    this.nopar = () => codeDo({ action: 'functionParX' })
+
+    this.opkit = () => toolbarDo({ action: 'opkitVisible' })
+
   </script>
 
 

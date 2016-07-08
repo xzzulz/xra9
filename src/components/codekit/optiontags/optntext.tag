@@ -9,10 +9,7 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
 
 
   <script>
-    this.edit = ( e ) => {
-      e.preventUpdate = true
-      toolbarDo({ action: 'textkitVisible' })
-    }
+    this.edit = () => toolbarDo({ action: 'textkitVisible' })
   </script>
 
 

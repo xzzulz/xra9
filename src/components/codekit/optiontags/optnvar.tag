@@ -9,14 +9,8 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
 
   <script>
 
-    this.bubble = ( e ) => {
-      e.preventUpdate = true
-      codeDo({ action: 'tokenBubble' })
-    }
-    this.name = ( e ) => {
-      e.preventUpdate = true
-      toolbarDo({ action: 'varkitVisible' })
-    }
+    this.bubble = () => codeDo({ action: 'tokenBubble' })
+    this.name = () => toolbarDo({ action: 'varkitVisible' })
 
   </script>
 
