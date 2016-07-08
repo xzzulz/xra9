@@ -25,7 +25,14 @@ import '../tokens/tknvar.tag'
     }
 
     this.on('update', () => {
-      Object.assign( this.tags.tknvar, codeState.lines[ codeState.cursor.y ].tokens[ codeState.cursor.x ] )
+      //Object.assign( this.tags.tknvar, codeState.lines[ codeState.cursor.y ].tokens[ codeState.cursor.x ] )
+      var token = codeState.lines[ codeState.cursor.y ].tokens[ codeState.cursor.x ]
+      this.tags.tknvar.id = token.id
+      this.tags.tknvar.group = token.group
+      this.tags.tknvar.options = {
+        tx1: token.options.tx1,
+        tx2: token.options.tx2,
+      }
     })
 
     var token

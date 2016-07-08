@@ -143,7 +143,7 @@ var codeStoreClass = function() {
 
     tokenBubble() {
       var token = state.lines[ state.cursor.y ].tokens[ state.cursor.x ]
-      if ( token.group == 'var' || token.group == 'object' || token.group == 'pin' ) {
+      if ( token.group == 'var' || token.group == 'object' || token.group == 'array' || token.group == 'pin' ) {
         token.options.bubble = ! token.options.bubble
         signal.trigger('updateLines', [ state.cursor.y ])
       }

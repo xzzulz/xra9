@@ -70,7 +70,7 @@ var toolbarStoreClass = function() {
 
     inputKitVisible() {
       var group = codeState.lines[ codeState.cursor.y ].tokens[ codeState.cursor.x ].group
-      if ( group == 'var' || group == 'object' || group == 'function' ) this.varkitVisible()
+      if ( group == 'var' || group == 'object' || group == 'array' || group == 'function' ) this.varkitVisible()
       else if ( group == 'number' ) this.numkitVisible()
       else if ( group == 'text' || group == 'comment' ) this.textkitVisible()
       else if ( group == 'operator' ) this.opkitVisible()
@@ -78,7 +78,7 @@ var toolbarStoreClass = function() {
 
     openInputKit() {
       var group = codeState.lines[ codeState.cursor.y ].tokens[ codeState.cursor.x ].group
-      if ( group == 'var' || group == 'object' || group == 'function' ) this.openVarkit()
+      if ( group == 'var' || group == 'object' || group == 'array' || group == 'function' ) this.openVarkit()
       else if ( group == 'number' ) this.openNumkit()
       else if ( group == 'text' || group == 'comment' ) this.openTextkit()
       else if ( group == 'operator' ) this.openOpkit()
@@ -91,7 +91,7 @@ var toolbarStoreClass = function() {
 
     openVarkit() {
       var group = codeState.lines[ codeState.cursor.y ].tokens[ codeState.cursor.x ].group
-      if ( group == 'var' || group == 'object' || group == 'function' ) {
+      if ( group == 'var' || group == 'object' || group == 'array' || group == 'function' ) {
         state.varkit.visible = true
         signal.trigger('varkitVisible')
       }

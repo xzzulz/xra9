@@ -3,6 +3,7 @@ import './token.tag'
 import './tknfunc.tag'
 import './tknvar.tag'
 import './tknob.tag'
+import './tknarr.tag'
 import './tknarrw.tag'
 import './tknnum.tag'
 import './tkntext.tag'
@@ -21,6 +22,7 @@ import './tknflag.tag'
   <token if={ group == 'token' }></token>
   <tknvar if={ group == 'var' }></tknvar>
   <tknob if={ group == 'object' }></tknob>
+  <tknarr if={ group == 'array' }></tknarr>
   <tknfunc if={ group == 'function' }></tknfunc>
   <tknarrw if={ group == 'arrow' }></tknarrw>
   <tknnum if={ group == 'number' }></tknnum>
