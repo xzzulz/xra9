@@ -19,8 +19,7 @@ import '../tokens/tkntext.tag'
     this.tags.tkntext.id = 0
 
     this.change = ( e ) => {
-      var token = codeUtil.cursorToken()
-      token.options.value = varname1.value
+      codeUtil.cursorToken().options.value = varname1.value
       signal.trigger('updateLines', [ codeState.cursor.y ])
     }
 
@@ -30,8 +29,7 @@ import '../tokens/tkntext.tag'
 
     var token
     toolbarSignal.on('textkitVisible', () => {
-      token = codeUtil.cursorToken()
-      this.varname1.value = token.options.value
+      this.varname1.value = codeUtil.cursorToken().options.value
       this.varname1.focus()
     })
 

@@ -1,5 +1,3 @@
-import { codeDo } from '../../stores/codeStore.js'
-import { codeInfo } from '../../stores/codeInfo.js'
 import opChart from '../../resInfo/opChart.js'
 
 

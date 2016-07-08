@@ -1,4 +1,4 @@
-import { codeState, codeDo } from '../stores/codeStore.js'
+import { codeDo } from '../stores/codeStore.js'
 
 var drag = {}
 
