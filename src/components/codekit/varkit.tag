@@ -21,7 +21,8 @@ import '../tokens/tknvar.tag'
     this.change = ( e ) => {
       codeUtil.cursorToken().options.tx1 = varname1.value.substring(0,8)
       codeUtil.cursorToken().options.tx2 = varname1.value.substring(8,16)
-      signal.trigger('updateLines', [ codeState.cursor.y ])
+      //signal.trigger('updateLines', [ codeState.cursor.y ])
+      signal.trigger( 'updateCursorToken' )
     }
 
     this.on('update', () => {

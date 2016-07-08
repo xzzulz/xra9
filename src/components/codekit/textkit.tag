@@ -20,7 +20,8 @@ import '../tokens/tkntext.tag'
 
     this.change = ( e ) => {
       codeUtil.cursorToken().options.value = varname1.value
-      signal.trigger('updateLines', [ codeState.cursor.y ])
+      //signal.trigger('updateLines', [ codeState.cursor.y ])
+      signal.trigger( 'updateCursorToken' )
     }
 
     this.on('update', () => {

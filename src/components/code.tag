@@ -1,4 +1,4 @@
-import { codeState, signal } from '../stores/codeStore.js'
+import { codeState, signal, codeUtil } from '../stores/codeStore.js'
 import scroll from './scroll.js'
 import './line.tag'
 import './floats.tag'
@@ -24,6 +24,10 @@ import cursor from './cursor.js'
       lines.forEach( ( lineNumber ) => {
         tag.tags.line[ lineNumber ].update()
       })
+    })
+
+    signal.on('updateCursorToken', () => {
+      this.tags.line[ codeState.cursor.y ].tags.cell[ codeState.cursor.x ].update()
     })
 
     signal.on('updateCursor', () => {

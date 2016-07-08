@@ -26,7 +26,7 @@ var codeStoreClass = function() {
     setToken( data ) {
       var token = state.lines[ state.cursor.y ].tokens[ state.cursor.x ] = new tokenClass( data.id, data.name )
       signal.trigger('updateLines', [ state.cursor.y ])
-      signal.trigger( 'updateCursor' )
+      //signal.trigger( 'updateCursor' )
     },
 
     grabToken( loc ) {
@@ -97,7 +97,7 @@ var codeStoreClass = function() {
       var token = util.cursorToken()
       if ( token.group == 'function' || token.group == 'arrow' || token.group == 'operator' || token.group == 'pin' || token.group == 'flag' ) {
         token.options.points = data
-        signal.trigger('updateLines', [ state.cursor.y ])
+        signal.trigger('updateCursorToken')
       }
     },
 
@@ -105,7 +105,7 @@ var codeStoreClass = function() {
       var token = util.cursorToken()
       if ( token.group == 'pin' || token.group == 'flag' ) {
         token.options.color = data
-        signal.trigger('updateLines', [ state.cursor.y ])
+        signal.trigger('updateCursorToken')
       }
     },
 
@@ -116,7 +116,7 @@ var codeStoreClass = function() {
         if ( token.options.bubble ) {
           token.options.parLen = 0
         }
-        signal.trigger('updateLines', [ state.cursor.y ])
+        signal.trigger('updateCursorToken')
       }
     },
 
@@ -129,7 +129,7 @@ var codeStoreClass = function() {
           token.options.parPoints = data
           token.options.parLen = 1
         }
-        signal.trigger('updateLines', [ state.cursor.y ])
+        signal.trigger('updateCursorToken')
       }
     },
 
@@ -137,7 +137,7 @@ var codeStoreClass = function() {
       var token = util.cursorToken()
       if ( token.group == 'function' || token.group == 'operator' || token.group == 'loop' ) {
         token.options.parLen = 0
-        signal.trigger('updateLines', [ state.cursor.y ])
+        signal.trigger('updateCursorToken')
       }
     },
 
@@ -145,7 +145,7 @@ var codeStoreClass = function() {
       var token = util.cursorToken()
       if ( token.group == 'var' || token.group == 'object' || token.group == 'array' || token.group == 'pin' ) {
         token.options.bubble = ! token.options.bubble
-        signal.trigger('updateLines', [ state.cursor.y ])
+        signal.trigger('updateCursorToken')
       }
     },
 
@@ -155,7 +155,7 @@ var codeStoreClass = function() {
         token.options.width += data
         if ( token.options.width < 1 ) token.options.width = 1
         if ( token.options.width > 8 ) token.options.width = 8
-        signal.trigger('updateLines', [ state.cursor.y ])
+        signal.trigger('updateCursorToken')
       }
     },
 
@@ -163,7 +163,7 @@ var codeStoreClass = function() {
       var token = util.cursorToken()
       if ( token.group == 'operator' ) {
         token.options.def = !token.options.def
-        signal.trigger('updateLines', [ state.cursor.y ])
+        signal.trigger('updateCursorToken')
       }
     },
 
@@ -171,7 +171,7 @@ var codeStoreClass = function() {
       var token = util.cursorToken()
       if ( token.group == 'operator' ) {
         token.options.id = id
-        signal.trigger('updateLines', [ state.cursor.y ])
+        signal.trigger('updateCursorToken')
       }
     },
 
@@ -189,7 +189,7 @@ var codeStoreClass = function() {
         else if ( data == 'o' ) opt.o = freeSlot
         else if ( data == 'x' ) opt.x = freeSlot
 
-        signal.trigger('updateLines', [ state.cursor.y ])
+        signal.trigger('updateCursorToken')
       }
     },
 
