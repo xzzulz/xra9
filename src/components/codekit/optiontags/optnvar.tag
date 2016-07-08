@@ -9,7 +9,7 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
 
   <script>
 
-    this.bubble = () => codeDo({ action: 'varBubble' })
+    this.bubble = () => codeDo({ action: 'tokenBubble' })
     this.name = () => toolbarDo({ action: 'varkitVisible' })
 
   </script>

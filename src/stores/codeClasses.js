@@ -71,6 +71,8 @@ var tokenClass = function( id, name ) {
       this.options = new commentTokenClass(); this.group = 'comment'; break
     case 94:
       this.options = new arrowTokenClass(); this.group = 'arrow'; break
+    case 95:
+      this.options = new pinTokenClass(); this.group = 'pin'; break
     default:
       this.options = {}; this.group = 'token'; break
   }
@@ -114,6 +116,15 @@ var ifTokenClass = function( o, x, cond ) {
 // name: (string) text name
 var arrowTokenClass = function( points ) {
   this.points = points ? points : 0
+}
+
+// Token object creator
+//
+// name: (string) text name
+var pinTokenClass = function( points, bubble, color ) {
+  this.points = points ? points : 0
+  this.bubble = bubble ? bubble : false
+  this.color = color ? color : 0
 }
 
 // Token object creator

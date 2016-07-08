@@ -262,7 +262,7 @@ export var codeInfo = {
     loc: { x: -224, y: -504 },
   },
   95: {
-    name: "assignment mark",
+    name: "pin",
     loc: { x: -280, y: -504 },
   },
 

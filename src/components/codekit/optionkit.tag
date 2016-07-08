@@ -8,6 +8,7 @@ import './optiontags/optncomm.tag'
 import './optiontags/optnop.tag'
 import './optiontags/optnloop.tag'
 import './optiontags/optnif.tag'
+import './optiontags/optnpin.tag'
 
 
 
@@ -23,6 +24,7 @@ import './optiontags/optnif.tag'
   <optnop if={ group == 'operator' }></optnop>
   <optnloop if={ group == 'loop' }></optnloop>
   <optnif if={ group == 'if' }></optnif>
+  <optnpin if={ group == 'pin' }></optnpin>
 
 
   <script>

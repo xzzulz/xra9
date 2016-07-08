@@ -9,6 +9,7 @@ import './tkncomm.tag'
 import './tknop.tag'
 import './tknloop.tag'
 import './tknif.tag'
+import './tknpin.tag'
 
 
 
@@ -26,6 +27,7 @@ import './tknif.tag'
   <tknop if={ group == 'operator' }></tknop>
   <tknloop if={ group == 'loop' }></tknloop>
   <tknif if={ group == 'if' }></tknif>
+  <tknpin if={ group == 'pin' }></tknpin>
 
 
   <script>
