@@ -14,6 +14,7 @@
       if ( this.id != 95 ) return
       this.pinpoint.style.transform = 'rotate(' + this.options.points*90 +'deg)'
       this.root.style.filter = 'hue-rotate(' + this.options.color + 'deg)'
+      this.root.style.webkitFilter = 'hue-rotate(' + this.options.color + 'deg)'
     })
 
   </script>
@@ -25,6 +26,9 @@
       width: 56px;
       height: 56px;
       z-index: 10;
+
+      -webkit-filter: hue-rotate(90deg);
+
     }
     #bkpin {
       width: 56px;

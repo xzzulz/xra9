@@ -12,6 +12,7 @@
       if ( this.id != 96 ) return
       this.flagpoint.style.transform = 'rotate(' + this.options.points*90 +'deg)'
       this.root.style.filter = 'hue-rotate(' + this.options.color + 'deg)'
+      this.root.style.webkitFilter = 'hue-rotate(' + this.options.color + 'deg)'
     })
 
   </script>
