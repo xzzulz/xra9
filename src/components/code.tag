@@ -31,7 +31,6 @@ import cursor from './cursor.js'
     })
 
     signal.on('updateToken', ( loc ) => {
-      console.log('updateToken', loc)
       this.tags.line[ loc.y ].tags.cell[ loc.x ].update()
     })
 

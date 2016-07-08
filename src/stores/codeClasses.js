@@ -39,8 +39,8 @@ var lineClass = function( tokens, chains ) {
 //
 // name: (string) text name
 var tokenClass = function( id, name ) {
-  this.id = id
-  this.name = name
+  this.id = id ? id : 0
+  this.name = name ? name : 0
   switch ( id ) {
     case 3:
     case 4:

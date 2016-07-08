@@ -30,16 +30,13 @@ var codeStoreClass = function() {
     },
 
     grabToken( loc ) {
-      var token = state.lines[ loc.y ].tokens[ loc.x ]
-      var tokenData = { id: token.id, name: token.name }
-      token.id = 0
-      token.name = ''
+      var tokenData = state.lines[ loc.y ].tokens[ loc.x ]
+      state.lines[ loc.y ].tokens[ loc.x ] = new tokenClass()
       return tokenData
     },
 
     putToken( loc, tokenData ) {
-      state.lines[ loc.y ].tokens[ loc.x ].id = tokenData.id
-      state.lines[ loc.y ].tokens[ loc.x ].name = tokenData.name
+      state.lines[ loc.y ].tokens[ loc.x ] = tokenData
     },
 
     moveToken( moveData ) {
