@@ -16,7 +16,7 @@ import './tknflag.tag'
 
 
 
-<cell  draggable="true" ondragstart={ dragstart } ondrag={ drag } ondrop={ drop } ondragover="return false">
+<cell  draggable="true" ondragstart={ dragstart } ondrop={ drop } ondragover={ dragover }>
 
 
   <token if={ group == 'token' }></token>
@@ -39,20 +39,19 @@ import './tknflag.tag'
 
     this.dragstart = (e) => {
       e.preventUpdate = true
-      e.dataTransfer.setData("text/plain", '10');
+      e.dataTransfer.setData("text/plain", '');
       drag.dragStart( e, this )
       return true
     }
 
-    this.drag = (e) => {
+    this.dragover = (e) => {
       e.preventUpdate = true
-      return true
+      return false
     }
 
     this.drop = (e) => {
       e.preventUpdate = true
       drag.dragEnd( e )
-      return true
     }
 
   </script>

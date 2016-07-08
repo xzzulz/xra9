@@ -42,9 +42,10 @@ var codeStoreClass = function() {
     moveToken( moveData ) {
       if ( state.lines[ moveData.to.y ].tokens[ moveData.to.x ].id == 0 ) {
         this.putToken( moveData.to, this.grabToken( moveData.from ) )
-        signal.trigger('updateLines', [ moveData.from.y, moveData.to.y ])
-        //signal.trigger( 'updateToken', moveData.from )
-        //signal.trigger( 'updateToken', moveData.to )
+        // updateToken don't work here, suspected related to
+        // e.preventUpdate on the dragEnd handler
+        signal.trigger( 'forceUpdateToken', moveData.from )
+        signal.trigger( 'forceUpdateToken', moveData.to )
       }
     },
 

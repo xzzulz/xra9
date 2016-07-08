@@ -34,6 +34,15 @@ import cursor from './cursor.js'
       this.tags.line[ loc.y ].tags.cell[ loc.x ].update()
     })
 
+    signal.on('forceUpdateToken', ( loc ) => {
+      var cell = this.tags.line[ loc.y ].tags.cell[ loc.x ]
+      Object.assign( cell, codeState.lines[ loc.y].tokens[ loc.x] )
+      for ( var tag in cell.tags ) {
+        Object.assign( cell.tags[tag], codeState.lines[ loc.y].tokens[ loc.x] )
+      }
+      cell.update()
+    })
+
     signal.on('updateCursor', () => {
       tag.tags.cursor.update()
     })

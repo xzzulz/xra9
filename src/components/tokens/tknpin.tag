@@ -26,9 +26,6 @@
       width: 56px;
       height: 56px;
       z-index: 10;
-
-      -webkit-filter: hue-rotate(90deg);
-
     }
     #bkpin {
       width: 56px;

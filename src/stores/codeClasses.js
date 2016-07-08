@@ -41,7 +41,9 @@ var lineClass = function( tokens, chains ) {
 var tokenClass = function( id, name ) {
   this.id = id ? id : 0
   this.name = name ? name : 0
-  switch ( id ) {
+  switch ( this.id ) {
+    case 0:
+      this.options = {}; this.group = ''; break
     case 3:
     case 4:
     case 5:
