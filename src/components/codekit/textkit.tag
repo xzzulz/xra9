@@ -1,4 +1,4 @@
-import { codeState, signal } from '../../stores/codeStore.js'
+import { codeUtil, codeState, signal } from '../../stores/codeStore.js'
 import { toolbarSignal } from '../../stores/toolbarStore.js'
 import '../tokens/tkntext.tag'
 
@@ -19,17 +19,18 @@ import '../tokens/tkntext.tag'
     this.tags.tkntext.id = 0
 
     this.change = ( e ) => {
-      codeState.lines[ codeState.cursor.y ].tokens[ codeState.cursor.x ].options.value = varname1.value
+      var token = codeUtil.cursorToken()
+      token.options.value = varname1.value
       signal.trigger('updateLines', [ codeState.cursor.y ])
     }
 
     this.on('update', () => {
-      Object.assign( this.tags.tkntext, codeState.lines[ codeState.cursor.y ].tokens[ codeState.cursor.x ] )
+      Object.assign( this.tags.tkntext, codeUtil.cursorToken() )
     })
 
     var token
     toolbarSignal.on('textkitVisible', () => {
-      token = codeState.lines[ codeState.cursor.y ].tokens[ codeState.cursor.x ]
+      token = codeUtil.cursorToken()
       this.varname1.value = token.options.value
       this.varname1.focus()
     })

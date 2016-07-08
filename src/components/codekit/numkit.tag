@@ -1,4 +1,4 @@
-import { codeState, signal } from '../../stores/codeStore.js'
+import { codeState, codeUtil, signal } from '../../stores/codeStore.js'
 import { toolbarSignal } from '../../stores/toolbarStore.js'
 import '../tokens/tknnum.tag'
 
@@ -19,17 +19,18 @@ import '../tokens/tknnum.tag'
     this.tags.tknnum.id = 0
 
     this.change = ( e ) => {
-      codeState.lines[ codeState.cursor.y ].tokens[ codeState.cursor.x ].options.value = varname1.value
+      var token = codeUtil.cursorToken()
+      token.options.value = varname1.value
       signal.trigger('updateLines', [ codeState.cursor.y ])
     }
 
     this.on('update', () => {
-      Object.assign( this.tags.tknnum, codeState.lines[ codeState.cursor.y ].tokens[ codeState.cursor.x ] )
+      Object.assign( this.tags.tknnum, codeUtil.cursorToken() )
     })
 
     var token
     toolbarSignal.on('numkitVisible', () => {
-      token = codeState.lines[ codeState.cursor.y ].tokens[ codeState.cursor.x ]
+      token = codeUtil.cursorToken()
       this.varname1.value = token.options.value
       this.varname1.focus()
     })

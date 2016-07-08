@@ -1,4 +1,4 @@
-import { codeState } from './codeStore.js'
+import { codeState, codeUtil } from './codeStore.js'
 
 
 var toolbarStoreClass = function() {
@@ -69,7 +69,7 @@ var toolbarStoreClass = function() {
   this.mutations = {
 
     inputKitVisible() {
-      var group = codeState.lines[ codeState.cursor.y ].tokens[ codeState.cursor.x ].group
+      var group = codeUtil.cursorToken().group
       if ( group == 'var' || group == 'object' || group == 'array' || group == 'function' ) this.varkitVisible()
       else if ( group == 'number' ) this.numkitVisible()
       else if ( group == 'text' || group == 'comment' ) this.textkitVisible()
@@ -77,7 +77,7 @@ var toolbarStoreClass = function() {
     },
 
     openInputKit() {
-      var group = codeState.lines[ codeState.cursor.y ].tokens[ codeState.cursor.x ].group
+      var group = codeUtil.cursorToken().group
       if ( group == 'var' || group == 'object' || group == 'array' || group == 'function' ) this.openVarkit()
       else if ( group == 'number' ) this.openNumkit()
       else if ( group == 'text' || group == 'comment' ) this.openTextkit()
@@ -90,7 +90,7 @@ var toolbarStoreClass = function() {
     },
 
     openVarkit() {
-      var group = codeState.lines[ codeState.cursor.y ].tokens[ codeState.cursor.x ].group
+      var group = codeUtil.cursorToken().group
       if ( group == 'var' || group == 'object' || group == 'array' || group == 'function' ) {
         state.varkit.visible = true
         signal.trigger('varkitVisible')
@@ -109,7 +109,7 @@ var toolbarStoreClass = function() {
     },
 
     openNumkit() {
-      var group = codeState.lines[ codeState.cursor.y ].tokens[ codeState.cursor.x ].group
+      var group = codeUtil.cursorToken().group
       if ( group == 'number' ) {
         state.numkit.visible = true
         signal.trigger('numkitVisible')
@@ -128,7 +128,7 @@ var toolbarStoreClass = function() {
     },
 
     openTextkit() {
-      var group = codeState.lines[ codeState.cursor.y ].tokens[ codeState.cursor.x ].group
+      var group = codeUtil.cursorToken().group
       if ( group == 'text' || group == 'comment' ) {
         state.textkit.visible = true
         signal.trigger('textkitVisible')
@@ -147,7 +147,7 @@ var toolbarStoreClass = function() {
     },
 
     openOpkit() {
-      var group = codeState.lines[ codeState.cursor.y ].tokens[ codeState.cursor.x ].group
+      var group = codeUtil.cursorToken().group
       if ( group == 'operator' ) {
         state.opkit.visible = true
         signal.trigger('opkitVisible')

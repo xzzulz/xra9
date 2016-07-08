@@ -2,7 +2,10 @@ import { codeInfo } from '../../stores/codeInfo.js'
 import { codeDo } from '../../stores/codeStore.js'
 import { toolbarDo } from '../../stores/toolbarStore.js'
 
+
+
 <tool onclick={ onclick }>
+
 
   <script>
 
@@ -22,6 +25,7 @@ import { toolbarDo } from '../../stores/toolbarStore.js'
 
   </script>
 
+
   <style scoped>
     :scope {
       width: 6vh;
@@ -30,5 +34,6 @@ import { toolbarDo } from '../../stores/toolbarStore.js'
       background-size: 60vh 60vh;
     }
   </style>
+
 
 </tool>

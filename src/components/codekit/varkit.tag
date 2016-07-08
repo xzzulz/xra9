@@ -1,4 +1,4 @@
-import { codeState, signal } from '../../stores/codeStore.js'
+import { codeUtil, codeState, signal } from '../../stores/codeStore.js'
 import { toolbarSignal } from '../../stores/toolbarStore.js'
 import '../tokens/tknvar.tag'
 
@@ -19,14 +19,14 @@ import '../tokens/tknvar.tag'
     this.tags.tknvar.id = 0
 
     this.change = ( e ) => {
-      codeState.lines[ codeState.cursor.y ].tokens[ codeState.cursor.x ].options.tx1 = varname1.value.substring(0,8)
-      codeState.lines[ codeState.cursor.y ].tokens[ codeState.cursor.x ].options.tx2 = varname1.value.substring(8,16)
+      codeUtil.cursorToken().options.tx1 = varname1.value.substring(0,8)
+      codeUtil.cursorToken().options.tx2 = varname1.value.substring(8,16)
       signal.trigger('updateLines', [ codeState.cursor.y ])
     }
 
     this.on('update', () => {
       //Object.assign( this.tags.tknvar, codeState.lines[ codeState.cursor.y ].tokens[ codeState.cursor.x ] )
-      var token = codeState.lines[ codeState.cursor.y ].tokens[ codeState.cursor.x ]
+      var token = codeUtil.cursorToken()
       this.tags.tknvar.id = token.id
       this.tags.tknvar.group = token.group
       this.tags.tknvar.options = {
@@ -37,7 +37,7 @@ import '../tokens/tknvar.tag'
 
     var token
     toolbarSignal.on('varkitVisible', () => {
-      token = codeState.lines[ codeState.cursor.y ].tokens[ codeState.cursor.x ]
+      token = codeUtil.cursorToken()
       this.varname1.value = token.options.tx1 + token.options.tx2
       this.varname1.focus()
     })

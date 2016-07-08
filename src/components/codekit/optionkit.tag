@@ -1,4 +1,4 @@
-import { codeState, signal } from '../../stores/codeStore.js'
+import { codeUtil, signal } from '../../stores/codeStore.js'
 import './optiontags/optnfunc.tag'
 import './optiontags/optnvar.tag'
 import './optiontags/optnarrw.tag'
@@ -31,7 +31,7 @@ import './optiontags/optnflag.tag'
   <script>
 
     this.on('update', () => {
-      this.group = codeState.lines[ codeState.cursor.y ].tokens[ codeState.cursor.x ].group
+      this.group = codeUtil.cursorToken().group
     })
 
     signal.on( 'updateCursor', () => {

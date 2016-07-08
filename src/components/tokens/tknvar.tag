@@ -1,9 +1,9 @@
-import { codeDo } from '../../stores/codeStore.js'
 import { codeInfo } from '../../stores/codeInfo.js'
 
 
 
 <tknvar>
+
 
   <div id="tt0" if={ ! options.tx2 }>{ options.tx1 }</div>
   <div id="tt1" if={ options.tx2 }>{ options.tx1 }</div>
@@ -12,6 +12,7 @@ import { codeInfo } from '../../stores/codeInfo.js'
   <div id="bk"></div>
 
   <div class="varbubble" if={ options.bubble }></div>
+
 
   <script>
 

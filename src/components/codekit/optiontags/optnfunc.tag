@@ -5,6 +5,7 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
 
 <optnfunc>
 
+
   <div id="optfuncpointup" onclick={ up } class="optfuncpoint"></div>
   <div id="optfuncpointdown" onclick={ down } class="optfuncpoint"></div>
   <div id="optfuncpointleft" onclick={ left } class="optfuncpoint"></div>

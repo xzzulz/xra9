@@ -12,7 +12,7 @@ var codeStoreClass = function() {
   }
 
   var state = this.state
-
+  var util = null
   this.signal = riot.observable()
   var signal = this.signal
 
@@ -94,7 +94,7 @@ var codeStoreClass = function() {
     },
 
     tokenPoints( data ) {
-      var token = state.lines[ state.cursor.y ].tokens[ state.cursor.x ]
+      var token = util.cursorToken()
       if ( token.group == 'function' || token.group == 'arrow' || token.group == 'operator' || token.group == 'pin' || token.group == 'flag' ) {
         token.options.points = data
         signal.trigger('updateLines', [ state.cursor.y ])
@@ -102,7 +102,7 @@ var codeStoreClass = function() {
     },
 
     tokenColor( data ) {
-      var token = state.lines[ state.cursor.y ].tokens[ state.cursor.x ]
+      var token = util.cursorToken()
       if ( token.group == 'pin' || token.group == 'flag' ) {
         token.options.color = data
         signal.trigger('updateLines', [ state.cursor.y ])
@@ -110,7 +110,7 @@ var codeStoreClass = function() {
     },
 
     functionBubble() {
-      var token = state.lines[ state.cursor.y ].tokens[ state.cursor.x ]
+      var token = util.cursorToken()
       if ( token.group == 'function' ) {
         token.options.bubble = ! token.options.bubble
         if ( token.options.bubble ) {
@@ -121,7 +121,7 @@ var codeStoreClass = function() {
     },
 
     functionParPoints( data ) {
-      var token = state.lines[ state.cursor.y ].tokens[ state.cursor.x ]
+      var token = util.cursorToken()
       if ( token.group == 'function' && !token.options.bubble || token.group == 'operator' || token.group == 'loop' ) {
 
         if ( token.options.parPoints === data ) token.options.parLen++
@@ -134,7 +134,7 @@ var codeStoreClass = function() {
     },
 
     functionParX() {
-      var token = state.lines[ state.cursor.y ].tokens[ state.cursor.x ]
+      var token = util.cursorToken()
       if ( token.group == 'function' || token.group == 'operator' || token.group == 'loop' ) {
         token.options.parLen = 0
         signal.trigger('updateLines', [ state.cursor.y ])
@@ -142,7 +142,7 @@ var codeStoreClass = function() {
     },
 
     tokenBubble() {
-      var token = state.lines[ state.cursor.y ].tokens[ state.cursor.x ]
+      var token = util.cursorToken()
       if ( token.group == 'var' || token.group == 'object' || token.group == 'array' || token.group == 'pin' ) {
         token.options.bubble = ! token.options.bubble
         signal.trigger('updateLines', [ state.cursor.y ])
@@ -150,7 +150,7 @@ var codeStoreClass = function() {
     },
 
     commWidth( data ) {
-      var token = state.lines[ state.cursor.y ].tokens[ state.cursor.x ]
+      var token = util.cursorToken()
       if ( token.group == 'comment' ) {
         token.options.width += data
         if ( token.options.width < 1 ) token.options.width = 1
@@ -160,7 +160,7 @@ var codeStoreClass = function() {
     },
 
     opDef() {
-      var token = state.lines[ state.cursor.y ].tokens[ state.cursor.x ]
+      var token = util.cursorToken()
       if ( token.group == 'operator' ) {
         token.options.def = !token.options.def
         signal.trigger('updateLines', [ state.cursor.y ])
@@ -168,7 +168,7 @@ var codeStoreClass = function() {
     },
 
     setOp( id ) {
-      var token = state.lines[ state.cursor.y ].tokens[ state.cursor.x ]
+      var token = util.cursorToken()
       if ( token.group == 'operator' ) {
         token.options.id = id
         signal.trigger('updateLines', [ state.cursor.y ])
@@ -176,7 +176,7 @@ var codeStoreClass = function() {
     },
 
     ifRotate( data ) {
-      var token = state.lines[ state.cursor.y ].tokens[ state.cursor.x ]
+      var token = util.cursorToken()
       if ( token.group == 'if' ) {
         var freeSlot = 0, opt = token.options
 
@@ -194,6 +194,13 @@ var codeStoreClass = function() {
     },
 
   }
+
+  this.util = {
+    cursorToken() {
+      return state.lines[ state.cursor.y ].tokens[ state.cursor.x ]
+    }
+  }
+  util = this.util
 
   this.do = ( action ) => {
     if ( this.mutations[ action.action ] ) this.mutations[ action.action ]( action.data )
@@ -221,5 +228,5 @@ codeStore.mutations.setData( lines, scopes, floats )
 var codeState = codeStore.state
 var codeDo = codeStore.do
 var signal = codeStore.signal
-
-export { codeState, codeDo, signal }
+var codeUtil = codeStore.util
+export { codeState, codeDo, signal, codeUtil }

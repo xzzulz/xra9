@@ -27,7 +27,6 @@ import { codeDo } from '../../../stores/codeStore.js'
       height: 100%;
       display: block;
     }
-
     .opt {
       width: 6vh;
       height: 6vh;
@@ -35,30 +34,25 @@ import { codeDo } from '../../../stores/codeStore.js'
       background-image: url('assets/img/options/optfuncparup.svg');
       background-size: 100% 100%;
     }
-
     #optup {
       left: 8vh;
       top: 4vh;
     }
-
     #optdown {
       left: 8vh;
       top: 13vh;
       transform: rotate(180deg);
     }
-
     #optleft {
       left: 2vh;
       top: 8.5vh;
       transform: rotate(-90deg);
     }
-
     #optright {
       left: 14vh;
       top: 8.5vh;
       transform: rotate(90deg);
     }
-
   </style>
 
 
