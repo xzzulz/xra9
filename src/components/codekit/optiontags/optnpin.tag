@@ -24,20 +24,58 @@ import { codeDo } from '../../../stores/codeStore.js'
 
 
   <script>
-    this.turq = () => codeDo({ action: 'tokenColor', data: 0 })
-    this.blu = () => codeDo({ action: 'tokenColor', data: 80 })
-    this.purp = () => codeDo({ action: 'tokenColor', data: 120 })
-    this.pink = () => codeDo({ action: 'tokenColor', data: 180 })
-    this.red = () => codeDo({ action: 'tokenColor', data: 220 })
-    this.yell = () => codeDo({ action: 'tokenColor', data: -80 })
-    this.oran = () => codeDo({ action: 'tokenColor', data: -110 })
-    this.gren = () => codeDo({ action: 'tokenColor', data: -50 })
-
-    this.up = () => codeDo({ action: 'tokenPoints', data: 3 })
-    this.down = () => codeDo({ action: 'tokenPoints', data: 1 })
-    this.left = () => codeDo({ action: 'tokenPoints', data: 2 })
-    this.right = () => codeDo({ action: 'tokenPoints', data: 0 })
-    this.bubble = () => codeDo({ action: 'tokenBubble' })
+    this.turq = ( e ) => {
+      e.preventUpdate = true
+      codeDo({ action: 'tokenColor', data: 0 })
+    }
+    this.blu = ( e ) => {
+      e.preventUpdate = true
+      codeDo({ action: 'tokenColor', data: 80 })
+    }
+    this.purp = ( e ) => {
+      e.preventUpdate = true
+      codeDo({ action: 'tokenColor', data: 120 })
+    }
+    this.pink = ( e ) => {
+      e.preventUpdate = true
+      codeDo({ action: 'tokenColor', data: 180 })
+    }
+    this.red = ( e ) => {
+      e.preventUpdate = true
+      codeDo({ action: 'tokenColor', data: 220 })
+    }
+    this.yell = ( e ) => {
+      e.preventUpdate = true
+      codeDo({ action: 'tokenColor', data: -80 })
+    }
+    this.oran = ( e ) => {
+      e.preventUpdate = true
+      codeDo({ action: 'tokenColor', data: -110 })
+    }
+    this.gren = ( e ) => {
+      e.preventUpdate = true
+      codeDo({ action: 'tokenColor', data: -50 })
+    }
+    this.up = ( e ) => {
+      e.preventUpdate = true
+      codeDo({ action: 'tokenPoints', data: 3 })
+    }
+    this.down = ( e ) => {
+      e.preventUpdate = true
+      codeDo({ action: 'tokenPoints', data: 1 })
+    }
+    this.left = ( e ) => {
+      e.preventUpdate = true
+      codeDo({ action: 'tokenPoints', data: 2 })
+    }
+    this.right = ( e ) => {
+      e.preventUpdate = true
+      codeDo({ action: 'tokenPoints', data: 0 })
+    }
+    this.bubble = ( e ) => {
+      e.preventUpdate = true
+      codeDo({ action: 'tokenBubble' })
+    }
   </script>
 
 

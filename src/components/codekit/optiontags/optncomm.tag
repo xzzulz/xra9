@@ -14,9 +14,18 @@ import { codeDo } from '../../../stores/codeStore.js'
 
 
   <script>
-    this.edit = () => toolbarDo({ action: 'textkitVisible' })
-    this.lessWidth = () => codeDo({ action: 'commWidth', data: -1 })
-    this.moreWidth = () => codeDo({ action: 'commWidth', data: 1 })
+    this.edit = ( e ) => {
+      e.preventUpdate = true
+      toolbarDo({ action: 'textkitVisible' })
+    }
+    this.lessWidth = ( e ) => {
+      e.preventUpdate = true
+      codeDo({ action: 'commWidth', data: -1 })
+    }
+    this.moreWidth = ( e ) => {
+      e.preventUpdate = true
+      codeDo({ action: 'commWidth', data: 1 })
+    }
   </script>
 
 

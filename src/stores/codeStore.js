@@ -46,6 +46,8 @@ var codeStoreClass = function() {
       if ( state.lines[ moveData.to.y ].tokens[ moveData.to.x ].id == 0 ) {
         this.putToken( moveData.to, this.grabToken( moveData.from ) )
         signal.trigger('updateLines', [ moveData.from.y, moveData.to.y ])
+        //signal.trigger( 'updateToken', moveData.from )
+        //signal.trigger( 'updateToken', moveData.to )
       }
     },
 

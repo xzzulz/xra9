@@ -16,12 +16,26 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
 
   <script>
 
-    this.parup = () => codeDo({ action: 'functionParPoints', data: 3 })
-    this.pardown = () => codeDo({ action: 'functionParPoints', data: 1 })
-    this.parleft = () => codeDo({ action: 'functionParPoints', data: 2 })
-    this.parright = () => codeDo({ action: 'functionParPoints', data: 0 })
-
-    this.nopar = () => codeDo({ action: 'functionParX' })
+    this.parup = ( e ) => {
+      e.preventUpdate = true
+      codeDo({ action: 'functionParPoints', data: 3 })
+    }
+    this.pardown = ( e ) => {
+      e.preventUpdate = true
+      codeDo({ action: 'functionParPoints', data: 1 })
+    }
+    this.parleft = ( e ) => {
+      e.preventUpdate = true
+      codeDo({ action: 'functionParPoints', data: 2 })
+    }
+    this.parright = ( e ) => {
+      e.preventUpdate = true
+      codeDo({ action: 'functionParPoints', data: 0 })
+    }
+    this.nopar = ( e ) => {
+      e.preventUpdate = true
+      codeDo({ action: 'functionParX' })
+    }
 
   </script>
 

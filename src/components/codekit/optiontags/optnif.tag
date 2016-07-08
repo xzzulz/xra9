@@ -11,9 +11,18 @@ import { codeDo } from '../../../stores/codeStore.js'
 
   <script>
 
-    this.cond = () => codeDo({ action: 'ifRotate', data: 'cond' })
-    this.o = () => codeDo({ action: 'ifRotate', data: 'o' })
-    this.x = () => codeDo({ action: 'ifRotate', data: 'x' })
+    this.cond = ( e ) => {
+      e.preventUpdate = true
+      codeDo({ action: 'ifRotate', data: 'cond' })
+    }
+    this.o = ( e ) => {
+      e.preventUpdate = true
+      codeDo({ action: 'ifRotate', data: 'o' })
+    }
+    this.x = ( e ) => {
+      e.preventUpdate = true
+      codeDo({ action: 'ifRotate', data: 'x' })
+    }
 
   </script>
 

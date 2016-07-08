@@ -30,6 +30,11 @@ import cursor from './cursor.js'
       this.tags.line[ codeState.cursor.y ].tags.cell[ codeState.cursor.x ].update()
     })
 
+    signal.on('updateToken', ( loc ) => {
+      console.log('updateToken', loc)
+      this.tags.line[ loc.y ].tags.cell[ loc.x ].update()
+    })
+
     signal.on('updateCursor', () => {
       tag.tags.cursor.update()
     })

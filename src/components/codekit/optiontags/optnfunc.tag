@@ -24,23 +24,50 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
 
 
   <script>
-
-    this.up = () => codeDo({ action: 'tokenPoints', data: 3 })
-    this.down = () => codeDo({ action: 'tokenPoints', data: 1 })
-    this.left = () => codeDo({ action: 'tokenPoints', data: 2 })
-    this.right = () => codeDo({ action: 'tokenPoints', data: 0 })
-
-    this.bubble = () => codeDo({ action: 'functionBubble' })
-
-    this.parup = () => codeDo({ action: 'functionParPoints', data: 3 })
-    this.pardown = () => codeDo({ action: 'functionParPoints', data: 1 })
-    this.parleft = () => codeDo({ action: 'functionParPoints', data: 2 })
-    this.parright = () => codeDo({ action: 'functionParPoints', data: 0 })
-
-    this.nopar = () => codeDo({ action: 'functionParX' })
-
-    this.name = () => toolbarDo({ action: 'varkitVisible' })
-
+    this.up = ( e ) => {
+      e.preventUpdate = true
+      codeDo({ action: 'tokenPoints', data: 3 })
+    }
+    this.down = ( e ) => {
+      e.preventUpdate = true
+      codeDo({ action: 'tokenPoints', data: 1 })
+    }
+    this.left = ( e ) => {
+      e.preventUpdate = true
+      codeDo({ action: 'tokenPoints', data: 2 })
+    }
+    this.right = ( e ) => {
+      e.preventUpdate = true
+      codeDo({ action: 'tokenPoints', data: 0 })
+    }
+    this.bubble = ( e ) => {
+      e.preventUpdate = true
+      codeDo({ action: 'functionBubble' })
+    }
+    this.parup = ( e ) => {
+      e.preventUpdate = true
+      codeDo({ action: 'functionParPoints', data: 3 })
+    }
+    this.pardown = ( e ) => {
+      e.preventUpdate = true
+      codeDo({ action: 'functionParPoints', data: 1 })
+    }
+    this.parleft = ( e ) => {
+      e.preventUpdate = true
+      codeDo({ action: 'functionParPoints', data: 2 })
+    }
+    this.parright = ( e ) => {
+      e.preventUpdate = true
+      codeDo({ action: 'functionParPoints', data: 0 })
+    }
+    this.nopar = ( e ) => {
+      e.preventUpdate = true
+      codeDo({ action: 'functionParX' })
+    }
+    this.name = ( e ) => {
+      e.preventUpdate = true
+      toolbarDo({ action: 'varkitVisible' })
+    }
   </script>
 
 

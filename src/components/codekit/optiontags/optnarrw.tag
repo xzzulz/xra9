@@ -13,10 +13,22 @@ import { codeDo } from '../../../stores/codeStore.js'
 
   <script>
 
-    this.up = () => codeDo({ action: 'tokenPoints', data: 3 })
-    this.down = () => codeDo({ action: 'tokenPoints', data: 1 })
-    this.left = () => codeDo({ action: 'tokenPoints', data: 2 })
-    this.right = () => codeDo({ action: 'tokenPoints', data: 0 })
+    this.up = ( e ) => {
+      e.preventUpdate = true
+      codeDo({ action: 'tokenPoints', data: 3 })
+    }
+    this.down = ( e ) => {
+      e.preventUpdate = true
+      codeDo({ action: 'tokenPoints', data: 1 })
+    }
+    this.left = ( e ) => {
+      e.preventUpdate = true
+      codeDo({ action: 'tokenPoints', data: 2 })
+    }
+    this.right = ( e ) => {
+      e.preventUpdate = true
+      codeDo({ action: 'tokenPoints', data: 0 })
+    }
 
   </script>
 

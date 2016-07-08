@@ -9,7 +9,10 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
 
 
   <script>
-    this.num = () => toolbarDo({ action: 'numkitVisible' })
+    this.num = ( e ) => {
+      e.preventUpdate = true
+      toolbarDo({ action: 'numkitVisible' })
+    }
   </script>
 
 
