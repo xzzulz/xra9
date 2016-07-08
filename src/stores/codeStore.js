@@ -95,7 +95,7 @@ var codeStoreClass = function() {
 
     tokenPoints( data ) {
       var token = state.lines[ state.cursor.y ].tokens[ state.cursor.x ]
-      if ( token.group == 'function' || token.group == 'arrow' || token.group == 'operator' || token.group == 'pin' ) {
+      if ( token.group == 'function' || token.group == 'arrow' || token.group == 'operator' || token.group == 'pin' || token.group == 'flag' ) {
         token.options.points = data
         signal.trigger('updateLines', [ state.cursor.y ])
       }
@@ -103,7 +103,7 @@ var codeStoreClass = function() {
 
     tokenColor( data ) {
       var token = state.lines[ state.cursor.y ].tokens[ state.cursor.x ]
-      if ( token.group == 'pin' ) {
+      if ( token.group == 'pin' || token.group == 'flag' ) {
         token.options.color = data
         signal.trigger('updateLines', [ state.cursor.y ])
       }

@@ -267,7 +267,7 @@ export var codeInfo = {
   },
 
   96: {
-    name: "namespace marker",
+    name: "flag",
     loc: { x: -336, y: -504 },
   },
 

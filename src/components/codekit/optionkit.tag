@@ -9,7 +9,7 @@ import './optiontags/optnop.tag'
 import './optiontags/optnloop.tag'
 import './optiontags/optnif.tag'
 import './optiontags/optnpin.tag'
-
+import './optiontags/optnflag.tag'
 
 
 <optionkit>
@@ -25,6 +25,7 @@ import './optiontags/optnpin.tag'
   <optnloop if={ group == 'loop' }></optnloop>
   <optnif if={ group == 'if' }></optnif>
   <optnpin if={ group == 'pin' }></optnpin>
+  <optnflag if={ group == 'flag' }></optnflag>
 
 
   <script>
