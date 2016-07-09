@@ -13,6 +13,7 @@ import './tknloop.tag'
 import './tknif.tag'
 import './tknpin.tag'
 import './tknflag.tag'
+import './tkntyp.tag'
 
 
 
@@ -33,6 +34,7 @@ import './tknflag.tag'
   <tknif if={ group == 'if' }></tknif>
   <tknpin if={ group == 'pin' }></tknpin>
   <tknflag if={ group == 'flag' }></tknflag>
+  <tkntyp if={ group == 'type' }></tkntyp>
 
 
   <script>

@@ -1,4 +1,4 @@
-import { codeInfo } from '../../stores/codeInfo.js'
+import tokenChart from '../../resInfo/tokenChart.js'
 
 
 
@@ -17,7 +17,8 @@ import { codeInfo } from '../../stores/codeInfo.js'
   <script>
 
     this.on("update", () => {
-      this.bk.style.backgroundPosition = codeInfo[ this.id ].loc.x + 'px ' + codeInfo[ this.id ].loc.y + 'px'
+      if ( this.id < 3 || this.id > 5 ) return
+      this.bk.style.backgroundImage = tokenChart[ this.id ].img
     })
 
   </script>
@@ -31,11 +32,10 @@ import { codeInfo } from '../../stores/codeInfo.js'
       position: absolute;
     }
     #bk {
-      width: 56px;
-      height: 56px;
+      width: 100%;
+      height: 100%;
       display: block;
-      background-image: url('assets/img/tk90.svg');
-      background-size: 560px 560px;
+      background-size: 100% 100%;
       z-index: 10;
       position: absolute;
     }

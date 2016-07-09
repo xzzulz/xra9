@@ -47,14 +47,16 @@ var tokenClass = function( id, name ) {
     case 3:
     case 4:
     case 5:
-    case 81:
+      this.options = new varTokenClass(); this.group = 'var'; break
     case 70:
     case 71:
     case 72:
+      this.options = new typeTokenClass(); this.group = 'type'; break
     case 73:
     case 80:
     case 81:
-      this.options = new varTokenClass(); this.group = 'var'; break
+    case 82:
+      this.options = new eventTokenClass(); this.group = 'event'; break
     case 6:
       this.options = new objectTokenClass(); this.group = 'object'; break
     case 7:
@@ -192,12 +194,32 @@ var loopTokenClass = function( parPoints, parLen ) {
 // Token object creator
 //
 // name: (string) text name
-var varTokenClass = function( tx1, tx2, bubble ) {
+var varTokenClass = function( tx1, tx2, bubble, spec ) {
+  this.tx1 = tx1 ? tx1 : ''
+  this.tx2 = tx2 ? tx2 : ''
+  this.bubble = bubble ? bubble : false
+  // 0: bool
+  // 1: num
+  // 2: tex
+  this.spec = spec ? spec : 0
+}
+
+// Token object creator
+//
+// name: (string) text name
+var typeTokenClass = function( tx1, tx2, def, spec ) {
+  this.tx1 = tx1 ? tx1 : ''
+  this.tx2 = tx2 ? tx2 : ''
+  this.def = def ? def : false
+  this.spec = spec ? spec : false
+}
+
+// todo: review this
+var eventTokenClass = function( tx1, tx2, bubble ) {
   this.tx1 = tx1 ? tx1 : ''
   this.tx2 = tx2 ? tx2 : ''
   this.bubble = bubble ? bubble : false
 }
-
 
 // floating set of tokens
 //
