@@ -33,24 +33,24 @@
       position: absolute;
     }
     #tt0 {
-      width: 56px;
+      width: 100%;
       text-align: center;
       position: absolute;
-      top: 10px;
+      top: 18%;
       z-index: 10;
     }
     #tt1 {
       position: absolute;
-      top: 2px;
-      width: 56px;
+      top: 3%;
+      width: 100%;
       text-align: center;
       z-index: 10;
     }
     #tt2 {
       position: absolute;
-      width: 56px;
+      width: 100%;
       text-align: center;
-      top: 12px;
+      top: 22%;
       z-index: 10;
     }
     .varbubble {

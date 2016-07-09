@@ -15,7 +15,7 @@ import tokenChart from '../../resInfo/tokenChart.js'
 
 
   <script>
-
+    this.id = 3
     this.on("update", () => {
       if ( this.id < 3 || this.id > 5 ) return
       this.bk.style.backgroundImage = tokenChart[ this.id ].img
@@ -40,27 +40,24 @@ import tokenChart from '../../resInfo/tokenChart.js'
       position: absolute;
     }
     #tt0 {
-      width: 56px;
+      width: 100%;
       text-align: center;
       position: absolute;
-      top: 10px;
-      margin: 0;
+      top: 18%;
       z-index: 10;
     }
     #tt1 {
       position: absolute;
-      top: 2px;
-      width: 56px;
+      top: 3%;
+      width: 100%;
       text-align: center;
-      margin: 0;
       z-index: 10;
     }
     #tt2 {
       position: absolute;
-      width: 56px;
+      width: 100%;
       text-align: center;
-      top: 12px;
-      margin: 0;
+      top: 22%;
       z-index: 10;
     }
     .varbubble {
