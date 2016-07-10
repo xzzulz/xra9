@@ -1,7 +1,7 @@
-import { codeUtil, signal } from '../../stores/codeStore.js'
-import { toolbarSignal } from '../../stores/toolbarStore.js'
-import '../tokens/tknvar.tag'
-import '../tokens/tknob.tag'
+import { codeUtil, signal } from '../../../stores/codeStore.js'
+import { toolbarSignal } from '../../../stores/toolbarStore.js'
+import '../../tokens/tknvar.tag'
+import '../../tokens/tknob.tag'
 
 
 

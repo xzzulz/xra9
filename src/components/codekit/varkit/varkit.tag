@@ -1,5 +1,5 @@
-import { codeUtil, codeState } from '../../stores/codeStore.js'
-import { toolbarSignal } from '../../stores/toolbarStore.js'
+import { codeUtil, codeState } from '../../../stores/codeStore.js'
+import { toolbarSignal } from '../../../stores/toolbarStore.js'
 import './varkitinfo.tag'
 
 
