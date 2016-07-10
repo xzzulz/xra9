@@ -35,10 +35,18 @@ var lineClass = function( tokens, chains ) {
   this.chains = chains
 }
 
+
+var varlistItem = function( frame, blocks, token ) {
+  this.frame = frame ? frame : 0
+  this.blocks = blocks ? blocks : []
+  this.token = token ? token : new tokenClass( 0, '' )
+}
+
+
 // Token object creator
 //
 // name: (string) text name
-var tokenClass = function( id, name ) {
+var tokenClass = function( id, name, ...options ) {
   this.id = id ? id : 0
   this.name = name ? name : 0
   switch ( this.id ) {
@@ -47,7 +55,7 @@ var tokenClass = function( id, name ) {
     case 3:
     case 4:
     case 5:
-      this.options = new varTokenClass(); this.group = 'var'; break
+      this.options = new varTokenClass( options[0], options[1], options[2] ); this.group = 'var'; break
     case 70:
     case 71:
     case 72:
@@ -58,7 +66,7 @@ var tokenClass = function( id, name ) {
     case 82:
       this.options = new eventTokenClass(); this.group = 'event'; break
     case 6:
-      this.options = new objectTokenClass(); this.group = 'object'; break
+      this.options = new objectTokenClass( options[0], options[1], options[2] ); this.group = 'object'; break
     case 7:
       this.options = new arrayTokenClass(); this.group = 'array'; break
     case 10:
@@ -196,14 +204,10 @@ var loopTokenClass = function( parPoints, parLen ) {
 // Token object creator
 //
 // name: (string) text name
-var varTokenClass = function( tx1, tx2, bubble, spec ) {
+var varTokenClass = function( tx1, tx2, bubble ) {
   this.tx1 = tx1 ? tx1 : ''
   this.tx2 = tx2 ? tx2 : ''
   this.bubble = bubble ? bubble : false
-  // 0: bool
-  // 1: num
-  // 2: tex
-  this.spec = spec ? spec : 0
 }
 
 // Token object creator
@@ -255,4 +259,4 @@ var stepClass = function( stepId ) {
 }
 
 ////////////////////////////////////////////////////////////
-export { scopeClass, lineClass, tokenClass, stepClass, floatClass, floatTokenClass }
+export { scopeClass, lineClass, varlistItem, tokenClass, stepClass, floatClass, floatTokenClass }

@@ -1,4 +1,4 @@
-import { lines, scopes, floats } from '../sampleData/sampleCodeData.js'
+import { lines, scopes, floats, varList } from '../sampleData/sampleCodeData.js'
 import { scopeClass, lineClass, tokenClass, stepClass, floatClass, floatTokenClass } from '../stores/codeClasses.js'
 
 
@@ -8,6 +8,7 @@ var codeStoreClass = function() {
     lines: [],
     floats: [],
     scopes: [],
+    vars: {},
     cursor: { x: 0, y: 0 },
   }
 
@@ -17,10 +18,11 @@ var codeStoreClass = function() {
   var signal = this.signal
 
   this.mutations = {
-    setData( lines, scopes, floats ) {
+    setData( lines, scopes, floats, vars ) {
       state.lines = lines
       state.scopes = scopes
       state.floats = floats
+      state.vars = vars
     },
 
     setToken( data ) {
@@ -240,7 +242,7 @@ function download(filename, text) {
 
 var codeStore = new codeStoreClass()
 
-codeStore.mutations.setData( lines, scopes, floats )
+codeStore.mutations.setData( lines, scopes, floats, varList )
 
 var codeState = codeStore.state
 var codeDo = codeStore.do

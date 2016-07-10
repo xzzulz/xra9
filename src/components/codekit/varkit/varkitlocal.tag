@@ -1,6 +1,6 @@
+import { codeState, codeUtil } from '../../../stores/codeStore.js'
 import { toolbarSignal } from '../../../stores/toolbarStore.js'
-import '../../tokens/tknvar.tag'
-import '../../tokens/tknob.tag'
+import './varlistitem.tag'
 
 
 
@@ -8,12 +8,21 @@ import '../../tokens/tknob.tag'
 
 
   <div id="vklc">Local</div>
+  <div id="vkllist">
+    <varlistitem each={ vars }></varlistitem>
+  </div>
 
 
   <script>
-
+    this.vars = []
+    var tag = this
     toolbarSignal.on('varkitVisible', () => {
-
+      var id = codeUtil.cursorToken().id
+      if ( id >= 3 && id <= 6 )
+        tag.vars = codeState.vars[id]
+      else
+        tag.vars = []
+      this.update()
     })
 
   </script>
@@ -28,20 +37,22 @@ import '../../tokens/tknob.tag'
       width: 36vw;
       bottom: .5vw;
       background-color: #1d212d;
+      overflow: auto;
     }
     #vklc {
       position: absolute;
       left: 1vw;
       top: .5vw;
     }
-
-    tknvar,tknob {
-      font-size: 2.3vw;
-      top: 0vw;
+    #vkllist {
+      position: absolute;
       left: 1vw;
-      width: 13vw;
-      height: 13vw;
+      top: 3vw;
+      width: 30vw;
+      display: flex;
+      flex-wrap: wrap;
     }
+
   </style>
 
 

@@ -1,4 +1,4 @@
-import { scopeClass, lineClass, tokenClass, stepClass, floatClass, floatTokenClass } from '../stores/codeClasses.js'
+import { scopeClass, lineClass, varlistItem, tokenClass, stepClass, floatClass, floatTokenClass } from '../stores/codeClasses.js'
 
 
 var scopes = [
@@ -374,6 +374,36 @@ var lines = [
 ]
 
 
+var varList = {
+  3: [
+      new varlistItem( 0, [], new tokenClass( 3, 'alpha', 'alpha' ) ),
+      new varlistItem( 0, [], new tokenClass( 3, 'beta', 'beta' ) ),
+      new varlistItem( 0, [], new tokenClass( 3, 'gamma', 'gamma', 'var' ) ),
+      new varlistItem( 0, [], new tokenClass( 3, 'delta', 'delta' ) ),
+      new varlistItem( 0, [], new tokenClass( 3, 'eta', 'eta' ) ),
+  ],
+  4: [
+      new varlistItem( 0, [], new tokenClass( 4, 'number', 'number' ) ),
+      new varlistItem( 0, [], new tokenClass( 4, 'amount', 'amount','of stuff' ) ),
+      new varlistItem( 0, [], new tokenClass( 4, 'count', 'count' ) ),
+      new varlistItem( 0, [], new tokenClass( 4, 'ii', 'ii', 'zz' ) ),
+      new varlistItem( 0, [], new tokenClass( 4, 'val', 'some', 'val' ) ),
+  ],
+  5: [
+      new varlistItem( 0, [], new tokenClass( 5, 'text', 'text' ) ),
+      new varlistItem( 0, [], new tokenClass( 5, 'detail', 'detail' ) ),
+      new varlistItem( 0, [], new tokenClass( 5, 'info', 'info' ) ),
+  ],
+  6: [
+      new varlistItem( 0, [], new tokenClass( 6, 'moon', 'number' ) ),
+      new varlistItem( 0, [], new tokenClass( 6, 'sun', 'sun', 'star' ) ),
+      new varlistItem( 0, [], new tokenClass( 6, 'rocket1', 'count' ) ),
+      new varlistItem( 0, [], new tokenClass( 6, 'spaceship 5', 'space', 'ship 5' ) ),
+      new varlistItem( 0, [], new tokenClass( 6, 'earth', 'earth' ) ),
+  ],
+}
+
+
 var floats = [
   new floatClass( 540,380, 2, 2,
     [
@@ -386,4 +416,4 @@ var floats = [
 floats = []
 
 
-export { lines, scopes, floats }
+export { lines, scopes, floats, varList }
