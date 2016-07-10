@@ -114,6 +114,7 @@ import '../../tokens/tknob.tag'
       left: 1vw;
       width: 13vw;
       height: 13vw;
+      color: #748396;
     }
   </style>
 
