@@ -141,6 +141,23 @@ var codeStoreClass = function() {
       }
     },
 
+    dotPoints( data ) {
+      var token = util.cursorToken()
+      if ( token.group == 'object' ) {
+        token.options.points = data
+        token.options.dot = true
+        signal.trigger('updateCursorToken')
+      }
+    },
+
+    noDot() {
+      var token = util.cursorToken()
+      if ( token.group == 'object' ) {
+        token.options.dot = false
+        signal.trigger('updateCursorToken')
+      }
+    },
+
     tokenBubble() {
       var token = util.cursorToken()
       if ( token.group == 'var' || token.group == 'object' || token.group == 'array' || token.group == 'pin' ) {

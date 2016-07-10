@@ -8,11 +8,29 @@
   <div id="tt2" if={ options.tx2 }>{ options.tx2 }</div>
 
   <div id="bk"></div>
+  <div id="dotpoint" if={ options.dot }></div>
 
   <div class="varbubble" if={ options.bubble }></div>
 
   <script>
+    this.on( 'update', () => {
+      if ( this.id != 6 ) return
 
+      switch ( this.options.points ) {
+        case 0:
+          this.dotpoint.style.transform = 'translate3d(53px, 30px, 0px)'
+          break;
+        case 1:
+          this.dotpoint.style.transform = 'translateX(24px) translateY(49px) rotate(90deg)'
+          break;
+        case 2:
+          this.dotpoint.style.transform = 'translateX(-4px) translateY(30px) rotate(180deg)'
+          break;
+        case 3:
+          this.dotpoint.style.transform = 'translateX(24px) translateY(-7px) rotate(270deg)'
+          break;
+      }
+    })
   </script>
 
 
@@ -28,6 +46,15 @@
       height: 100%;
       display: block;
       background-image: url('assets/img/tokens/ob.svg');
+      background-size: 100% 100%;
+      z-index: 10;
+      position: absolute;
+    }
+    #dotpoint {
+      width: 12.5%;
+      height: 25%;
+      display: block;
+      background-image: url('assets/img/tokens/dot.svg');
       background-size: 100% 100%;
       z-index: 10;
       position: absolute;

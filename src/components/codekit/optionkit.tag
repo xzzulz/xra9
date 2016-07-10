@@ -10,12 +10,13 @@ import './optiontags/optnloop.tag'
 import './optiontags/optnif.tag'
 import './optiontags/optnpin.tag'
 import './optiontags/optnflag.tag'
+import './optiontags/optnob.tag'
 
 
 <optionkit>
 
 
-  <optnvar if={ group == 'var' || group == 'object' || group == 'array' }></optnvar>
+  <optnvar if={ group == 'var' || group == 'array' }></optnvar>
   <optnfunc if={ group == 'function' }></optnfunc>
   <optnarrw if={ group == 'arrow' }></optnarrw>
   <optnnum if={ group == 'number' }></optnnum>
@@ -26,6 +27,7 @@ import './optiontags/optnflag.tag'
   <optnif if={ group == 'if' }></optnif>
   <optnpin if={ group == 'pin' }></optnpin>
   <optnflag if={ group == 'flag' }></optnflag>
+  <optnob if={ group == 'object' }></optnob>
 
 
   <script>
