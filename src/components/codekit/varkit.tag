@@ -25,7 +25,7 @@ import './varkitinfo.tag'
       background: #151821;
       border: .4vh solid #1d2233;
       z-index: 200;
-      font-family: 'Ubuntu mono';
+      font: 1vw 'Ubuntu mono';
     }
   </style>
 
