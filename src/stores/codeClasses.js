@@ -66,7 +66,7 @@ var tokenClass = function( id, name, ...options ) {
     case 82:
       this.options = new eventTokenClass(); this.group = 'event'; break
     case 6:
-      this.options = new objectTokenClass( options[0], options[1], options[2] ); this.group = 'object'; break
+      this.options = new objectTokenClass( options[0], options[1], options[2], options[3], options[4], options[5], options[6] ); this.group = 'object'; break
     case 7:
       this.options = new arrayTokenClass(); this.group = 'array'; break
     case 10:
@@ -98,9 +98,11 @@ var tokenClass = function( id, name, ...options ) {
 // Token object creator
 //
 // name: (string) text name
-var objectTokenClass = function( tx1, tx2, bubble, dot, points ) {
+var objectTokenClass = function( tx1, tx2, type, typeGroup, bubble, dot, points ) {
   this.tx1 = tx1 ? tx1 : ''
   this.tx2 = tx2 ? tx2 : ''
+  this.type = type ? type : 0
+  this.typeGroup = typeGroup ? typeGroup : ''
   this.bubble = bubble ? bubble : false
   this.dot = dot ? dot : false
   this.points = points ? points : 0

@@ -1,3 +1,4 @@
+import typeChart from '../../resInfo/typeChart.js'
 
 
 
@@ -8,14 +9,15 @@
   <div id="tt2" if={ options.tx2 }>{ options.tx2 }</div>
 
   <div id="bk"></div>
+  <div id="type" if={ options.typeGroup }></div>
   <div id="dotpoint" if={ options.dot }></div>
 
   <div class="varbubble" if={ options.bubble }></div>
 
+
   <script>
     this.on( 'update', () => {
       if ( this.id != 6 ) return
-
       switch ( this.options.points ) {
         case 0:
           this.dotpoint.style.transform = 'translate3d(53px, 30px, 0px)'
@@ -29,6 +31,9 @@
         case 3:
           this.dotpoint.style.transform = 'translateX(24px) translateY(-7px) rotate(270deg)'
           break;
+      }
+      if ( this.options.typeGroup ) {
+        this.type.style.backgroundImage = typeChart[ this.options.type ].img
       }
     })
   </script>
@@ -48,6 +53,16 @@
       background-image: url('assets/img/tokens/ob.svg');
       background-size: 100% 100%;
       z-index: 10;
+      position: absolute;
+    }
+    #type {
+      width: 53.125%;
+      height: 46.875%;
+      left: 23.4375%;
+      top: 42.1875%;
+      display: block;
+      background-size: 100% 100%;
+      z-index: 11;
       position: absolute;
     }
     #dotpoint {

@@ -4,6 +4,7 @@ import './optionkit.tag'
 import './toolkit.tag'
 import './datakit.tag'
 import './varkit/varkit.tag'
+import './obkit/obkit.tag'
 import './numkit.tag'
 import './textkit.tag'
 import './opkit.tag'
@@ -15,6 +16,7 @@ import './opkit.tag'
   <toolkit></toolkit>
   <datakit></datakit>
   <varkit if={ varkitVisible }></varkit>
+  <obkit if={ obkitVisible }></obkit>
   <numkit if={ numkitVisible }></numkit>
   <textkit if={ textkitVisible }></textkit>
   <opkit if={ opkitVisible }></opkit>
@@ -22,12 +24,18 @@ import './opkit.tag'
 
   <script>
     this.varkitVisible = false
+    this.obkitVisible = false
     this.numkitVisible = false
     this.textkitVisible = false
     this.opkitVisible = false
 
     toolbarSignal.on('varkitVisible', () => {
       this.varkitVisible = toolbarState.varkit.visible
+      this.update()
+    })
+
+    toolbarSignal.on('obkitVisible', () => {
+      this.obkitVisible = toolbarState.obkit.visible
       this.update()
     })
 

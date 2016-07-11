@@ -17,7 +17,7 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
   <script>
 
     this.bubble = () => codeDo({ action: 'tokenBubble' })
-    this.name = () => toolbarDo({ action: 'varkitVisible' })
+    this.name = () => toolbarDo({ action: 'obkitVisible' })
 
     this.up = () => codeDo({ action: 'dotPoints', data: 3 })
     this.down = () => codeDo({ action: 'dotPoints', data: 1 })

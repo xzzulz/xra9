@@ -395,11 +395,11 @@ var varList = {
       new varlistItem( 0, [], new tokenClass( 5, 'info', 'info' ) ),
   ],
   6: [
-      new varlistItem( 0, [], new tokenClass( 6, 'moon', 'number' ) ),
-      new varlistItem( 0, [], new tokenClass( 6, 'sun', 'sun', 'star' ) ),
-      new varlistItem( 0, [], new tokenClass( 6, 'rocket1', 'count' ) ),
-      new varlistItem( 0, [], new tokenClass( 6, 'spaceship 5', 'space', 'ship 5' ) ),
-      new varlistItem( 0, [], new tokenClass( 6, 'earth', 'earth' ) ),
+      new varlistItem( 0, [], new tokenClass( 6, 'moon', 'moon', '', 1, 'basic' ) ),
+      new varlistItem( 0, [], new tokenClass( 6, 'sun', 'sun', 'star', 1, 'basic' ) ),
+      new varlistItem( 0, [], new tokenClass( 6, 'rocket1', 'count', '', 0, 'basic' ) ),
+      new varlistItem( 0, [], new tokenClass( 6, 'spaceship 5', 'space', 'ship 5', 0, 'basic' ) ),
+      new varlistItem( 0, [], new tokenClass( 6, 'earth', 'earth', '', 1, 'basic' ) ),
   ],
 }
 
