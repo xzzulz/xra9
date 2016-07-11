@@ -9,20 +9,20 @@ var typeChart = {
     img: 'url(' + path + 'basic/planet.svg)',
   },
   2: {
+    name: 'frog',
+    img: 'url(' + path + 'basic/frog.svg)',
+  },
+  3: {
+    name: 'apple',
+    img: 'url(' + path + 'basic/apple.svg)',
+  },
+  4: {
     name: 'user',
     img: 'url(' + path + 'basic/user.svg)',
   },
-  3: {
-    name: 'bool',
-    img: 'url(' + path + 'basic/bool.svg)',
-  },
-  4: {
-    name: 'number',
-    img: 'url(' + path + 'basic/num.svg)',
-  },
   5: {
-    name: 'text',
-    img: 'url(' + path + 'basic/tex.svg)',
+    name: 'flower',
+    img: 'url(' + path + 'basic/flower.svg)',
   },
 
 }
