@@ -21,7 +21,7 @@ import tokenChart from '../../resInfo/tokenChart.js'
       if ( this.id < 3 || this.id > 5 ) return
       this.bk.style.backgroundImage = tokenChart[ this.id ].img
       this.flag.style.filter = 'hue-rotate(' + this.options.flag + 'deg)'
-      this.flag.style.webkitFilter = 'hue-rotate(' + this.options.flag + 'deg)'      
+      this.flag.style.webkitFilter = 'hue-rotate(' + this.options.flag + 'deg)'
     })
 
   </script>
@@ -77,7 +77,7 @@ import tokenChart from '../../resInfo/tokenChart.js'
       position: absolute;
       width: 12.5%;
       height: 14.2859375%;
-      left: 14.625%;
+      left: 15.625%;
       top: 48.4375%;
       z-index: 10;
       background:  url('assets/img/tokens/miniflag.svg');

@@ -12,6 +12,7 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
   <div id="optdotleft" onclick={ left } class="optdot"></div>
   <div id="optdotright" onclick={ right } class="optdot"></div>
   <div id="optdotx" onclick={ nodot }></div>
+  <div id="optobflag" onclick={ flag }></div>
 
 
   <script>
@@ -24,6 +25,8 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
     this.left = () => codeDo({ action: 'dotPoints', data: 2 })
     this.right = () => codeDo({ action: 'dotPoints', data: 0 })
     this.nodot = () => codeDo({ action: 'noDot' })
+
+    this.flag = () => toolbarDo({ action: 'flagkitVisible' })
 
   </script>
 
@@ -49,8 +52,8 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
     #optvarname {
       left: 2vh;
       top: 14vh;
-      width: 4vh;
-      height: 4vh;
+      width: 5vh;
+      height: 5vh;
       position: absolute;
       background-image: url('assets/img/options/optname.svg');
       background-size: 100% 100%;
@@ -98,6 +101,15 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
       background-size: 100% 100%;
       left: 18.7vh;
       top: 9.5vh;
+    }
+    #optobflag {
+      left: 2vh;
+      top: 11vh;
+      width: 2vh;
+      height: 2vh;
+      position: absolute;
+      background-image: url('assets/img/options/optflag.svg');
+      background-size: 100% 100%;
     }
   </style>
 

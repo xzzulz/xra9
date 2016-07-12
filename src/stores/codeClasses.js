@@ -98,7 +98,7 @@ var tokenClass = function( id, name, ...options ) {
 // Token object creator
 //
 // name: (string) text name
-var objectTokenClass = function( tx1, tx2, type, typeGroup, bubble, dot, points ) {
+var objectTokenClass = function( tx1, tx2, type, typeGroup, bubble, dot, points, flag ) {
   this.tx1 = tx1 ? tx1 : ''
   this.tx2 = tx2 ? tx2 : ''
   this.type = type ? type : 0
@@ -106,6 +106,7 @@ var objectTokenClass = function( tx1, tx2, type, typeGroup, bubble, dot, points 
   this.bubble = bubble ? bubble : false
   this.dot = dot ? dot : false
   this.points = points ? points : 0
+  this.flag = flag ? flag : 0
 }
 
 // Token object creator
@@ -206,10 +207,11 @@ var loopTokenClass = function( parPoints, parLen ) {
 // Token object creator
 //
 // name: (string) text name
-var varTokenClass = function( tx1, tx2, bubble ) {
+var varTokenClass = function( tx1, tx2, bubble, flag ) {
   this.tx1 = tx1 ? tx1 : ''
   this.tx2 = tx2 ? tx2 : ''
   this.bubble = bubble ? bubble : false
+  this.flag = flag ? flag : false
 }
 
 // Token object creator

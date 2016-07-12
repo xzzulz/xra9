@@ -8,6 +8,7 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
   <div id="optvarname" onclick={ name }></div>
   <div id="optvarflag" onclick={ flag }></div>
 
+
   <script>
 
     this.bubble = () => codeDo({ action: 'tokenBubble' })

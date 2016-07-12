@@ -11,6 +11,7 @@ import typeChart from '../../resInfo/typeChart.js'
   <div id="bk"></div>
   <div id="type" if={ options.typeGroup }></div>
   <div id="dotpoint" if={ options.dot }></div>
+  <div id="flag" if={ options.flag }></div>
 
   <div class="varbubble" if={ options.bubble }></div>
 
@@ -35,6 +36,8 @@ import typeChart from '../../resInfo/typeChart.js'
       if ( this.options.typeGroup ) {
         this.type.style.backgroundImage = typeChart[ this.options.type ].img
       }
+      this.flag.style.filter = 'hue-rotate(' + this.options.flag + 'deg)'
+      this.flag.style.webkitFilter = 'hue-rotate(' + this.options.flag + 'deg)'
     })
   </script>
 
@@ -103,6 +106,16 @@ import typeChart from '../../resInfo/typeChart.js'
       height: 120%;
       z-index: 4;
       background:  url('assets/img/tokens/varbubble.svg');
+      background-size: 100% 100%;
+    }
+    #flag {
+      position: absolute;
+      width: 12.5%;
+      height: 14.2859375%;
+      left: 9.375%;
+      top: 42.1875%;
+      z-index: 10;
+      background:  url('assets/img/tokens/miniflag.svg');
       background-size: 100% 100%;
     }
   </style>
