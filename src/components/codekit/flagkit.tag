@@ -1,6 +1,7 @@
 import { codeDo } from '../../stores/codeStore.js'
 import color from '../../resInfo/color.js'
 import '../tokens/tknflag.tag'
+import './flagkitnoflag.tag'
 
 
 
@@ -17,6 +18,7 @@ import '../tokens/tknflag.tag'
     <tknflag onclick={ turq }></tknflag>
     <tknflag onclick={ blu }></tknflag>
     <tknflag onclick={ purp }></tknflag>
+    <flagkitnoflag onclick={ noflag }></flagkitnoflag>
   </div>
 
 
@@ -30,6 +32,8 @@ import '../tokens/tknflag.tag'
     this.turq = () => codeDo({ action: 'flagColor', data: color.turq })
     this.blu = () => codeDo({ action: 'flagColor', data: color.blu })
     this.purp = () => codeDo({ action: 'flagColor', data: color.purp })
+
+    this.noflag = () => codeDo({ action: 'flagColor', data: 0 })
 
     this.tags.tknflag[0].id = 96
     this.tags.tknflag[1].id = 96
@@ -57,7 +61,7 @@ import '../tokens/tknflag.tag'
       position: absolute;
       right: 24vh;
       top: 3vh;
-      height: 30vh;
+      height: 32vh;
       width: 50vh;
       background: #151821;
       border: .4vh solid #1d2233;
@@ -75,6 +79,12 @@ import '../tokens/tknflag.tag'
 
     }
     tknflag {
+      position: static;
+      width: 8vh;
+      height: 8vh;
+      margin: 1vh;
+    }
+    flagkitnoflag {
       position: static;
       width: 8vh;
       height: 8vh;
