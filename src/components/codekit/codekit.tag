@@ -8,6 +8,8 @@ import './obkit/obkit.tag'
 import './numkit.tag'
 import './textkit.tag'
 import './opkit.tag'
+import './flagkit.tag'
+
 
 
 <codekit>
@@ -20,6 +22,7 @@ import './opkit.tag'
   <numkit if={ numkitVisible }></numkit>
   <textkit if={ textkitVisible }></textkit>
   <opkit if={ opkitVisible }></opkit>
+  <flagkit if={ flagkitVisible }></flagkit>
 
 
   <script>
@@ -28,6 +31,7 @@ import './opkit.tag'
     this.numkitVisible = false
     this.textkitVisible = false
     this.opkitVisible = false
+    this.flagkitVisible = false
 
     toolbarSignal.on('varkitVisible', () => {
       this.varkitVisible = toolbarState.varkit.visible
@@ -51,6 +55,11 @@ import './opkit.tag'
 
     toolbarSignal.on('opkitVisible', () => {
       this.opkitVisible = toolbarState.opkit.visible
+      this.update()
+    })
+
+    toolbarSignal.on('flagkitVisible', () => {
+      this.flagkitVisible = toolbarState.flagkit.visible
       this.update()
     })
 

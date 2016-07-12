@@ -62,6 +62,9 @@ var toolbarStoreClass = function() {
     opkit: {
       visible: false
     },
+    flagkit: {
+      visible: false
+    },
   }
 
   var state = this.state
@@ -182,6 +185,10 @@ var toolbarStoreClass = function() {
       signal.trigger('opkitVisible')
     },
 
+    flagkitVisible() {
+      state.flagkit.visible = ! state.flagkit.visible
+      signal.trigger('flagkitVisible')
+    },
 
   }
 

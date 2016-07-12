@@ -6,11 +6,13 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
 
   <div id="optvarbubble" onclick={ bubble }></div>
   <div id="optvarname" onclick={ name }></div>
+  <div id="optvarflag" onclick={ flag }></div>
 
   <script>
 
     this.bubble = () => codeDo({ action: 'tokenBubble' })
     this.name = () => toolbarDo({ action: 'varkitVisible' })
+    this.flag = () => toolbarDo({ action: 'flagkitVisible' })
 
   </script>
 
@@ -21,28 +23,34 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
       height: 100%;
       display: block;
     }
-
     #optvarbubble {
-      left: 7vh;
-      top: 2vh;
-      width: 15vh;
-      height: 15vh;
+      left: 3vh;
+      top: 3vh;
+      width: 8vh;
+      height: 8vh;
       position: absolute;
       background-image: url('assets/img/options/optvarbubble.svg');
       background-size: 100% 100%;
       cursor: pointer;
     }
-
     #optvarname {
-      left: 2vh;
-      top: 14vh;
-      width: 4vh;
-      height: 4vh;
+      left: 5.5vh;
+      top: 13vh;
+      width: 5vh;
+      height: 5vh;
       position: absolute;
       background-image: url('assets/img/options/optname.svg');
       background-size: 100% 100%;
     }
-
+    #optvarflag {
+      left: 2vh;
+      top: 13vh;
+      width: 2vh;
+      height: 2vh;
+      position: absolute;
+      background-image: url('assets/img/options/optflag.svg');
+      background-size: 100% 100%;
+    }
   </style>
 
 
