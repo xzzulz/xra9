@@ -3,6 +3,8 @@ import { toolbarSignal } from '../../../stores/toolbarStore.js'
 import './varkitinfo.tag'
 import './varkitlocal.tag'
 import './varkitob.tag'
+import './varkitextern.tag'
+import './varkitimport.tag'
 
 
 
@@ -14,6 +16,8 @@ import './varkitob.tag'
   </label>
   <varkitlocal></varkitlocal>
   <varkitob></varkitob>
+  <varkitextern></varkitextern>
+  <varkitimport></varkitimport>
 
   <script>
 
@@ -24,8 +28,8 @@ import './varkitob.tag'
     :scope {
       position: absolute;
       right: 24vh;
-      top: 3vh;
-      height: 94vh;
+      top: 0;
+      bottom: 0;
       width: 80vw;
       background: #151821;
       border: .4vh solid #1d2233;

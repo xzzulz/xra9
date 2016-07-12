@@ -4,10 +4,10 @@ import '../../tokens/tknob.tag'
 
 
 
-<varkitob>
+<varkitextern>
 
 
-  <div id="vkob">Object</div>
+  <div id="vkob">Extern</div>
 
 
   <script>
@@ -24,9 +24,9 @@ import '../../tokens/tknob.tag'
       position: absolute;
       display: block;
       top: .5vw;
-      right: 37vw;
-      width: 18vw;
-      bottom: .5vw;
+      right: 55.5vw;
+      left: .5vw;
+      height: 48vh;
       background-color: #1d212d;
     }
     #vkob {
@@ -45,4 +45,4 @@ import '../../tokens/tknob.tag'
   </style>
 
 
-</varkitob>
+</varkitextern>

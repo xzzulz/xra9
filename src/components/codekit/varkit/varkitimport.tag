@@ -4,10 +4,10 @@ import '../../tokens/tknob.tag'
 
 
 
-<varkitob>
+<varkitimport>
 
 
-  <div id="vkob">Object</div>
+  <div id="vkob">Import</div>
 
 
   <script>
@@ -23,10 +23,10 @@ import '../../tokens/tknob.tag'
     :scope {
       position: absolute;
       display: block;
-      top: .5vw;
-      right: 37vw;
-      width: 18vw;
-      bottom: .5vw;
+      top: 50vh;
+      right: 55.5vw;
+      left: .5vw;
+      bottom: .5vh;
       background-color: #1d212d;
     }
     #vkob {
@@ -45,4 +45,4 @@ import '../../tokens/tknob.tag'
   </style>
 
 
-</varkitob>
+</varkitimport>
