@@ -82,7 +82,7 @@ var toolbarStoreClass = function() {
 
     openInputKit() {
       var group = codeUtil.cursorToken().group
-      if ( group == 'var' || group == 'object' || group == 'array' || group == 'function' || group == 'type' ) this.openVarkit()
+      if ( group == 'var' || group == 'array' || group == 'function' || group == 'type' ) this.openVarkit()
       else if ( group == 'object' ) this.openObkit()
       else if ( group == 'number' ) this.openNumkit()
       else if ( group == 'text' || group == 'comment' ) this.openTextkit()
