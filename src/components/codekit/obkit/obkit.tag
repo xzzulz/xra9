@@ -3,8 +3,10 @@ import { toolbarSignal } from '../../../stores/toolbarStore.js'
 import './obkitinfo.tag'
 import './obkitlocal.tag'
 import './obkitob.tag'
-import './obkittype.tag'
-
+import './obkittypeinfo.tag'
+import './obkitextern.tag'
+import './obkitimport.tag'
+import './obkittypes.tag'
 
 
 <obkit>
@@ -14,9 +16,14 @@ import './obkittype.tag'
     <input id="vsearch">
   </label>
   <obkitlocal></obkitlocal>
-  <obkitob></obkitob>
-  <obkittype></obkittype>
 
+  <obkittypeinfo></obkittypeinfo>
+  <obkitob></obkitob>
+
+  <obkitextern></obkitextern>
+  <obkitimport></obkitimport>
+
+  <obkittypes></obkittypes>
 
   <script>
 
@@ -27,9 +34,9 @@ import './obkittype.tag'
     :scope {
       position: absolute;
       right: 24vh;
-      top: 0vh;
-      bottom: 0vh;
-      width: 85vw;
+      top: 0;
+      bottom: 0;
+      left: 0;
       background: #151821;
       border: .4vh solid #1d2233;
       z-index: 200;

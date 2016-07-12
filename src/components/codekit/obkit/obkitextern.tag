@@ -4,10 +4,10 @@ import '../../tokens/tknob.tag'
 
 
 
-<obkitob>
+<obkitextern>
 
 
-  <div id="vkob">Object</div>
+  <div id="vkob">Extern</div>
 
 
   <script>
@@ -23,10 +23,10 @@ import '../../tokens/tknob.tag'
     :scope {
       position: absolute;
       display: block;
-      top: 17vw;
-      right: 37vw;
+      top: .5vw;
+      right: 53.5vw;
       width: 16vw;
-      bottom: .5vw;
+      height: 16vw;
       background-color: #1d212d;
     }
     #vkob {
@@ -45,4 +45,4 @@ import '../../tokens/tknob.tag'
   </style>
 
 
-</obkitob>
+</obkitextern>

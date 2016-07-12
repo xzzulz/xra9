@@ -4,10 +4,10 @@ import '../../tokens/tknob.tag'
 
 
 
-<obkitob>
+<obkitimport>
 
 
-  <div id="vkob">Object</div>
+  <div id="vkob">Import</div>
 
 
   <script>
@@ -24,7 +24,7 @@ import '../../tokens/tknob.tag'
       position: absolute;
       display: block;
       top: 17vw;
-      right: 37vw;
+      right: 53.5vw;
       width: 16vw;
       bottom: .5vw;
       background-color: #1d212d;
@@ -45,4 +45,4 @@ import '../../tokens/tknob.tag'
   </style>
 
 
-</obkitob>
+</obkitimport>
