@@ -49,11 +49,15 @@ import './optiontags/optnob.tag'
 
   <style scoped>
     :scope {
-      height: 20%;
+      position: absolute;
+      right: 0;
+      top: 0vh;
+      width: 24vh;
+      height: 22vh;
+      box-sizing: border-box;
       display: block;
       background: #151821;
       border: .4vh solid #1d2233;
-      position: relative;
     }
   </style>
 

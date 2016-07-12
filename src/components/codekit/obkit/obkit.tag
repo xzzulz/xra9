@@ -3,17 +3,20 @@ import { toolbarSignal } from '../../../stores/toolbarStore.js'
 import './obkitinfo.tag'
 import './obkitlocal.tag'
 import './obkitob.tag'
+import './obkittype.tag'
 
 
 
 <obkit>
 
   <obkitinfo></obkitinfo>
-  <label id="lbsearch">obkit search
+  <label id="lbsearch">search
     <input id="vsearch">
   </label>
   <obkitlocal></obkitlocal>
   <obkitob></obkitob>
+  <obkittype></obkittype>
+
 
   <script>
 
@@ -24,9 +27,9 @@ import './obkitob.tag'
     :scope {
       position: absolute;
       right: 24vh;
-      top: 3vh;
-      height: 94vh;
-      width: 80vw;
+      top: 0vh;
+      bottom: 0vh;
+      width: 85vw;
       background: #151821;
       border: .4vh solid #1d2233;
       z-index: 200;

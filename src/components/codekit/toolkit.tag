@@ -13,7 +13,11 @@ import './tool.tag'
 
   <style scoped>
     :scope {
-
+      position: absolute;
+      right: 0;
+      top: 22vh;
+      width: 24vh;
+      height: 40vh;
       padding: 1.5vh;
 
       background: #151821;

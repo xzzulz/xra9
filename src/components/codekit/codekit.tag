@@ -69,7 +69,7 @@ import './opkit.tag'
       position: absolute;
       right: 0;
       top: 0;
-      width: 24vh;
+      width: 100vw;
       height: 100vh;
     }
   </style>
