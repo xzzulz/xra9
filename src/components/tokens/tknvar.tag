@@ -10,6 +10,7 @@ import tokenChart from '../../resInfo/tokenChart.js'
   <div id="tt2" if={ options.tx2 }>{ options.tx2 }</div>
 
   <div id="bk"></div>
+  <div id="flag" if={ options.flag }></div>
 
   <div class="varbubble" if={ options.bubble }></div>
 
@@ -19,6 +20,8 @@ import tokenChart from '../../resInfo/tokenChart.js'
     this.on("update", () => {
       if ( this.id < 3 || this.id > 5 ) return
       this.bk.style.backgroundImage = tokenChart[ this.id ].img
+      this.flag.style.filter = 'hue-rotate(' + this.options.flag + 'deg)'
+      this.flag.style.webkitFilter = 'hue-rotate(' + this.options.flag + 'deg)'      
     })
 
   </script>
@@ -69,6 +72,16 @@ import tokenChart from '../../resInfo/tokenChart.js'
       z-index: 4;
       background:  url('assets/img/varbubble.svg');
       background-size: 66px 66px;
+    }
+    #flag {
+      position: absolute;
+      width: 12.5%;
+      height: 14.2859375%;
+      left: 14.625%;
+      top: 48.4375%;
+      z-index: 10;
+      background:  url('assets/img/tokens/miniflag.svg');
+      background-size: 100% 100%;
     }
   </style>
 

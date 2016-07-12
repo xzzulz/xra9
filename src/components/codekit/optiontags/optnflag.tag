@@ -1,5 +1,5 @@
 import { codeDo } from '../../../stores/codeStore.js'
-
+import color from '../../../resInfo/color.js'
 
 
 <optnflag>
@@ -22,14 +22,15 @@ import { codeDo } from '../../../stores/codeStore.js'
 
 
   <script>
-    this.turq = () => codeDo({ action: 'tokenColor', data: 0 })
-    this.blu = () => codeDo({ action: 'tokenColor', data: 80 })
-    this.purp = () => codeDo({ action: 'tokenColor', data: 120 })
-    this.pink = () => codeDo({ action: 'tokenColor', data: 180 })
-    this.red = () => codeDo({ action: 'tokenColor', data: 220 })
-    this.yell = () => codeDo({ action: 'tokenColor', data: -80 })
-    this.oran = () => codeDo({ action: 'tokenColor', data: -110 })
-    this.gren = () => codeDo({ action: 'tokenColor', data: -50 })
+    this.pink = () => codeDo({ action: 'tokenColor', data: color.pink })
+    this.red = () => codeDo({ action: 'tokenColor', data: color.red })
+    this.oran = () => codeDo({ action: 'tokenColor', data: color.oran })
+    this.yell = () => codeDo({ action: 'tokenColor', data: color.yell })
+
+    this.gren = () => codeDo({ action: 'tokenColor', data: color.gren })
+    this.turq = () => codeDo({ action: 'tokenColor', data: color.turq })
+    this.blu = () => codeDo({ action: 'tokenColor', data: color.blu })
+    this.purp = () => codeDo({ action: 'tokenColor', data: color.purp })
 
     this.up = () => codeDo({ action: 'tokenPoints', data: 3 })
     this.down = () => codeDo({ action: 'tokenPoints', data: 1 })

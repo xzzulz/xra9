@@ -1,5 +1,7 @@
 import { lines, scopes, floats, varList } from '../sampleData/sampleCodeData.js'
 import { scopeClass, lineClass, tokenClass, stepClass, floatClass, floatTokenClass } from '../stores/codeClasses.js'
+import { toolbarDo } from './toolbarStore.js'
+
 
 
 var codeStoreClass = function() {
@@ -192,6 +194,12 @@ var codeStoreClass = function() {
         token.options.id = id
         signal.trigger('updateCursorToken')
       }
+    },
+
+    flagColor( color ) {
+      util.cursorToken().options.flag = color
+      signal.trigger('updateCursorToken')
+      toolbarDo({ action: 'flagkitVisible' })
     },
 
     ifRotate( data ) {
