@@ -65,6 +65,9 @@ var toolbarStoreClass = function() {
     flagkit: {
       visible: false
     },
+    typekit: {
+      visible: false
+    },
   }
 
   var state = this.state
@@ -76,20 +79,22 @@ var toolbarStoreClass = function() {
 
     inputKitVisible() {
       var group = codeUtil.cursorToken().group
-      if ( group == 'var' || group == 'array' || group == 'function' || group == 'type' ) this.varkitVisible()
+      if ( group == 'var' || group == 'array' || group == 'function' ) this.varkitVisible()
       else if ( group == 'object' ) this.obkitVisible()
       else if ( group == 'number' ) this.numkitVisible()
       else if ( group == 'text' || group == 'comment' ) this.textkitVisible()
       else if ( group == 'operator' ) this.opkitVisible()
+      else if ( group == 'type' ) this.typekitVisible()
     },
 
     openInputKit() {
       var group = codeUtil.cursorToken().group
-      if ( group == 'var' || group == 'array' || group == 'function' || group == 'type' ) this.openVarkit()
+      if ( group == 'var' || group == 'array' || group == 'function' ) this.openVarkit()
       else if ( group == 'object' ) this.openObkit()
       else if ( group == 'number' ) this.openNumkit()
       else if ( group == 'text' || group == 'comment' ) this.openTextkit()
       else if ( group == 'operator' ) this.openOpkit()
+      else if ( group == 'type' ) this.openTypekit()
     },
 
     varkitVisible() {
@@ -188,6 +193,24 @@ var toolbarStoreClass = function() {
     flagkitVisible() {
       state.flagkit.visible = ! state.flagkit.visible
       signal.trigger('flagkitVisible')
+    },
+
+    typekitVisible() {
+      if ( ! state.typekit.visible ) this.openTypekit()
+      else this.closeTypekit()
+    },
+
+    openTypekit() {
+      var group = codeUtil.cursorToken().group
+      if ( group == 'type' ) {
+        state.typekit.visible = true
+        signal.trigger('typekitVisible')
+      }
+    },
+
+    closeTypekit() {
+      state.typekit.visible = false
+      signal.trigger('typekitVisible')
     },
 
   }
