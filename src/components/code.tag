@@ -7,7 +7,7 @@ import cursor from './cursor.js'
 
 
 
-<code style="top:{y}%; left:{x}%; width: {w}%; height: {h}%;" onmousedown={ onmousedown } onclick={ onclick } >
+<code style="top:{y}%; left:{x}%; width: {w}%; height: {h}%;" onmousedown={ mousedown } onclick={ click } >
 
   <div class="codescroll" style="width: {lines[0].tokens.length*56}px;">
     <line each={ lines }></line>
@@ -47,13 +47,13 @@ import cursor from './cursor.js'
       tag.tags.cursor.update()
     })
 
-    this.onmousedown = ( e ) => {
+    this.mousedown = ( e ) => {
       e.preventUpdate = true
       scroll.start( e )
       return true
     }
 
-    this.onclick = ( e ) => {
+    this.click = ( e ) => {
       e.preventUpdate = true
       if ( e.button == 0 ) cursor.click( e )
     }

@@ -3,23 +3,20 @@ import './codepanel.tag'
 import './codekit/codekit.tag'
 
 
+
 <main>
 
   <utilkit></utilkit>
-
-  <codepanel></codepanel>
-
   <codekit></codekit>
+  <codepanel></codepanel>
 
 
   <script>
-
-
-
   </script>
 
-  <style scoped>
 
+  <style scoped>
   </style>
+
 
 </main>
