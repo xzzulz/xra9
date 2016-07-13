@@ -224,7 +224,7 @@ var varTokenClass = function( tx1, tx2, bubble, flag ) {
   this.tx1 = tx1 ? tx1 : ''
   this.tx2 = tx2 ? tx2 : ''
   this.bubble = bubble ? bubble : false
-  this.flag = flag ? flag : false
+  this.flag = flag ? flag : 0
 }
 
 // todo: review this

@@ -16,6 +16,7 @@ import { codeInfo } from '../../stores/codeInfo.js'
   <script>
 
     this.on("update", () => {
+      if ( this.id < 70 || this.id > 73 ) return
       this.bk.style.backgroundPosition = codeInfo[ this.id ].loc.x + 'px ' + codeInfo[ this.id ].loc.y + 'px'
       switch ( this.options.points ) {
         case 0:
