@@ -112,6 +112,19 @@ var objectTokenClass = function( tx1, tx2, type, typeGroup, bubble, dot, points,
 // Token object creator
 //
 // name: (string) text name
+var typeTokenClass = function( tx1, tx2, type, typeGroup, dot, points, def ) {
+  this.tx1 = tx1 ? tx1 : ''
+  this.tx2 = tx2 ? tx2 : ''
+  this.type = type ? type : 0
+  this.typeGroup = typeGroup ? typeGroup : ''
+  this.def = def ? def : false
+  this.dot = dot ? dot : false
+  this.points = points ? points : 0
+}
+
+// Token object creator
+//
+// name: (string) text name
 var arrayTokenClass = function( tx1, tx2, bubble ) {
   this.tx1 = tx1 ? tx1 : ''
   this.tx2 = tx2 ? tx2 : ''
@@ -212,16 +225,6 @@ var varTokenClass = function( tx1, tx2, bubble, flag ) {
   this.tx2 = tx2 ? tx2 : ''
   this.bubble = bubble ? bubble : false
   this.flag = flag ? flag : false
-}
-
-// Token object creator
-//
-// name: (string) text name
-var typeTokenClass = function( tx1, tx2, def, spec ) {
-  this.tx1 = tx1 ? tx1 : ''
-  this.tx2 = tx2 ? tx2 : ''
-  this.def = def ? def : false
-  this.spec = spec ? spec : false
 }
 
 // todo: review this

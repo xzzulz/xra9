@@ -147,7 +147,7 @@ var codeStoreClass = function() {
 
     dotPoints( data ) {
       var token = util.cursorToken()
-      if ( token.group == 'object' ) {
+      if ( token.group == 'object' || token.group == 'type' ) {
         token.options.points = data
         token.options.dot = true
         signal.trigger('updateCursorToken')
@@ -156,7 +156,7 @@ var codeStoreClass = function() {
 
     noDot() {
       var token = util.cursorToken()
-      if ( token.group == 'object' ) {
+      if ( token.group == 'object' || token.group == 'type' ) {
         token.options.dot = false
         signal.trigger('updateCursorToken')
       }
