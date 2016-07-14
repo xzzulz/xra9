@@ -20,9 +20,22 @@ import { codeInfo } from '../../stores/codeInfo.js'
       this.block.style.width = 100 * this.options.w + '%'
       this.block.style.height = 100 * this.options.h + '%'
       switch ( this.options.lvl ) {
-        case 1: this.block.style.backgroundColor = '#0c1018'; break
-        case 2: this.block.style.backgroundColor = '#131a25'; break
-        case 3: this.block.style.backgroundColor = '#19212f'; break
+        case 1:
+          this.block.style.backgroundColor = '#0d121b'
+          this.block.style.zIndex = 1
+          break
+        case 2:
+          this.block.style.backgroundColor = '#151c27'
+          this.block.style.zIndex = 1
+          break
+        case 3:
+          this.block.style.backgroundColor = '#1b2331'
+          this.block.style.zIndex = 1
+          break
+        case 4:
+          this.block.style.backgroundColor = '#212b3b'
+          this.block.style.zIndex = 1
+          break
       }
     })
 

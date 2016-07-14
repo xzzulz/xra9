@@ -233,7 +233,7 @@ var codeStoreClass = function() {
     blokLvl() {
       var token = util.cursorToken()
       if ( token.id != 13 ) return
-      if ( ++token.options.lvl > 3 ) token.options.lvl = 1
+      if ( ++token.options.lvl > 4 ) token.options.lvl = 1
       signal.trigger('updateCursorToken')
     },
 
