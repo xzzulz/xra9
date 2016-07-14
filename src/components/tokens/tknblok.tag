@@ -26,15 +26,15 @@ import { codeInfo } from '../../stores/codeInfo.js'
           break
         case 2:
           this.block.style.backgroundColor = '#151c27'
-          this.block.style.zIndex = 1
+          this.block.style.zIndex = 2
           break
         case 3:
           this.block.style.backgroundColor = '#1b2331'
-          this.block.style.zIndex = 1
+          this.block.style.zIndex = 3
           break
         case 4:
           this.block.style.backgroundColor = '#212b3b'
-          this.block.style.zIndex = 1
+          this.block.style.zIndex = 4
           break
       }
     })
@@ -49,7 +49,6 @@ import { codeInfo } from '../../stores/codeInfo.js'
       display: block;
       position: absolute;
       display: block;
-      z-index: 10;
     }
     #bar {
       position: absolute;
@@ -58,6 +57,7 @@ import { codeInfo } from '../../stores/codeInfo.js'
       width: 25%;
       height: 100%;
       background-color: #0c1d37;
+      z-index: 10;
     }
     #block {
       position: absolute;
