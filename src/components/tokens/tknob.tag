@@ -1,4 +1,4 @@
-import typeChart from '../../resInfo/typeChart.js'
+import { getType } from '../../utils/util.js'
 
 
 
@@ -34,7 +34,7 @@ import typeChart from '../../resInfo/typeChart.js'
           break;
       }
       if ( this.options.typeGroup ) {
-        this.type.style.backgroundImage = typeChart[ this.options.type ].img
+        this.type.style.backgroundImage = getType( this.options )
       }
       this.flag.style.filter = 'hue-rotate(' + this.options.flag + 'deg)'
       this.flag.style.webkitFilter = 'hue-rotate(' + this.options.flag + 'deg)'

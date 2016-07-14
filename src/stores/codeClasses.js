@@ -39,7 +39,7 @@ var lineClass = function( tokens, chains ) {
 var varlistItem = function( frame, blocks, token ) {
   this.frame = frame ? frame : 0
   this.blocks = blocks ? blocks : []
-  this.token = token ? token : new tokenClass( 0, '' )
+  this.token = token ? token : new tokenClass()
 }
 
 
@@ -48,7 +48,7 @@ var varlistItem = function( frame, blocks, token ) {
 // name: (string) text name
 var tokenClass = function( id, name, ...options ) {
   this.id = id ? id : 0
-  this.name = name ? name : 0
+  this.name = name ? name : ''
   switch ( this.id ) {
     case 0:
       this.options = {}; this.group = ''; break
@@ -101,7 +101,7 @@ var tokenClass = function( id, name, ...options ) {
 var objectTokenClass = function( tx1, tx2, type, typeGroup, bubble, dot, points, flag ) {
   this.tx1 = tx1 ? tx1 : ''
   this.tx2 = tx2 ? tx2 : ''
-  this.type = type ? type : 0
+  this.type = type ? type : ''
   this.typeGroup = typeGroup ? typeGroup : ''
   this.bubble = bubble ? bubble : false
   this.dot = dot ? dot : false
@@ -115,7 +115,7 @@ var objectTokenClass = function( tx1, tx2, type, typeGroup, bubble, dot, points,
 var typeTokenClass = function( tx1, tx2, type, typeGroup, dot, points, def ) {
   this.tx1 = tx1 ? tx1 : ''
   this.tx2 = tx2 ? tx2 : ''
-  this.type = type ? type : 0
+  this.type = type ? type : ''
   this.typeGroup = typeGroup ? typeGroup : ''
   this.def = def ? def : false
   this.dot = dot ? dot : false
