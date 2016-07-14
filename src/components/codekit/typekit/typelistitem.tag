@@ -1,25 +1,25 @@
 import { codeUtil, codeState, signal } from '../../../stores/codeStore.js'
 import { toolbarDo } from '../../../stores/toolbarStore.js'
-import '../../tokens/tknob.tag'
+import '../../tokens/tkntyp.tag'
 
 
 
 <typelistitem onclick={ click }>
 
 
-  <tknob></tknob>
+  <tkntyp></tkntyp>
 
 
   <script>
 
     this.on( 'update', () => {
-      this.tags.tknob.id = this.token.id
-      this.tags.tknob.group = this.token.group
-      this.tags.tknob.options = {
-        tx1: this.token.options.tx1,
-        tx2: this.token.options.tx2,
-        type: this.token.options.type,
-        typeGroup: this.token.options.typeGroup,
+      this.tags.tkntyp.id = this.id
+      this.tags.tkntyp.group = this.group
+      this.tags.tkntyp.options = {
+        tx1: this.options.tx1,
+        tx2: this.options.tx2,
+        type: this.options.type,
+        typeGroup: this.options.typeGroup,
       }
     })
 
@@ -45,7 +45,7 @@ import '../../tokens/tknob.tag'
       width: 4vw;
       height: 4vw;
     }
-    tknvar,tknob {
+    tkntyp {
       font-size: .8vw;
       color: #748396;
       width: 4vw;

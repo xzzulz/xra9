@@ -59,7 +59,7 @@ var tokenClass = function( id, name, ...options ) {
     case 70:
     case 71:
     case 72:
-      this.options = new typeTokenClass(); this.group = 'type'; break
+      this.options = new typeTokenClass( options[0], options[1], options[2], options[3], options[4], options[5] ); this.group = 'type'; break
     case 73:
     case 80:
     case 81:
@@ -266,4 +266,4 @@ var stepClass = function( stepId ) {
 }
 
 ////////////////////////////////////////////////////////////
-export { scopeClass, lineClass, varlistItem, tokenClass, stepClass, floatClass, floatTokenClass }
+export { scopeClass, lineClass, varlistItem, tokenClass, stepClass, floatClass, floatTokenClass, typeTokenClass }

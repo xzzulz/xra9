@@ -409,6 +409,14 @@ var varList = {
   ],
 }
 
+var typeList = [
+  new tokenClass( 70, '', 'planet', '', 'planet', 'demo' ),
+  new tokenClass( 70, '', 'apple', '', 'apple', 'demo' ),
+  new tokenClass( 70, '', 'frog', '', 'frog', 'demo' ),
+  new tokenClass( 70, '', 'flower', '', 'flower', 'demo' ),
+  new tokenClass( 70, '', 'user', '', 'user', 'demo' ),
+]
+
 
 var floats = [
   new floatClass( 540,380, 2, 2,
@@ -422,4 +430,4 @@ var floats = [
 floats = []
 
 
-export { lines, scopes, floats, varList }
+export { lines, scopes, floats, varList, typeList }

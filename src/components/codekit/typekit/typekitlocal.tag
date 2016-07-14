@@ -7,16 +7,18 @@ import './typelistitem.tag'
 <typekitlocal>
 
 
+
   <div id="vklc">Local</div>
   <div id="vkllist">
-    <typelistitem each={ vars }></typelistitem>
+    <typelistitem each={ types }></typelistitem>
   </div>
 
 
   <script>
-    this.vars = []
+    this.types = []
     toolbarSignal.on('typekitVisible', () => {
-      this.vars = codeState.vars[6]
+      this.types = codeState.types
+      console.log('this.types', this.types)
       this.update()
     })
 

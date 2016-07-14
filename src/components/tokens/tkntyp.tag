@@ -1,4 +1,5 @@
 import { codeInfo } from '../../stores/codeInfo.js'
+import { getType } from '../../utils/util.js'
 
 
 
@@ -33,7 +34,7 @@ import { codeInfo } from '../../stores/codeInfo.js'
           break;
       }
       if ( this.options.typeGroup ) {
-        this.type.style.backgroundImage = typeChart[ this.options.type ].img
+        this.type.style.backgroundImage = getType( this.options )
       }
     })
 

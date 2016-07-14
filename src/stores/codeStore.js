@@ -1,4 +1,4 @@
-import { lines, scopes, floats, varList } from '../sampleData/sampleCodeData.js'
+import { lines, scopes, floats, varList, typeList } from '../sampleData/sampleCodeData.js'
 import { scopeClass, lineClass, tokenClass, stepClass, floatClass, floatTokenClass } from '../stores/codeClasses.js'
 import { toolbarDo } from './toolbarStore.js'
 
@@ -20,11 +20,12 @@ var codeStoreClass = function() {
   var signal = this.signal
 
   this.mutations = {
-    setData( lines, scopes, floats, vars ) {
+    setData( lines, scopes, floats, vars, types ) {
       state.lines = lines
       state.scopes = scopes
       state.floats = floats
-      state.vars = vars
+      state.vars = vars,
+      state.types = types
     },
 
     setToken( data ) {
@@ -250,7 +251,7 @@ function download(filename, text) {
 
 var codeStore = new codeStoreClass()
 
-codeStore.mutations.setData( lines, scopes, floats, varList )
+codeStore.mutations.setData( lines, scopes, floats, varList, typeList )
 
 var codeState = codeStore.state
 var codeDo = codeStore.do
