@@ -26,7 +26,7 @@ var toolbarStoreClass = function() {
       { id: 21 },
       { id: 22 },
 
-      { id: 0 },
+      { id: 13 },
       { id: 95 },
       { id: 96 },
 

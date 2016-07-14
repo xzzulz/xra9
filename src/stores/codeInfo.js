@@ -60,13 +60,13 @@ export var codeInfo = {
   },
 
   13: {
-    name: "function",
+    name: "block",
     loc: { x: -168, y: -56 },
   },
 
   14: {
     name: "function definition",
-    loc: { x: -224, y: -56 },
+    loc: { x: -56, y: -56 },
   },
 
   15: {
@@ -86,7 +86,7 @@ export var codeInfo = {
 
   18: {
     name: "block",
-    loc: { x: -448, y: -56 },
+    loc: { x: -112, y: -56 },
   },
 
 

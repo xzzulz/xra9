@@ -12,12 +12,12 @@
 // x0,y0: (integers) top left corner in col, subrows coordinates.
 // x1,y1: (integers) bottom right corner in col, subrows coordinates.
 // color: (string) hex color value
-var scopeClass = function( x0, y0, x1, y1, color ) {
-  this.x0 = x0
-  this.y0 = y0
-  this.x1 = x1
-  this.y1 = y1
-  this.color = color
+var scopeClass = function( x, y, w, h, lvl ) {
+  this.x = x
+  this.y = y
+  this.w = w
+  this.h = h
+  this.lvl = lvl
 }
 
 
@@ -71,6 +71,8 @@ var tokenClass = function( id, name, ...options ) {
       this.options = new arrayTokenClass(); this.group = 'array'; break
     case 10:
       this.options = new functionTokenClass(); this.group = 'function'; break
+    case 13:
+      this.options = new blokTokenClass(); this.group = 'block'; break
     case 22:
       this.options = new ifTokenClass(); this.group = 'if'; break
     case 30:
@@ -215,6 +217,15 @@ var commentTokenClass = function( value, width ) {
 var loopTokenClass = function( parPoints, parLen ) {
   this.parPoints = parPoints ? parPoints : 0
   this.parLen = parLen ? parLen : 0
+}
+
+// Token object creator
+//
+// name: (string) text name
+var blokTokenClass = function( w, h, lvl ) {
+  this.w = w ? w : 1
+  this.h = h ? h : 1
+  this.lvl = lvl ? lvl : 1
 }
 
 // Token object creator

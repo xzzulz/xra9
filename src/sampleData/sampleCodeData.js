@@ -2,13 +2,8 @@ import { scopeClass, lineClass, varlistItem, tokenClass, stepClass, floatClass, 
 
 
 var scopes = [
-  new scopeClass( 0, 0, 34, 60, '#0d0f13' ),
-  new scopeClass( 2, 4, 30, 42, '#14171c' ),
-  new scopeClass( 8, 6, 28, 24, '#191d23' ),
-  new scopeClass( 8, 30, 28, 36, '#191d23' ),
-  new scopeClass( 6, 16, 7, 17, '#0d3139' ),
-  new scopeClass( 8, 16, 9, 17, '#0d3139' ),
-  new scopeClass( 10, 20, 11, 21, '#0d3139' )
+  new scopeClass( 2, 2, 10, 6, 1 ),
+  new scopeClass( 3, 3, 4, 3, 2 ),
 ]
 
 
@@ -430,4 +425,4 @@ var floats = [
 floats = []
 
 
-export { lines, scopes, floats, varList, typeList }
+export { lines, floats, varList, typeList }

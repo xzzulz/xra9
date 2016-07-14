@@ -12,6 +12,8 @@ import './optiontags/optnpin.tag'
 import './optiontags/optnflag.tag'
 import './optiontags/optnob.tag'
 import './optiontags/optntyp.tag'
+import './optiontags/optnblok.tag'
+
 
 
 <optionkit>
@@ -30,6 +32,7 @@ import './optiontags/optntyp.tag'
   <optnflag if={ group == 'flag' }></optnflag>
   <optnob if={ group == 'object' }></optnob>
   <optntyp if={ group == 'type' }></optntyp>
+  <optnblok if={ group == 'block' }></optnblok>
 
 
   <script>

@@ -21,7 +21,7 @@ import { codeInfo } from '../../stores/codeInfo.js'
       if (this.id != 10) return
 
       if ( this.options.bubble )
-        this.bk.style.backgroundPosition = codeInfo[ this.id ].loc.x - 224 + 'px ' + codeInfo[ this.id ].loc.y + 'px'
+        this.bk.style.backgroundPosition = codeInfo[ this.id ].loc.x - 56 + 'px ' + codeInfo[ this.id ].loc.y + 'px'
       else
         this.bk.style.backgroundPosition = codeInfo[ this.id ].loc.x + 'px ' + codeInfo[ this.id ].loc.y + 'px'
 

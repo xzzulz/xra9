@@ -1,4 +1,4 @@
-import { lines, scopes, floats, varList, typeList } from '../sampleData/sampleCodeData.js'
+import { lines, floats, varList, typeList } from '../sampleData/sampleCodeData.js'
 import { scopeClass, lineClass, tokenClass, stepClass, floatClass, floatTokenClass } from '../stores/codeClasses.js'
 import { toolbarDo } from './toolbarStore.js'
 
@@ -20,9 +20,8 @@ var codeStoreClass = function() {
   var signal = this.signal
 
   this.mutations = {
-    setData( lines, scopes, floats, vars, types ) {
+    setData( lines, floats, vars, types ) {
       state.lines = lines
-      state.scopes = scopes
       state.floats = floats
       state.vars = vars,
       state.types = types
@@ -221,6 +220,23 @@ var codeStoreClass = function() {
       }
     },
 
+    blokSize( points ) {
+      var token = util.cursorToken()
+      if ( token.id != 13 ) return
+      if ( points == 0 ) token.options.w++
+      else if ( points == 1 ) token.options.h++
+      else if ( points == 2 && token.options.w > 1 ) token.options.w--
+      else if ( points == 3 && token.options.h > 1 ) token.options.h--
+      signal.trigger('updateCursorToken')
+    },
+
+    blokLvl() {
+      var token = util.cursorToken()
+      if ( token.id != 13 ) return
+      if ( ++token.options.lvl > 3 ) token.options.lvl = 1
+      signal.trigger('updateCursorToken')
+    },
+
   }
 
   this.util = {
@@ -251,7 +267,7 @@ function download(filename, text) {
 
 var codeStore = new codeStoreClass()
 
-codeStore.mutations.setData( lines, scopes, floats, varList, typeList )
+codeStore.mutations.setData( lines, floats, varList, typeList )
 
 var codeState = codeStore.state
 var codeDo = codeStore.do
