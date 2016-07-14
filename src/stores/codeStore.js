@@ -53,6 +53,16 @@ var codeStoreClass = function() {
       }
     },
 
+    delete() {
+      var token = util.cursorToken()
+      token.id = 0
+      token.group = ''
+      token.name = ''
+      token.options = {}
+      signal.trigger( 'forceUpdateToken', state.cursor )
+      signal.trigger( 'updateCursor' )
+    },
+
     moveCursor( loc ) {
       state.cursor.x = loc.x
       state.cursor.y = loc.y

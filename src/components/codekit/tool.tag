@@ -15,6 +15,10 @@ import { toolbarDo } from '../../stores/toolbarStore.js'
 
     this.onclick = ( e ) => {
       e.preventUpdate = true
+      if ( this.id == 60 ) {
+        codeDo({ action: 'delete' })
+        return
+      }
       codeDo({
         action: 'setToken',
         data: { id: this.id, name: '' }

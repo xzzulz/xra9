@@ -196,6 +196,10 @@ export var codeInfo = {
     loc: { x: -224, y: -280 },
   },
 
+  60: {
+    name: "delete",
+    loc: { x: 0, y: -336 },
+  },
 
 
   70: {
