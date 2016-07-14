@@ -24,17 +24,17 @@ import '../../tokens/tkntyp.tag'
     })
 
     this.click = () => {
-      codeUtil.cursorToken().id = this.token.id
-      codeUtil.cursorToken().name = this.token.name
-      codeUtil.cursorToken().group = this.token.group
+      codeUtil.cursorToken().id = this.id
+      codeUtil.cursorToken().name = this.name
+      codeUtil.cursorToken().group = this.group
       codeUtil.cursorToken().options = {
-        tx1: this.token.options.tx1,
-        tx2: this.token.options.tx2,
-        type: this.token.options.type,
-        typeGroup: this.token.options.typeGroup,
+        tx1: this.options.tx1,
+        tx2: this.options.tx2,
+        type: this.options.type,
+        typeGroup: this.options.typeGroup,
       }
       signal.trigger( 'forceUpdateToken', codeState.cursor )
-      toolbarDo({ action: 'closetypekit' })
+      toolbarDo({ action: 'closeTypekit' })
     }
   </script>
 
