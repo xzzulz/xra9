@@ -1,6 +1,6 @@
 import { codeUtil, signal } from '../../../stores/codeStore.js'
 import { toolbarSignal } from '../../../stores/toolbarStore.js'
-import '../../tokens/tknob.tag'
+import '../../tokens/tkntyp.tag'
 
 
 
@@ -8,7 +8,7 @@ import '../../tokens/tknob.tag'
 
 
   <div></div>
-  <tknob></tknob>
+  <tkntyp></tkntyp>
 
   <label id="varlab1">abbr
     <input id="varin1" type="text" value="hello"  maxlength="8" oninput={ change }>
@@ -33,7 +33,7 @@ import '../../tokens/tknob.tag'
     var token
     this.on('update', () => {
       token = codeUtil.cursorToken()
-      Object.assign( this.tags.tknob, token )
+      Object.assign( this.tags.tkntyp, token )
     })
 
     toolbarSignal.on('typekitVisible', () => {
@@ -102,13 +102,12 @@ import '../../tokens/tknob.tag'
     #varlab3 {
       top: 7vw;
     }
-    tknvar,tknob {
+    tkntyp {
       font-size: 2.3vw;
       top: 0vw;
       left: 1vw;
       width: 13vw;
       height: 13vw;
-      color: #748396;
     }
   </style>
 
