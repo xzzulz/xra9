@@ -18,7 +18,6 @@ import { getType } from '../../utils/util.js'
 
     this.on("update", () => {
       if ( this.id < 70 || this.id > 73 ) return
-      this.bk.style.backgroundPosition = codeInfo[ this.id ].loc.x + 'px ' + codeInfo[ this.id ].loc.y + 'px'
       switch ( this.options.points ) {
         case 0:
           this.dotpoint.style.transform = 'translate3d(53px, 30px, 0px)'
@@ -50,36 +49,33 @@ import { getType } from '../../utils/util.js'
       color: #2696c1;
     }
     #bk {
-      width: 56px;
-      height: 56px;
+      width: 100%;
+      height: 100%;
       display: block;
-      background-image: url('assets/img/tk90.svg');
-      background-size: 560px 560px;
+      background-image: url('assets/img/tokens/typ.svg');
+      background-size: 100% 100%;
       z-index: 10;
       position: absolute;
     }
     #tt0t {
-      width: 56px;
+      width: 100%;
       text-align: center;
       position: absolute;
-      top: 10px;
-      margin: 0;
+      top: 18%;
       z-index: 10;
     }
     #tt1t {
       position: absolute;
-      top: 2px;
-      width: 56px;
+      top: 3%;
+      width: 100%;
       text-align: center;
-      margin: 0;
       z-index: 10;
     }
     #tt2t {
       position: absolute;
-      width: 56px;
+      width: 100%;
       text-align: center;
-      top: 12px;
-      margin: 0;
+      top: 22%;
       z-index: 10;
     }
     #type {

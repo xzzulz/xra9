@@ -47,7 +47,7 @@ import '../../tokens/tkntyp.tag'
     }
     tkntyp {
       font-size: .8vw;
-      color: #748396;
+      color: #2696c1;
       width: 4vw;
       height: 4vw;
     }
