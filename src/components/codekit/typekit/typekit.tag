@@ -1,5 +1,4 @@
-import { codeUtil, codeState } from '../../../stores/codeStore.js'
-import { toolbarSignal } from '../../../stores/toolbarStore.js'
+import { toolbarDo } from '../../../stores/toolbarStore.js'
 import './typekitinfo.tag'
 import './typekitlocal.tag'
 import './typekittypeinfo.tag'
@@ -14,7 +13,7 @@ import './typekittypes.tag'
     <input id="tsearch">
   </label>
   <div id="typkitnew"></div>
-  <div id="typkitok"></div>
+  <div id="typkitok" onclick={ ok }></div>
 
   <typekitinfo></typekitinfo>
 
@@ -28,7 +27,7 @@ import './typekittypes.tag'
   <typekittypes></typekittypes>
 
   <script>
-
+    this.ok = () => toolbarDo({ action: 'closeTypekit' })
   </script>
 
 
