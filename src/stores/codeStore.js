@@ -64,23 +64,29 @@ var codeStoreClass = function() {
     },
 
     moveCursor( loc ) {
+      if ( loc.x > state.lines[0].tokens.length - 1 ) return
+      if ( loc.y > state.lines.length - 1 ) return
+      if ( state.lines[ loc.y ].tokens.length == 0 ) return
       state.cursor.x = loc.x
       state.cursor.y = loc.y
       signal.trigger( 'updateCursor' )
     },
 
     moveCursorUp() {
-      if ( state.cursor.y > 0 ) {
-        state.cursor.y--
-        signal.trigger( 'updateCursor' )
-      }
+      if ( state.cursor.y == 0 ) return
+      state.cursor.y--
+      if ( state.lines[ state.cursor.y ].tokens.length == 0 ) state.cursor.y--
+      if ( state.cursor.y < 0 ) state.cursor.y += 2
+      signal.trigger( 'updateCursor' )
+
     },
 
     moveCursorDown() {
-      if ( state.cursor.y < state.lines.length - 1 ) {
-        state.cursor.y++
-        signal.trigger( 'updateCursor' )
-      }
+      if ( state.cursor.y == state.lines.length - 1 ) return
+      state.cursor.y++
+      if ( state.lines[ state.cursor.y ].tokens.length == 0 ) state.cursor.y++
+      if ( state.cursor.y >= state.lines.length ) state.cursor.y -= 2
+      signal.trigger( 'updateCursor' )
     },
 
     moveCursorLeft() {

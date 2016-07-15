@@ -17,6 +17,7 @@ var line0 = new lineClass(
     new tokenClass( 1, 'm55' ),
     new tokenClass( 6, 'fast' ),
     new tokenClass( 0, '1234' ),
+
     new tokenClass( 4, '0000' ),
     new tokenClass( 3, 'xxxxx' ),
     new tokenClass( 6, 'quick' ),
@@ -25,6 +26,7 @@ var line0 = new lineClass(
     new tokenClass( 4, '0000' ),
     new tokenClass( 6, 'xxxxx' ),
     new tokenClass( 3, 'quick' ),
+
     new tokenClass( 5, 'qust' ),
     new tokenClass( 1, 'm55' ),
     new tokenClass( 6, 'fast' ),
@@ -33,6 +35,7 @@ var line0 = new lineClass(
     new tokenClass( 3, 'xxxxx' ),
     new tokenClass( 6, 'quick' ),
     new tokenClass( 6, 'web' ),
+
     new tokenClass( 0, '1234' ),
     new tokenClass( 4, '0000' ),
     new tokenClass( 6, 'xxxxx' ),
@@ -40,6 +43,7 @@ var line0 = new lineClass(
     new tokenClass( 2, 'web' ),
     new tokenClass( 6, 'quick' ),
     new tokenClass( 6, 'web' ),
+    new tokenClass( 3, 'quick' ),
   ],
   [
     new stepClass( 0 ),
@@ -365,8 +369,18 @@ var lines = [
   line6,
   line7,
   line8,
-
 ]
+var alin
+for ( var i=0; i<16; i++ ) {
+  alin = new lineClass([])
+  for (var j = 0; j < 32; j++) {
+    alin.tokens.push( new tokenClass( 0, '' ) )
+  }
+  lines.push( alin )
+  if ( i%8 == 0 ) lines.push( new lineClass([]) )
+}
+
+
 
 
 var varList = {
