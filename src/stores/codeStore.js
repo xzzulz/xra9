@@ -172,7 +172,7 @@ var codeStoreClass = function() {
 
     typedot() {
       var token = util.cursorToken()
-      if ( token.group == 'object' ) {
+      if ( token.group == 'object' || token.group == 'var' ) {
         token.options.typedot = ! token.options.typedot
         signal.trigger('updateCursorToken')
       }

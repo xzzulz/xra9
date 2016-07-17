@@ -5,6 +5,9 @@ import tokenChart from '../../resInfo/tokenChart.js'
 <tknvar>
 
 
+  <div id="prop" if={ options.prop }></div>
+  <div id="typdot" if={ options.typedot }></div>
+
   <div id="tt0" if={ ! options.tx2 }>{ options.tx1 }</div>
   <div id="tt1" if={ options.tx2 }>{ options.tx1 }</div>
   <div id="tt2" if={ options.tx2 }>{ options.tx2 }</div>
@@ -20,8 +23,7 @@ import tokenChart from '../../resInfo/tokenChart.js'
     this.on("update", () => {
       if ( this.id < 3 || this.id > 5 ) return
       this.bk.style.backgroundImage = tokenChart[ this.id ].img
-      this.flag.style.filter = 'hue-rotate(' + this.options.flag + 'deg)'
-      this.flag.style.webkitFilter = 'hue-rotate(' + this.options.flag + 'deg)'
+      this.prop.style.backgroundColor = this.options.prop
     })
 
   </script>
@@ -73,15 +75,26 @@ import tokenChart from '../../resInfo/tokenChart.js'
       background:  url('assets/img/varbubble.svg');
       background-size: 66px 66px;
     }
-    #flag {
-      position: absolute;
-      width: 12.5%;
-      height: 14.2859375%;
-      left: 15.625%;
-      top: 48.4375%;
+    #prop {
+      width: 21.875%;
+      height: 21.875%;
+      display: block;
       z-index: 10;
-      background:  url('assets/img/tokens/miniflag.svg');
-      background-size: 100% 100%;
+      position: absolute;
+      left: 18.75%;
+      top: 55.46875%;
+      border-radius: 50%;
+    }
+    #typdot {
+      width: 9.375%;
+      height: 9.375%;
+      display: block;
+      z-index: 10;
+      position: absolute;
+      left: 14.0625%;
+      top: 48.4375%;
+      border-radius: 50%;
+      background-color: #518093;
     }
   </style>
 
