@@ -4,14 +4,16 @@ import { getType } from '../../utils/util.js'
 
 <tknob>
 
+
+  <div id="dot" if={ options.dot }></div>
+  <div id="prop" if={ options.prop }></div>
+
   <div id="tt0" if={ ! options.tx2 }>{ options.tx1 }</div>
   <div id="tt1" if={ options.tx2 }>{ options.tx1 }</div>
   <div id="tt2" if={ options.tx2 }>{ options.tx2 }</div>
 
   <div id="bk"></div>
   <div id="type" if={ options.typeGroup }></div>
-  <div id="dotpoint" if={ options.dot }></div>
-  <div id="flag" if={ options.flag }></div>
 
   <div class="varbubble" if={ options.bubble }></div>
 
@@ -19,25 +21,14 @@ import { getType } from '../../utils/util.js'
   <script>
     this.on( 'update', () => {
       if ( this.id != 6 ) return
-      switch ( this.options.points ) {
-        case 0:
-          this.dotpoint.style.transform = 'translate3d(53px, 30px, 0px)'
-          break;
-        case 1:
-          this.dotpoint.style.transform = 'translateX(24px) translateY(49px) rotate(90deg)'
-          break;
-        case 2:
-          this.dotpoint.style.transform = 'translateX(-4px) translateY(30px) rotate(180deg)'
-          break;
-        case 3:
-          this.dotpoint.style.transform = 'translateX(24px) translateY(-7px) rotate(270deg)'
-          break;
-      }
+
       if ( this.options.typeGroup ) {
         this.type.style.backgroundImage = getType( this.options )
       }
-      this.flag.style.filter = 'hue-rotate(' + this.options.flag + 'deg)'
-      this.flag.style.webkitFilter = 'hue-rotate(' + this.options.flag + 'deg)'
+
+      this.dot.style.backgroundColor = this.options.dot
+      this.prop.style.backgroundColor = this.options.prop
+
     })
   </script>
 
@@ -68,14 +59,25 @@ import { getType } from '../../utils/util.js'
       z-index: 11;
       position: absolute;
     }
-    #dotpoint {
-      width: 12.5%;
+    #dot {
+      width: 25%;
       height: 25%;
       display: block;
-      background-image: url('assets/img/tokens/dot.svg');
-      background-size: 100% 100%;
       z-index: 10;
       position: absolute;
+      left: 64.0625%;
+      top: 53.125%;
+      border-radius: 50%;
+    }
+    #prop {
+      width: 25%;
+      height: 25%;
+      display: block;
+      z-index: 10;
+      position: absolute;
+      left: 10.9375%;
+      top: 53.125%;
+      border-radius: 50%;
     }
     #tt0 {
       width: 100%;
@@ -106,16 +108,6 @@ import { getType } from '../../utils/util.js'
       height: 120%;
       z-index: 4;
       background:  url('assets/img/tokens/varbubble.svg');
-      background-size: 100% 100%;
-    }
-    #flag {
-      position: absolute;
-      width: 12.5%;
-      height: 14.2859375%;
-      left: 9.375%;
-      top: 42.1875%;
-      z-index: 10;
-      background:  url('assets/img/tokens/miniflag.svg');
       background-size: 100% 100%;
     }
   </style>

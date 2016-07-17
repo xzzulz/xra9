@@ -100,15 +100,14 @@ var tokenClass = function( id, name, ...options ) {
 // Token object creator
 //
 // name: (string) text name
-var objectTokenClass = function( tx1, tx2, type, typeGroup, bubble, dot, points, flag ) {
+var objectTokenClass = function( tx1, tx2, type, typeGroup, bubble, dot, prop ) {
   this.tx1 = tx1 ? tx1 : ''
   this.tx2 = tx2 ? tx2 : ''
   this.type = type ? type : ''
   this.typeGroup = typeGroup ? typeGroup : ''
   this.bubble = bubble ? bubble : false
-  this.dot = dot ? dot : false
-  this.points = points ? points : 0
-  this.flag = flag ? flag : 0
+  this.dot = dot ? dot : ''
+  this.prop = prop ? prop : ''
 }
 
 // Token object creator

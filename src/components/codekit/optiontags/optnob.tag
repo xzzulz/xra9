@@ -6,13 +6,8 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
 
   <div id="optvarbubble" onclick={ bubble }></div>
   <div id="optvarname" onclick={ name }></div>
-
-  <div id="optdotup" onclick={ up } class="optdot"></div>
-  <div id="optdotdown" onclick={ down } class="optdot"></div>
-  <div id="optdotleft" onclick={ left } class="optdot"></div>
-  <div id="optdotright" onclick={ right } class="optdot"></div>
-  <div id="optdotx" onclick={ nodot }></div>
-  <div id="optobflag" onclick={ flag }></div>
+  <div id="optobdot" onclick={ dot }></div>
+  <div id="optobprop" onclick={ prop }></div>
 
 
   <script>
@@ -20,13 +15,8 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
     this.bubble = () => codeDo({ action: 'tokenBubble' })
     this.name = () => toolbarDo({ action: 'obkitVisible' })
 
-    this.up = () => codeDo({ action: 'dotPoints', data: 3 })
-    this.down = () => codeDo({ action: 'dotPoints', data: 1 })
-    this.left = () => codeDo({ action: 'dotPoints', data: 2 })
-    this.right = () => codeDo({ action: 'dotPoints', data: 0 })
-    this.nodot = () => codeDo({ action: 'noDot' })
-
-    this.flag = () => toolbarDo({ action: 'flagkitVisible' })
+    this.dot = () => toolbarDo({ action: 'dotkitVisible' })
+    this.prop = () => toolbarDo({ action: 'propkitVisible' })
 
   </script>
 
@@ -50,10 +40,10 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
     }
 
     #optvarname {
-      left: 2vh;
-      top: 14vh;
-      width: 5vh;
-      height: 5vh;
+      left: 6vh;
+      top: 13vh;
+      width: 7vh;
+      height: 7vh;
       position: absolute;
       background-image: url('assets/img/options/optname.svg');
       background-size: 100% 100%;
@@ -66,49 +56,22 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
       width: 2.6vh;
       height: 1vh;
     }
-
-    .optdot {
-      width: 4vh;
-      height: 4vh;
+    #optobdot {
+      left: 15vh;
+      top: 14vh;
+      width: 2.5vh;
+      height: 5vh;
       position: absolute;
-      background-image: url('assets/img/options/optfuncparup.svg');
+      background-image: url('assets/img/options/optobdot.svg');
       background-size: 100% 100%;
     }
-    #optdotup {
-      left: 14vh;
-      top: 10.2vh;
-    }
-    #optdotdown {
-      left: 14vh;
-      top: 15.8vh;
-      transform: rotate(180deg);
-    }
-    #optdotleft {
-      left: 9.8vh;
-      top: 13.1vh;
-      transform: rotate(-90deg);
-    }
-    #optdotright {
-      left: 18.4vh;
-      top: 13.1vh;
-      transform: rotate(90deg);
-    }
-    #optdotx {
-      width: 3vh;
-      height: 3vh;
+    #optobprop {
+      left: 1.5vh;
+      top: 14vh;
+      width: 2.5vh;
+      height: 5vh;
       position: absolute;
-      background-image: url('assets/img/options/optfuncparx.svg');
-      background-size: 100% 100%;
-      left: 18.7vh;
-      top: 9.5vh;
-    }
-    #optobflag {
-      left: 2vh;
-      top: 11vh;
-      width: 2vh;
-      height: 2vh;
-      position: absolute;
-      background-image: url('assets/img/options/optflag.svg');
+      background-image: url('assets/img/options/optprop.svg');
       background-size: 100% 100%;
     }
   </style>

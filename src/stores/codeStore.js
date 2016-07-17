@@ -170,10 +170,28 @@ var codeStoreClass = function() {
       }
     },
 
+    dotColor( color ) {
+      var token = util.cursorToken()
+      if ( token.group == 'object' ) {
+        token.options.dot = color
+        toolbarDo({ action: 'dotkitVisible' })
+        signal.trigger('updateCursorToken')
+      }
+    },
+
     noDot() {
       var token = util.cursorToken()
-      if ( token.group == 'object' || token.group == 'type' ) {
-        token.options.dot = false
+      if ( token.group == 'object' ) {
+        token.options.dot = ''
+        signal.trigger('updateCursorToken')
+      }
+    },
+
+    propColor( color ) {
+      var token = util.cursorToken()
+      if ( token.group == 'object' || token.group == 'var' ) {
+        token.options.prop = color
+        toolbarDo({ action: 'propkitVisible' })
         signal.trigger('updateCursorToken')
       }
     },

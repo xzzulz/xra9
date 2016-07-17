@@ -67,6 +67,12 @@ var toolbarStoreClass = function() {
     flagkit: {
       visible: false
     },
+    dotkit: {
+      visible: false
+    },
+    propkit: {
+      visible: false
+    },
     typekit: {
       visible: false
     },
@@ -195,6 +201,16 @@ var toolbarStoreClass = function() {
     flagkitVisible() {
       state.flagkit.visible = ! state.flagkit.visible
       signal.trigger('flagkitVisible')
+    },
+
+    dotkitVisible() {
+      state.dotkit.visible = ! state.dotkit.visible
+      signal.trigger('dotkitVisible')
+    },
+
+    propkitVisible() {
+      state.propkit.visible = ! state.propkit.visible
+      signal.trigger('propkitVisible')
     },
 
     typekitVisible() {
