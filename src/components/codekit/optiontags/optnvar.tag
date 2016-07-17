@@ -6,14 +6,15 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
 
   <div id="optvarbubble" onclick={ bubble }></div>
   <div id="optvarname" onclick={ name }></div>
-  <div id="optvarflag" onclick={ flag }></div>
-
+  <div id="optvarprop" onclick={ prop }></div>
+  <div id="optvartypdot" onclick={ typdot }></div>
 
   <script>
 
     this.bubble = () => codeDo({ action: 'tokenBubble' })
     this.name = () => toolbarDo({ action: 'varkitVisible' })
-    this.flag = () => toolbarDo({ action: 'flagkitVisible' })
+    this.prop = () => toolbarDo({ action: 'propkitVisible' })
+    this.typdot = () => codeDo({ action: 'typedot' })
 
   </script>
 
@@ -26,30 +27,38 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
     }
     #optvarbubble {
       left: 3vh;
-      top: 3vh;
+      top: 2vh;
       width: 8vh;
       height: 8vh;
       position: absolute;
       background-image: url('assets/img/options/optvarbubble.svg');
       background-size: 100% 100%;
-      cursor: pointer;
     }
     #optvarname {
-      left: 5.5vh;
+      left: 6vh;
       top: 13vh;
-      width: 5vh;
-      height: 5vh;
+      width: 6vh;
+      height: 6vh;
       position: absolute;
       background-image: url('assets/img/options/optname.svg');
       background-size: 100% 100%;
     }
-    #optvarflag {
+    #optvarprop {
       left: 2vh;
-      top: 13vh;
+      top: 14.5vh;
       width: 2vh;
-      height: 2vh;
+      height: 4vh;
       position: absolute;
-      background-image: url('assets/img/options/optflag.svg');
+      background-image: url('assets/img/options/optprop.svg');
+      background-size: 100% 100%;
+    }
+    #optvartypdot {
+      left: 2vh;
+      top: 12.5vh;
+      width: 1.5vh;
+      height: 1.5vh;
+      position: absolute;
+      background-image: url('assets/img/options/opttypdot.svg');
       background-size: 100% 100%;
     }
   </style>
