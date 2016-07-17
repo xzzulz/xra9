@@ -179,10 +179,10 @@ var codeStoreClass = function() {
       }
     },
 
-    noDot() {
+    typedot() {
       var token = util.cursorToken()
       if ( token.group == 'object' ) {
-        token.options.dot = ''
+        token.options.typedot = ! token.options.typedot
         signal.trigger('updateCursorToken')
       }
     },

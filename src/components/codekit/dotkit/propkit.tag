@@ -46,22 +46,6 @@ import '../flagkitnoflag.tag'
 
     this.noProp = () => codeDo({ action: 'propColor', data: '' })
 
-/*
-    this.tags.dotcolor[0].options = { color: -93 }//lime
-    this.tags.dotcolor[1].options = { color: -70 }// green
-    this.tags.dotcolor[2].options = { color: 0 }//turq
-    this.tags.dotcolor[3].options = { color: 20 }// aqua
-
-    this.tags.dotcolor[4].options = { color: 30 }//lblue
-    this.tags.dotcolor[5].options = { color: 70 }// blue
-    this.tags.dotcolor[6].options = { color: 100 }//purple
-    this.tags.dotcolor[7].options = { color: 120 }//pink
-
-    this.tags.dotcolor[8].options = { color: 150 }//magenta
-    this.tags.dotcolor[9].options = { color: 190 }// red
-    this.tags.dotcolor[10].options = { color: 220 }//orange
-    this.tags.dotcolor[11].options = { color: 250 }//yellow
-*/
     this.tags.dotcolor[0].options = { color: color.yellgren }//yellowgreen
     this.tags.dotcolor[1].options = { color: color.gren }// green
     this.tags.dotcolor[2].options = { color: color.seagren }//sea green

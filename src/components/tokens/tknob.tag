@@ -7,6 +7,7 @@ import { getType } from '../../utils/util.js'
 
   <div id="dot" if={ options.dot }></div>
   <div id="prop" if={ options.prop }></div>
+  <div id="typdot" if={ options.typedot }></div>
 
   <div id="tt0" if={ ! options.tx2 }>{ options.tx1 }</div>
   <div id="tt1" if={ options.tx2 }>{ options.tx1 }</div>
@@ -78,6 +79,17 @@ import { getType } from '../../utils/util.js'
       left: 10.9375%;
       top: 53.125%;
       border-radius: 50%;
+    }
+    #typdot {
+      width: 9.375%;
+      height: 9.375%;
+      display: block;
+      z-index: 10;
+      position: absolute;
+      left: 10.9375%;
+      top: 42.1875%;
+      border-radius: 50%;
+      background-color: #518093;
     }
     #tt0 {
       width: 100%;

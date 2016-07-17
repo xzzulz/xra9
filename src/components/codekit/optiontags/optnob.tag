@@ -8,6 +8,7 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
   <div id="optvarname" onclick={ name }></div>
   <div id="optobdot" onclick={ dot }></div>
   <div id="optobprop" onclick={ prop }></div>
+  <div id="opttypdot" onclick={ typdot }></div>
 
 
   <script>
@@ -17,6 +18,8 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
 
     this.dot = () => toolbarDo({ action: 'dotkitVisible' })
     this.prop = () => toolbarDo({ action: 'propkitVisible' })
+
+    this.typdot = () => codeDo({ action: 'typedot' })
 
   </script>
 
@@ -52,9 +55,7 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
       position: absolute;
       left: 14.7vh;
       top: 14.5vh;
-      background: #163461;
-      width: 2.6vh;
-      height: 1vh;
+      background: #163prop
     }
     #optobdot {
       left: 15vh;
@@ -72,6 +73,15 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
       height: 5vh;
       position: absolute;
       background-image: url('assets/img/options/optprop.svg');
+      background-size: 100% 100%;
+    }
+    #opttypdot {
+      left: 1.5vh;
+      top: 11vh;
+      width: 2vh;
+      height: 2vh;
+      position: absolute;
+      background-image: url('assets/img/options/opttypdot.svg');
       background-size: 100% 100%;
     }
   </style>

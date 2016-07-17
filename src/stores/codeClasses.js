@@ -100,7 +100,7 @@ var tokenClass = function( id, name, ...options ) {
 // Token object creator
 //
 // name: (string) text name
-var objectTokenClass = function( tx1, tx2, type, typeGroup, bubble, dot, prop ) {
+var objectTokenClass = function( tx1, tx2, type, typeGroup, bubble, dot, prop, typedot ) {
   this.tx1 = tx1 ? tx1 : ''
   this.tx2 = tx2 ? tx2 : ''
   this.type = type ? type : ''
@@ -108,6 +108,7 @@ var objectTokenClass = function( tx1, tx2, type, typeGroup, bubble, dot, prop ) 
   this.bubble = bubble ? bubble : false
   this.dot = dot ? dot : ''
   this.prop = prop ? prop : ''
+  this.typedot = typedot ? typedot : false
 }
 
 // Token object creator
