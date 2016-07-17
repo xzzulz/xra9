@@ -8,7 +8,6 @@ import './obkit/obkit.tag'
 import './numkit.tag'
 import './textkit.tag'
 import './opkit.tag'
-import './flagkit.tag'
 import './dotkit/dotkit.tag'
 import './dotkit/propkit.tag'
 import './typekit/typekit.tag'
@@ -25,7 +24,6 @@ import './typekit/typekit.tag'
   <numkit if={ numkitVisible }></numkit>
   <textkit if={ textkitVisible }></textkit>
   <opkit if={ opkitVisible }></opkit>
-  <flagkit if={ flagkitVisible }></flagkit>
   <typekit if={ typekitVisible }></typekit>
   <dotkit if={ dotkitVisible }></dotkit>
   <propkit if={ propkitVisible }></propkit>
@@ -37,7 +35,6 @@ import './typekit/typekit.tag'
     this.numkitVisible = false
     this.textkitVisible = false
     this.opkitVisible = false
-    this.flagkitVisible = false
     this.dotkitVisible = false
     this.propkitVisible = false
     this.typekitVisible = false
@@ -69,11 +66,6 @@ import './typekit/typekit.tag'
 
     toolbarSignal.on('propkitVisible', () => {
       this.propkitVisible = toolbarState.propkit.visible
-      this.update()
-    })
-
-    toolbarSignal.on('flagkitVisible', () => {
-      this.flagkitVisible = toolbarState.flagkit.visible
       this.update()
     })
 

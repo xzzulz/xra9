@@ -115,7 +115,7 @@ var codeStoreClass = function() {
 
     tokenPoints( data ) {
       var token = util.cursorToken()
-      if ( token.group == 'function' || token.group == 'arrow' || token.group == 'operator' || token.group == 'pin' || token.group == 'flag' ) {
+      if ( token.group == 'function' || token.group == 'arrow' || token.group == 'operator' || token.group == 'pin' ) {
         token.options.points = data
         signal.trigger('updateCursorToken')
       }
@@ -123,7 +123,7 @@ var codeStoreClass = function() {
 
     tokenColor( data ) {
       var token = util.cursorToken()
-      if ( token.group == 'pin' || token.group == 'flag' ) {
+      if ( token.group == 'pin' ) {
         token.options.color = data
         signal.trigger('updateCursorToken')
       }
@@ -157,15 +157,6 @@ var codeStoreClass = function() {
       var token = util.cursorToken()
       if ( token.group == 'function' || token.group == 'operator' || token.group == 'loop' ) {
         token.options.parLen = 0
-        signal.trigger('updateCursorToken')
-      }
-    },
-
-    dotPoints( data ) {
-      var token = util.cursorToken()
-      if ( token.group == 'object' || token.group == 'type' ) {
-        token.options.points = data
-        token.options.dot = true
         signal.trigger('updateCursorToken')
       }
     },
@@ -228,12 +219,6 @@ var codeStoreClass = function() {
         token.options.id = id
         signal.trigger('updateCursorToken')
       }
-    },
-
-    flagColor( color ) {
-      util.cursorToken().options.flag = color
-      signal.trigger('updateCursorToken')
-      toolbarDo({ action: 'flagkitVisible' })
     },
 
     ifRotate( data ) {

@@ -16,7 +16,7 @@ var toolbarStoreClass = function() {
 
       { id: 10 },
       { id: 40 },
-      { id: 18 },
+      { id: 13 },
 
       { id: 30 },
       { id: 31 },
@@ -26,9 +26,8 @@ var toolbarStoreClass = function() {
       { id: 21 },
       { id: 22 },
 
-      { id: 13 },
       { id: 95 },
-      { id: 96 },
+
 
     ],
 
@@ -62,9 +61,6 @@ var toolbarStoreClass = function() {
       visible: false
     },
     opkit: {
-      visible: false
-    },
-    flagkit: {
       visible: false
     },
     dotkit: {
@@ -196,11 +192,6 @@ var toolbarStoreClass = function() {
     closeOpkit() {
       state.opkit.visible = false
       signal.trigger('opkitVisible')
-    },
-
-    flagkitVisible() {
-      state.flagkit.visible = ! state.flagkit.visible
-      signal.trigger('flagkitVisible')
     },
 
     dotkitVisible() {
