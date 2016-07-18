@@ -163,7 +163,7 @@ var codeStoreClass = function() {
 
     dotColor( color ) {
       var token = util.cursorToken()
-      if ( token.group == 'object' ) {
+      if ( token.group == 'object' || token.group == 'array' ) {
         token.options.dot = color
         signal.trigger('updateCursorToken')
       }

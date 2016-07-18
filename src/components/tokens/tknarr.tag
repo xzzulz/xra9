@@ -6,6 +6,9 @@
   <div id="prop" if={ options.prop }></div>
   <div id="typdot" if={ options.typedot }></div>
 
+  <div id="dot" if={ options.dot }></div>
+  <div id="ix" if={ options.index }></div>
+
   <div id="tt0" if={ ! options.tx2 }>{ options.tx1 }</div>
   <div id="tt1" if={ options.tx2 }>{ options.tx1 }</div>
   <div id="tt2" if={ options.tx2 }>{ options.tx2 }</div>
@@ -24,6 +27,8 @@
       }
 
       this.prop.style.backgroundColor = this.options.prop
+      this.ix.style.backgroundColor = this.options.index
+      this.dot.style.backgroundColor = this.options.dot
 
     })
   </script>
@@ -106,6 +111,26 @@
       top: 42.1875%;
       border-radius: 50%;
       background-color: #518093;
+    }
+    #ix {
+      width: 25%;
+      height: 25%;
+      display: block;
+      z-index: 10;
+      position: absolute;
+      left: 64.0625%;
+      top: 53.125%;
+      border-radius: 50%;
+    }
+    #dot {
+      width: 12.5%;
+      height: 25%;
+      display: block;
+      z-index: 10;
+      position: absolute;
+      left: 85.9375%;
+      top: 53.125%;
+      border-radius: 0 8px 8px 0;
     }
   </style>
 

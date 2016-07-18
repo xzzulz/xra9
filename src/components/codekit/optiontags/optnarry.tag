@@ -31,7 +31,7 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
     this.prop = () => toolbarDo({ action: 'propColor' })
     this.typdot = () => codeDo({ action: 'typedot' })
 
-    this.ix = () => toolbarDo({ action: 'cindexColor' })
+    this.ix = () => toolbarDo({ action: 'indexColor' })
     this.dot = () => toolbarDo({ action: 'dotColor' })
 
     this.parup = () => codeDo({ action: 'functionParPoints', data: 3 })

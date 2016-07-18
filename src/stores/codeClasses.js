@@ -133,10 +133,10 @@ var arrayTokenClass = function( tx1, tx2, type, typeGroup, bubble, dot, prop, ty
   this.type = type ? type : ''
   this.typeGroup = typeGroup ? typeGroup : ''
   this.bubble = bubble ? bubble : false
-  this.dot = dot ? dot : false
+  this.dot = dot ? dot : ''
   this.prop = prop ? prop : ''
   this.typedot = typedot ? typedot : false
-  this.index = index ? index : false
+  this.index = index ? index : ''
 }
 
 // Token object creator
