@@ -1,4 +1,4 @@
-import { codeDo } from '../../../stores/codeStore.js'
+import { codeDo, codeUtil } from '../../../stores/codeStore.js'
 import { toolbarDo } from '../../../stores/toolbarStore.js'
 
 <optnvar>
@@ -9,13 +9,20 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
   <div id="optvarprop" onclick={ prop }></div>
   <div id="optvartypdot" onclick={ typdot }></div>
 
+  <div id="optvarixdot" onclick={ ixdot } if={ id == 4 }></div>
+
   <script>
 
     this.bubble = () => codeDo({ action: 'tokenBubble' })
     this.name = () => toolbarDo({ action: 'varkitVisible' })
     this.prop = () => toolbarDo({ action: 'propColor' })
     this.typdot = () => codeDo({ action: 'typedot' })
+    this.ixdot = () => toolbarDo({ action: 'indexColor' })
 
+    this.id = 0
+    this.on( 'update', () => {
+      this.id = codeUtil.cursorToken().id
+    })
   </script>
 
 
@@ -57,6 +64,15 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
       top: 12.5vh;
       width: 1.5vh;
       height: 1.5vh;
+      position: absolute;
+      background-image: url('assets/img/options/opttypdot.svg');
+      background-size: 100% 100%;
+    }
+    #optvarixdot {
+      left: 13.5vh;
+      top: 15vh;
+      width: 3vh;
+      height: 3vh;
       position: absolute;
       background-image: url('assets/img/options/opttypdot.svg');
       background-size: 100% 100%;

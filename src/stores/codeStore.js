@@ -186,7 +186,7 @@ var codeStoreClass = function() {
 
     indexColor( color ) {
       var token = util.cursorToken()
-      if ( token.group == 'array' ) {
+      if ( token.group == 'array' || token.id == 4 ) {
         token.options.index = color
         signal.trigger('updateCursorToken')
       }

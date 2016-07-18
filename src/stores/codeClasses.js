@@ -239,12 +239,13 @@ var blokTokenClass = function( w, h, lvl ) {
 // Token object creator
 //
 // name: (string) text name
-var varTokenClass = function( tx1, tx2, bubble, prop, typedot ) {
+var varTokenClass = function( tx1, tx2, bubble, prop, typedot, index ) {
   this.tx1 = tx1 ? tx1 : ''
   this.tx2 = tx2 ? tx2 : ''
   this.bubble = bubble ? bubble : false
   this.prop = prop ? prop : ''
   this.typedot = typedot ? typedot : false
+  this.index = index ? index : ''
 }
 
 // todo: review this

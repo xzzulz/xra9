@@ -7,6 +7,7 @@ import tokenChart from '../../resInfo/tokenChart.js'
 
   <div id="prop" if={ options.prop }></div>
   <div id="typdot" if={ options.typedot }></div>
+  <div id="ix" if={ options.index }></div>
 
   <div id="tt0" if={ ! options.tx2 }>{ options.tx1 }</div>
   <div id="tt1" if={ options.tx2 }>{ options.tx1 }</div>
@@ -24,6 +25,8 @@ import tokenChart from '../../resInfo/tokenChart.js'
       if ( this.id < 3 || this.id > 5 ) return
       this.bk.style.backgroundImage = tokenChart[ this.id ].img
       this.prop.style.backgroundColor = this.options.prop
+
+      if ( this.id == 4 ) this.ix.style.backgroundColor = this.options.index
     })
 
   </script>
@@ -95,6 +98,16 @@ import tokenChart from '../../resInfo/tokenChart.js'
       top: 48.4375%;
       border-radius: 50%;
       background-color: #518093;
+    }
+    #ix {
+      width: 14.0625%;
+      height: 14.0625%;
+      display: block;
+      z-index: 10;
+      position: absolute;
+      left: 73.4375%;
+      top: 59.375%;
+      border-radius: 50%;
     }
   </style>
 
