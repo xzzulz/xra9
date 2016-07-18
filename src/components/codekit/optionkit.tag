@@ -13,13 +13,14 @@ import './optiontags/optnflag.tag'
 import './optiontags/optnob.tag'
 import './optiontags/optntyp.tag'
 import './optiontags/optnblok.tag'
+import './optiontags/optnarry.tag'
 
 
 
 <optionkit>
 
 
-  <optnvar if={ group == 'var' || group == 'array' }></optnvar>
+  <optnvar if={ group == 'var' }></optnvar>
   <optnfunc if={ group == 'function' }></optnfunc>
   <optnarrw if={ group == 'arrow' }></optnarrw>
   <optnnum if={ group == 'number' }></optnnum>
@@ -33,6 +34,7 @@ import './optiontags/optnblok.tag'
   <optnob if={ group == 'object' }></optnob>
   <optntyp if={ group == 'type' }></optntyp>
   <optnblok if={ group == 'block' }></optnblok>
+  <optnarry if={ group == 'array' }></optnarry>
 
 
   <script>

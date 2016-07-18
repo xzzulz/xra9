@@ -172,7 +172,7 @@ var codeStoreClass = function() {
 
     typedot() {
       var token = util.cursorToken()
-      if ( token.group == 'object' || token.group == 'var' ) {
+      if ( token.group == 'object' || token.group == 'var' || token.group == 'array' ) {
         token.options.typedot = ! token.options.typedot
         signal.trigger('updateCursorToken')
       }
@@ -180,7 +180,7 @@ var codeStoreClass = function() {
 
     propColor( color ) {
       var token = util.cursorToken()
-      if ( token.group == 'object' || token.group == 'var' ) {
+      if ( token.group == 'object' || token.group == 'var' || token.group == 'array' ) {
         token.options.prop = color
         toolbarDo({ action: 'propkitVisible' })
         signal.trigger('updateCursorToken')
