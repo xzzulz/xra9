@@ -13,7 +13,7 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
 
     this.bubble = () => codeDo({ action: 'tokenBubble' })
     this.name = () => toolbarDo({ action: 'varkitVisible' })
-    this.prop = () => toolbarDo({ action: 'propkitVisible' })
+    this.prop = () => toolbarDo({ action: 'propColor' })
     this.typdot = () => codeDo({ action: 'typedot' })
 
   </script>

@@ -1,4 +1,4 @@
-import { codeDo } from '../../../stores/codeStore.js'
+import { toolbarDo } from '../../../stores/toolbarStore.js'
 import color from '../../../resInfo/color.js'
 import './dotcolor.tag'
 import '../flagkitnoflag.tag'
@@ -29,22 +29,22 @@ import '../flagkitnoflag.tag'
 
 
   <script>
-    this.yellgren = () => codeDo({ action: 'dotColor', data: color.yellgren })
-    this.gren = () => codeDo({ action: 'dotColor', data: color.gren })
-    this.seagren = () => codeDo({ action: 'dotColor', data: color.seagren })
-    this.aqua = () => codeDo({ action: 'dotColor', data: color.aqua })
+    this.yellgren = () => toolbarDo({ action: 'setColor', data: color.yellgren })
+    this.gren = () => toolbarDo({ action: 'setColor', data: color.gren })
+    this.seagren = () => toolbarDo({ action: 'setColor', data: color.seagren })
+    this.aqua = () => toolbarDo({ action: 'setColor', data: color.aqua })
 
-    this.sky = () => codeDo({ action: 'dotColor', data: color.sky })
-    this.royblu = () => codeDo({ action: 'dotColor', data: color.royblu })
-    this.blu = () => codeDo({ action: 'dotColor', data: color.blu })
-    this.purp = () => codeDo({ action: 'dotColor', data: color.purp })
+    this.sky = () => toolbarDo({ action: 'setColor', data: color.sky })
+    this.royblu = () => toolbarDo({ action: 'setColor', data: color.royblu })
+    this.blu = () => toolbarDo({ action: 'setColor', data: color.blu })
+    this.purp = () => toolbarDo({ action: 'setColor', data: color.purp })
 
-    this.pink = () => codeDo({ action: 'dotColor', data: color.pink })
-    this.red = () => codeDo({ action: 'dotColor', data: color.red })
-    this.orang = () => codeDo({ action: 'dotColor', data: color.orang })
-    this.yell = () => codeDo({ action: 'dotColor', data: color.yell })
+    this.pink = () => toolbarDo({ action: 'setColor', data: color.pink })
+    this.red = () => toolbarDo({ action: 'setColor', data: color.red })
+    this.orang = () => toolbarDo({ action: 'setColor', data: color.orang })
+    this.yell = () => toolbarDo({ action: 'setColor', data: color.yell })
 
-    this.noDot = () => codeDo({ action: 'dotColor', data: '' })
+    this.noDot = () => toolbarDo({ action: 'setColor', data: '' })
 
 
     this.tags.dotcolor[0].options = { color: color.yellgren }//yellowgreen

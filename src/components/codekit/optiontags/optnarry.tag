@@ -28,11 +28,11 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
 
     this.bubble = () => codeDo({ action: 'tokenBubble' })
     this.name = () => toolbarDo({ action: 'varkitVisible' })
-    this.prop = () => toolbarDo({ action: 'propkitVisible' })
+    this.prop = () => toolbarDo({ action: 'propColor' })
     this.typdot = () => codeDo({ action: 'typedot' })
 
-    this.ix = () => toolbarDo({ action: 'colorIndex' })
-    this.dot = () => toolbarDo({ action: 'colorDot' })
+    this.ix = () => toolbarDo({ action: 'cindexColor' })
+    this.dot = () => toolbarDo({ action: 'dotColor' })
 
     this.parup = () => codeDo({ action: 'functionParPoints', data: 3 })
     this.pardown = () => codeDo({ action: 'functionParPoints', data: 1 })

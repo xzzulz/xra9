@@ -165,7 +165,6 @@ var codeStoreClass = function() {
       var token = util.cursorToken()
       if ( token.group == 'object' ) {
         token.options.dot = color
-        toolbarDo({ action: 'dotkitVisible' })
         signal.trigger('updateCursorToken')
       }
     },
@@ -182,7 +181,14 @@ var codeStoreClass = function() {
       var token = util.cursorToken()
       if ( token.group == 'object' || token.group == 'var' || token.group == 'array' ) {
         token.options.prop = color
-        toolbarDo({ action: 'propkitVisible' })
+        signal.trigger('updateCursorToken')
+      }
+    },
+
+    indexColor( color ) {
+      var token = util.cursorToken()
+      if ( token.group == 'array' ) {
+        token.options.index = color
         signal.trigger('updateCursorToken')
       }
     },

@@ -16,8 +16,8 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
     this.bubble = () => codeDo({ action: 'tokenBubble' })
     this.name = () => toolbarDo({ action: 'obkitVisible' })
 
-    this.dot = () => toolbarDo({ action: 'dotkitVisible' })
-    this.prop = () => toolbarDo({ action: 'propkitVisible' })
+    this.dot = () => toolbarDo({ action: 'dotColor' })
+    this.prop = () => toolbarDo({ action: 'propColor' })
 
     this.typdot = () => codeDo({ action: 'typedot' })
 

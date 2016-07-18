@@ -1,4 +1,4 @@
-import { codeState, codeUtil } from './codeStore.js'
+import { codeState, codeUtil, codeDo } from './codeStore.js'
 
 
 var toolbarStoreClass = function() {
@@ -64,7 +64,8 @@ var toolbarStoreClass = function() {
       visible: false
     },
     dotkit: {
-      visible: false
+      visible: false,
+      target: ''
     },
     propkit: {
       visible: false
@@ -194,6 +195,34 @@ var toolbarStoreClass = function() {
       signal.trigger('opkitVisible')
     },
 
+    dotColor() {
+      state.dotkit.visible = true
+      state.dotkit.target = 'dot'
+      signal.trigger('dotkitVisible')
+    },
+
+    propColor() {
+      state.dotkit.visible = true
+      state.dotkit.target = 'prop'
+      signal.trigger('dotkitVisible')
+    },
+
+    indexColor() {
+      state.dotkit.visible = true
+      state.dotkit.target = 'index'
+      signal.trigger('dotkitVisible')
+    },
+
+    setColor( color ) {
+      switch ( state.dotkit.target ) {
+        case 'dot': codeDo({ action: 'dotColor', data: color }) ; break
+        case 'prop': codeDo({ action: 'propColor', data: color }) ; break
+        case 'index': codeDo({ action: 'indexColor', data: color }) ; break
+      }
+      state.dotkit.visible = false
+      signal.trigger('dotkitVisible')
+    },
+/*
     dotkitVisible() {
       state.dotkit.visible = ! state.dotkit.visible
       signal.trigger('dotkitVisible')
@@ -203,7 +232,7 @@ var toolbarStoreClass = function() {
       state.propkit.visible = ! state.propkit.visible
       signal.trigger('propkitVisible')
     },
-
+*/
     typekitVisible() {
       if ( ! state.typekit.visible ) this.openTypekit()
       else this.closeTypekit()
