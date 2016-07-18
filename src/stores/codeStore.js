@@ -142,8 +142,7 @@ var codeStoreClass = function() {
 
     functionParPoints( data ) {
       var token = util.cursorToken()
-      if ( token.group == 'function' && !token.options.bubble || token.group == 'operator' || token.group == 'loop' ) {
-
+      if ( token.group == 'function' && !token.options.bubble || token.group == 'operator' || token.group == 'loop' || token.group == 'array' ) {
         if ( token.options.parPoints === data ) token.options.parLen++
         else {
           token.options.parPoints = data
@@ -155,7 +154,7 @@ var codeStoreClass = function() {
 
     functionParX() {
       var token = util.cursorToken()
-      if ( token.group == 'function' || token.group == 'operator' || token.group == 'loop' ) {
+      if ( token.group == 'function' || token.group == 'operator' || token.group == 'loop' || token.group == 'array' ) {
         token.options.parLen = 0
         signal.trigger('updateCursorToken')
       }

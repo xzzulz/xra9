@@ -52,7 +52,6 @@ import { codeInfo } from '../../stores/codeInfo.js'
       transform-origin: 28px 34px;
       z-index: 10;
     }
-
     #tt0 {
       width: 56px;
       text-align: center;
@@ -77,7 +76,6 @@ import { codeInfo } from '../../stores/codeInfo.js'
       margin: 0;
       z-index: 10;
     }
-
     #parBar {
       position: absolute;
       left: 28px;
@@ -88,7 +86,6 @@ import { codeInfo } from '../../stores/codeInfo.js'
       background-color: #163461;
       z-index: 5;
     }
-
   </style>
 
 

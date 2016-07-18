@@ -127,7 +127,7 @@ var typeTokenClass = function( tx1, tx2, type, typeGroup, dot, points, def ) {
 // Token object creator
 //
 // name: (string) text name
-var arrayTokenClass = function( tx1, tx2, type, typeGroup, bubble, dot, prop, typedot, index ) {
+var arrayTokenClass = function( tx1, tx2, type, typeGroup, bubble, dot, prop, typedot, index, parPoints, parLen ) {
   this.tx1 = tx1 ? tx1 : ''
   this.tx2 = tx2 ? tx2 : ''
   this.type = type ? type : ''
@@ -137,6 +137,8 @@ var arrayTokenClass = function( tx1, tx2, type, typeGroup, bubble, dot, prop, ty
   this.prop = prop ? prop : ''
   this.typedot = typedot ? typedot : false
   this.index = index ? index : ''
+  this.parPoints = parPoints ? parPoints : 0
+  this.parLen = parLen ? parLen : 0
 }
 
 // Token object creator

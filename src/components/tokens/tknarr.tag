@@ -3,6 +3,8 @@
 
 <tknarr>
 
+  <div id="parBar"></div>
+
   <div id="prop" if={ options.prop }></div>
   <div id="typdot" if={ options.typedot }></div>
 
@@ -30,6 +32,8 @@
       this.ix.style.backgroundColor = this.options.index
       this.dot.style.backgroundColor = this.options.dot
 
+      this.parBar.style.transform = 'rotate(' + this.options.parPoints*90 +'deg)'
+      this.parBar.style.width = this.options.parLen*56 +'px'
     })
   </script>
 
@@ -131,6 +135,16 @@
       left: 85.9375%;
       top: 53.125%;
       border-radius: 0 8px 8px 0;
+    }
+    #parBar {
+      position: absolute;
+      left: 28px;
+      top: 34px;
+      height: 10px;
+      width: 0px;
+      transform-origin: left center;
+      background-color: #07403f;
+      z-index: 5;
     }
   </style>
 
