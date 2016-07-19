@@ -194,7 +194,7 @@ var flagTokenClass = function( points, color ) {
 var pinTokenClass = function( points, bubble, color ) {
   this.points = points ? points : 0
   this.bubble = bubble ? bubble : false
-  this.color = color ? color : 0
+  this.color = color ? color : '#048c5d'
 }
 
 // Token object creator

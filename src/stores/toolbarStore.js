@@ -213,11 +213,18 @@ var toolbarStoreClass = function() {
       signal.trigger('dotkitVisible')
     },
 
+    pinColor() {
+      state.dotkit.visible = true
+      state.dotkit.target = 'pin'
+      signal.trigger('dotkitVisible')
+    },
+
     setColor( color ) {
       switch ( state.dotkit.target ) {
         case 'dot': codeDo({ action: 'dotColor', data: color }) ; break
         case 'prop': codeDo({ action: 'propColor', data: color }) ; break
         case 'index': codeDo({ action: 'indexColor', data: color }) ; break
+        case 'pin': codeDo({ action: 'pinColor', data: color }) ; break
       }
       state.dotkit.visible = false
       signal.trigger('dotkitVisible')

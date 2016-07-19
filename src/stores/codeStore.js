@@ -192,6 +192,14 @@ var codeStoreClass = function() {
       }
     },
 
+    pinColor( color ) {
+      var token = util.cursorToken()
+      if ( token.group == 'pin' ) {
+        token.options.color = color
+        signal.trigger('updateCursorToken')
+      }
+    },
+
     tokenBubble() {
       var token = util.cursorToken()
       if ( token.group == 'var' || token.group == 'object' || token.group == 'array' || token.group == 'pin' ) {
