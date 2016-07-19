@@ -106,7 +106,6 @@ var codeStoreClass = function() {
     util( data ) {
       if ( data.id == 0 ) {// save
         var stateString = JSON.stringify( state )
-        console.log( stateString )
         download('code.json', stateString)
         //var uriContent = "data:text/plain," + encodeURIComponent( stateString )
         //newWindow = window.open(uriContent, 'save file')

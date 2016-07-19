@@ -18,7 +18,6 @@ import './typelistitem.tag'
     this.types = []
     toolbarSignal.on('typekitVisible', () => {
       this.types = codeState.types
-      console.log('this.types', this.types)
       this.update()
     })
 

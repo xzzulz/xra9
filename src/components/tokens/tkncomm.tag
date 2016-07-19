@@ -12,8 +12,6 @@
 
     this.on("update", () => {
       if ( this.id != 92 ) return
-      console.log('this', this)
-      console.log('this.options.width', this.options.width)
       this.tt0.style.width = 56 * this.options.width + 'px'
     })
 
