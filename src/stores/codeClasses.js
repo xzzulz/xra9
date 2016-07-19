@@ -100,7 +100,7 @@ var tokenClass = function( id, name, ...options ) {
 // Token object creator
 //
 // name: (string) text name
-var objectTokenClass = function( tx1, tx2, type, typeGroup, bubble, dot, prop, typedot ) {
+var objectTokenClass = function( tx1, tx2, type, typeGroup, bubble, dot, prop, typedot, loopVal ) {
   this.tx1 = tx1 ? tx1 : ''
   this.tx2 = tx2 ? tx2 : ''
   this.type = type ? type : ''
@@ -109,6 +109,7 @@ var objectTokenClass = function( tx1, tx2, type, typeGroup, bubble, dot, prop, t
   this.dot = dot ? dot : ''
   this.prop = prop ? prop : ''
   this.typedot = typedot ? typedot : false
+  this.loopVal = loopVal ? loopVal : false
 }
 
 // Token object creator
@@ -127,7 +128,7 @@ var typeTokenClass = function( tx1, tx2, type, typeGroup, dot, points, def ) {
 // Token object creator
 //
 // name: (string) text name
-var arrayTokenClass = function( tx1, tx2, type, typeGroup, bubble, dot, prop, typedot, index, parPoints, parLen ) {
+var arrayTokenClass = function( tx1, tx2, type, typeGroup, bubble, dot, prop, typedot, index, parPoints, parLen, loopVal ) {
   this.tx1 = tx1 ? tx1 : ''
   this.tx2 = tx2 ? tx2 : ''
   this.type = type ? type : ''
@@ -139,6 +140,7 @@ var arrayTokenClass = function( tx1, tx2, type, typeGroup, bubble, dot, prop, ty
   this.index = index ? index : ''
   this.parPoints = parPoints ? parPoints : 0
   this.parLen = parLen ? parLen : 0
+  this.loopVal = loopVal ? loopVal : false
 }
 
 // Token object creator
@@ -239,13 +241,15 @@ var blokTokenClass = function( w, h, lvl ) {
 // Token object creator
 //
 // name: (string) text name
-var varTokenClass = function( tx1, tx2, bubble, prop, typedot, index ) {
+var varTokenClass = function( tx1, tx2, bubble, prop, typedot, index, loopKey, loopVal ) {
   this.tx1 = tx1 ? tx1 : ''
   this.tx2 = tx2 ? tx2 : ''
   this.bubble = bubble ? bubble : false
   this.prop = prop ? prop : ''
   this.typedot = typedot ? typedot : false
   this.index = index ? index : ''
+  this.loopKey = loopKey ? loopKey : false
+  this.loopVal = loopVal ? loopVal : false
 }
 
 // todo: review this

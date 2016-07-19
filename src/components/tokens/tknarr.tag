@@ -18,7 +18,10 @@
   <div id="bk"></div>
   <div id="type" if={ options.typeGroup }></div>
 
+  <div id="val" if={ options.loopVal }></div>
+
   <div class="varbubble" if={ options.bubble }></div>
+
 
   <script>
     this.on( 'update', () => {
@@ -145,6 +148,16 @@
       transform-origin: left center;
       background-color: #07403f;
       z-index: 5;
+    }
+    #val {
+      position: absolute;
+      left: 18px;
+      top: 13px;
+      width: 20px;
+      height: 9.8px;
+      z-index: 10;
+      background:  url('assets/img/tokens/loopval.svg');
+      background-size: 100% 100%;
     }
   </style>
 

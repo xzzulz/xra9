@@ -268,6 +268,28 @@ var codeStoreClass = function() {
       signal.trigger('updateCursorToken')
     },
 
+    setAsLoopKey() {
+      var token = util.cursorToken()
+      if ( token.group == 'var' || token.group == 'object' || token.group == 'array' || token.group == 'function' ) {
+        token.options.tx1 = ''
+        token.options.tx2 = ''
+        token.options.loopKey = ! token.options.loopKey
+        token.options.loopVal = false
+        signal.trigger('updateCursorToken')
+      }
+    },
+
+    setAsLoopVal() {
+      var token = util.cursorToken()
+      if ( token.group == 'var' || token.group == 'object' || token.group == 'array' || token.group == 'function' ) {
+        token.options.tx1 = ''
+        token.options.tx2 = ''
+        token.options.loopVal = ! token.options.loopVal
+        token.options.loopKey = false
+        signal.trigger('updateCursorToken')
+      }
+    },
+
   }
 
   this.util = {

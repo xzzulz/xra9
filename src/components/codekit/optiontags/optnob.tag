@@ -10,6 +10,8 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
   <div id="optobprop" onclick={ prop }></div>
   <div id="opttypdot" onclick={ typdot }></div>
 
+  <div id="optloopval" onclick={ val }></div>
+
 
   <script>
 
@@ -18,8 +20,9 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
 
     this.dot = () => toolbarDo({ action: 'dotColor' })
     this.prop = () => toolbarDo({ action: 'propColor' })
-
     this.typdot = () => codeDo({ action: 'typedot' })
+
+    this.val = () => codeDo({ action: 'setAsLoopVal' })
 
   </script>
 
@@ -30,7 +33,6 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
       height: 100%;
       display: block;
     }
-
     #optvarbubble {
       left: 2vh;
       top: 2vh;
@@ -41,7 +43,6 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
       background-size: 100% 100%;
       cursor: pointer;
     }
-
     #optvarname {
       left: 6vh;
       top: 13vh;
@@ -50,12 +51,6 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
       position: absolute;
       background-image: url('assets/img/options/optname.svg');
       background-size: 100% 100%;
-    }
-    #optfuncpar {
-      position: absolute;
-      left: 14.7vh;
-      top: 14.5vh;
-      background: #163prop
     }
     #optobdot {
       left: 15vh;
@@ -83,6 +78,15 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
       position: absolute;
       background-image: url('assets/img/options/opttypdot.svg');
       background-size: 100% 100%;
+    }
+    #optloopval {
+      width: 4vh;
+      height: 2vh;
+      position: absolute;
+      background-image: url('assets/img/options/optloopval.svg');
+      background-size: 100% 100%;
+      left: 18vh;
+      top: 1vh;
     }
   </style>
 

@@ -16,6 +16,8 @@ import { getType } from '../../utils/util.js'
   <div id="bk"></div>
   <div id="type" if={ options.typeGroup }></div>
 
+  <div id="val" if={ options.loopVal }></div>
+
   <div class="varbubble" if={ options.bubble }></div>
 
 
@@ -120,6 +122,16 @@ import { getType } from '../../utils/util.js'
       height: 120%;
       z-index: 4;
       background:  url('assets/img/tokens/varbubble.svg');
+      background-size: 100% 100%;
+    }
+    #val {
+      position: absolute;
+      left: 18px;
+      top: 12px;
+      width: 20px;
+      height: 9.8px;
+      z-index: 10;
+      background:  url('assets/img/tokens/loopval.svg');
       background-size: 100% 100%;
     }
   </style>

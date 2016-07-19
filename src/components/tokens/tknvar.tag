@@ -16,6 +16,9 @@ import tokenChart from '../../resInfo/tokenChart.js'
   <div id="bk"></div>
   <div id="flag" if={ options.flag }></div>
 
+  <div id="key" if={ options.loopKey }></div>
+  <div id="val" if={ options.loopVal }></div>
+
   <div class="varbubble" if={ options.bubble }></div>
 
 
@@ -108,6 +111,26 @@ import tokenChart from '../../resInfo/tokenChart.js'
       left: 73.4375%;
       top: 59.375%;
       border-radius: 50%;
+    }
+    #key {
+      position: absolute;
+      left: 18px;
+      top: 15px;
+      width: 20px;
+      height: 10px;
+      z-index: 10;
+      background:  url('assets/img/tokens/loopkey.svg');
+      background-size: 100% 100%;
+    }
+    #val {
+      position: absolute;
+      left: 18px;
+      top: 15px;
+      width: 20px;
+      height: 9.8px;
+      z-index: 10;
+      background:  url('assets/img/tokens/loopval.svg');
+      background-size: 100% 100%;
     }
   </style>
 

@@ -11,6 +11,10 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
 
   <div id="optvarixdot" onclick={ ixdot } if={ id == 4 }></div>
 
+  <div id="optloopkey" onclick={ key }></div>
+  <div id="optloopval" onclick={ val }></div>
+
+
   <script>
 
     this.bubble = () => codeDo({ action: 'tokenBubble' })
@@ -18,6 +22,9 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
     this.prop = () => toolbarDo({ action: 'propColor' })
     this.typdot = () => codeDo({ action: 'typedot' })
     this.ixdot = () => toolbarDo({ action: 'indexColor' })
+
+    this.key = () => codeDo({ action: 'setAsLoopKey' })
+    this.val = () => codeDo({ action: 'setAsLoopVal' })
 
     this.id = 0
     this.on( 'update', () => {
@@ -76,6 +83,24 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
       position: absolute;
       background-image: url('assets/img/options/opttypdot.svg');
       background-size: 100% 100%;
+    }
+    #optloopkey {
+      width: 4vh;
+      height: 2vh;
+      position: absolute;
+      background-image: url('assets/img/options/optloopkey.svg');
+      background-size: 100% 100%;
+      left: 12vh;
+      top: 1vh;
+    }
+    #optloopval {
+      width: 4vh;
+      height: 2vh;
+      position: absolute;
+      background-image: url('assets/img/options/optloopval.svg');
+      background-size: 100% 100%;
+      left: 18vh;
+      top: 1vh;
     }
   </style>
 

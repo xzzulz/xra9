@@ -23,6 +23,8 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
 
   <div id="optarryparx" onclick={ nopar }></div>
 
+  <div id="optloopval" onclick={ val }></div>
+
 
   <script>
 
@@ -40,6 +42,8 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
     this.parright = () => codeDo({ action: 'functionParPoints', data: 0 })
 
     this.nopar = () => codeDo({ action: 'functionParX' })
+
+    this.val = () => codeDo({ action: 'setAsLoopVal' })
 
   </script>
 
@@ -61,7 +65,7 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
     }
     #optarryname {
       left: 5.5vh;
-      top: 13vh;
+      top: 15vh;
       width: 5vh;
       height: 5vh;
       position: absolute;
@@ -70,7 +74,7 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
     }
     #optarryprop {
       left: 2vh;
-      top: 14vh;
+      top: 16vh;
       width: 2vh;
       height: 4vh;
       position: absolute;
@@ -79,7 +83,7 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
     }
     #optarrytypdot {
       left: 2vh;
-      top: 12.5vh;
+      top: 14.5vh;
       width: 1.5vh;
       height: 1.5vh;
       position: absolute;
@@ -88,7 +92,7 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
     }
     #optarryix {
       left: 12vh;
-      top: 14vh;
+      top: 16vh;
       width: 4vh;
       height: 4vh;
       position: absolute;
@@ -97,7 +101,7 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
     }
     #optarrydot {
       left: 17.5vh;
-      top: 14vh;
+      top: 16vh;
       width: 2vh;
       height: 4vh;
       position: absolute;
@@ -111,30 +115,25 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
       background-image: url('assets/img/options/optfuncparup.svg');
       background-size: 100% 100%;
     }
-
     #optarryparup {
       left: 14vh;
-      top: 3vh;
+      top: 6vh;
     }
-
     #optarrypardown {
       left: 14vh;
-      top: 8vh;
+      top: 11vh;
       transform: rotate(180deg);
     }
-
     #optarryparleft {
       left: 9.8vh;
-      top: 5.5vh;
+      top: 8.5vh;
       transform: rotate(-90deg);
     }
-
     #optarryparright {
       left: 18.4vh;
-      top: 5.5vh;
+      top: 8.5vh;
       transform: rotate(90deg);
     }
-
     #optarryparx {
       width: 3vh;
       height: 3vh;
@@ -142,7 +141,16 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
       background-image: url('assets/img/options/optfuncparx.svg');
       background-size: 100% 100%;
       left: 18.7vh;
-      top: 2vh;
+      top: 5vh;
+    }
+    #optloopval {
+      width: 4vh;
+      height: 2vh;
+      position: absolute;
+      background-image: url('assets/img/options/optloopval.svg');
+      background-size: 100% 100%;
+      left: 18vh;
+      top: 1vh;
     }
   </style>
 
