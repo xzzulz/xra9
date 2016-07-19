@@ -226,17 +226,7 @@ var toolbarStoreClass = function() {
       state.dotkit.visible = false
       signal.trigger('dotkitVisible')
     },
-/*
-    dotkitVisible() {
-      state.dotkit.visible = ! state.dotkit.visible
-      signal.trigger('dotkitVisible')
-    },
 
-    propkitVisible() {
-      state.propkit.visible = ! state.propkit.visible
-      signal.trigger('propkitVisible')
-    },
-*/
     typekitVisible() {
       if ( ! state.typekit.visible ) this.openTypekit()
       else this.closeTypekit()

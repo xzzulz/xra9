@@ -14,6 +14,8 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
   <div id="optfuncdef" onclick={ bubble } ></div>
   <div id="optfuncname" onclick={ name }></div>
 
+  <div id="optfuncprop" onclick={ prop }></div>
+
   <div id="optfuncpar"></div>
   <div id="optfuncparup" onclick={ parup } class="optfuncpar"></div>
   <div id="optfuncpardown" onclick={ pardown } class="optfuncpar"></div>
@@ -31,6 +33,7 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
     this.right = () => codeDo({ action: 'tokenPoints', data: 0 })
 
     this.bubble = () => codeDo({ action: 'functionBubble' })
+    this.prop = () => toolbarDo({ action: 'propColor' })
 
     this.parup = () => codeDo({ action: 'functionParPoints', data: 3 })
     this.pardown = () => codeDo({ action: 'functionParPoints', data: 1 })
@@ -54,19 +57,28 @@ import { toolbarDo } from '../../../stores/toolbarStore.js'
     #optfuncdef {
       left: .5vh;
       top: 10.5vh;
-      width: 6vh;
-      height: 6vh;
+      width: 5vh;
+      height: 5vh;
       position: absolute;
       background-image: url('assets/img/options/optfuncdef.svg');
       background-size: 100% 100%;
     }
     #optfuncname {
-      left: 6.5vh;
-      top: 16.5vh;
-      width: 3vh;
-      height: 3vh;
+      left: 5vh;
+      top: 17vh;
+      width: 4vh;
+      height: 4vh;
       position: absolute;
       background-image: url('assets/img/options/optname.svg');
+      background-size: 100% 100%;
+    }
+    #optfuncprop {
+      left: 1vh;
+      top: 17vh;
+      width: 2vh;
+      height: 4vh;
+      position: absolute;
+      background-image: url('assets/img/options/optprop.svg');
       background-size: 100% 100%;
     }
     .optfuncpoint {

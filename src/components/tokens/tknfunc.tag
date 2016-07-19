@@ -10,6 +10,8 @@ import { codeInfo } from '../../stores/codeInfo.js'
   <div id="tt1" if={ options.tx2 }>{ options.tx1 }</div>
   <div id="tt2" if={ options.tx2 }>{ options.tx2 }</div>
 
+  <div id="prop" if={ options.prop }></div>
+
   <div id="bk"></div>
 
 
@@ -29,6 +31,10 @@ import { codeInfo } from '../../stores/codeInfo.js'
 
       this.parBar.style.transform = 'rotate(' + this.options.parPoints*90 +'deg)'
       this.parBar.style.width = this.options.parLen*56 +'px'
+
+      this.prop.style.backgroundColor = this.options.prop
+      this.prop.style.transform = 'rotate(' + this.options.points*90 +'deg)'
+
     })
 
   </script>
@@ -85,6 +91,17 @@ import { codeInfo } from '../../stores/codeInfo.js'
       transform-origin: left center;
       background-color: #163461;
       z-index: 5;
+    }
+    #prop {
+      width: 12px;
+      height: 12px;
+      display: block;
+      z-index: 10;
+      position: absolute;
+      left: 11px;
+      top: 28px;
+      border-radius: 50%;
+      transform-origin: 17.2px 6px;
     }
   </style>
 

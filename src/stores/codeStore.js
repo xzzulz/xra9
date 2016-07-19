@@ -177,7 +177,7 @@ var codeStoreClass = function() {
 
     propColor( color ) {
       var token = util.cursorToken()
-      if ( token.group == 'object' || token.group == 'var' || token.group == 'array' ) {
+      if ( token.group == 'object' || token.group == 'var' || token.group == 'array' || token.group == 'function' ) {
         token.options.prop = color
         signal.trigger('updateCursorToken')
       }
