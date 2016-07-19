@@ -16,18 +16,15 @@ var toolbarStoreClass = function() {
 
       { id: 10 },
       { id: 40 },
-      { id: 13 },
-
       { id: 30 },
-      { id: 31 },
-      { id: 32 },
 
       { id: 20 },
       { id: 21 },
       { id: 22 },
 
       { id: 95 },
-
+      { id: 13 },
+      { id: 0 },
 
     ],
 

@@ -15,7 +15,7 @@ import './tool.tag'
     :scope {
       position: absolute;
       right: 0;
-      top: 62vh;
+      top: 57vh;
       width: 24vh;
       height: 21vh;
       padding: 1.5vh;

@@ -17,7 +17,7 @@ import './tool.tag'
       right: 0;
       top: 22vh;
       width: 24vh;
-      height: 40vh;
+      height: 35vh;
       padding: 1.5vh;
 
       background: #151821;
