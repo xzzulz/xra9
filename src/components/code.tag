@@ -47,6 +47,11 @@ import cursor from './cursor.js'
       tag.tags.cursor.update()
     })
 
+    signal.on('updateCode', () => {
+      tag.lines = codeUtil.getLines()
+      tag.update()
+    })
+
     this.mousedown = ( e ) => {
       e.preventUpdate = true
       scroll.start( e )

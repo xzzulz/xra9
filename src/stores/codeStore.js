@@ -1,6 +1,7 @@
-import { lines, floats, varList, typeList } from '../sampleData/sampleCodeData.js'
+import { sampleState } from '../sampleData/sampleCodeData.js'
 import { scopeClass, lineClass, tokenClass, stepClass, floatClass, floatTokenClass } from '../stores/codeClasses.js'
 import { toolbarDo } from './toolbarStore.js'
+
 
 
 
@@ -19,8 +20,14 @@ var codeStoreClass = function() {
   this.signal = riot.observable()
   var signal = this.signal
 
+  this.setState = ( newState ) => {
+    this.state = newState
+    state = this.state
+    codeState = this.state
+  }
+
   this.mutations = {
-    setData( lines, floats, vars, types ) {
+    setState( lines, floats, vars, types ) {
       state.lines = lines
       state.floats = floats
       state.vars = vars,
@@ -107,8 +114,8 @@ var codeStoreClass = function() {
       if ( data.id == 0 ) {// save
         var stateString = JSON.stringify( state )
         download('code.json', stateString)
-        //var uriContent = "data:text/plain," + encodeURIComponent( stateString )
-        //newWindow = window.open(uriContent, 'save file')
+      } else if ( data.id == 1 ) {
+        loadCode()
       }
     },
 
@@ -295,6 +302,9 @@ var codeStoreClass = function() {
   this.util = {
     cursorToken() {
       return state.lines[ state.cursor.y ].tokens[ state.cursor.x ]
+    },
+    getLines() {
+      return state.lines
     }
   }
   util = this.util
@@ -316,11 +326,20 @@ function download(filename, text) {
   document.body.removeChild(element)
 }
 
+function loadCode() {
+  fetch('code/code01.json')
+  .then( ( response ) => response.json() )
+  .then( ( json ) => {
+    codeStore.setState( json )
+    codeStore.signal.trigger('updateCode')
+  })
+}
 
 
 var codeStore = new codeStoreClass()
 
-codeStore.mutations.setData( lines, floats, varList, typeList )
+//codeStore.mutations.setData( lines, floats, varList, typeList )
+codeStore.setState( sampleState )
 
 var codeState = codeStore.state
 var codeDo = codeStore.do

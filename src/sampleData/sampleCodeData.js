@@ -438,5 +438,13 @@ var floats = [
 ]
 floats = []
 
+var sampleState = {
+  lines: lines,
+  floats: floats,
+  scopes: [],
+  vars: varList,
+  types: typeList,
+  cursor: { x: 0, y: 0 },
+}
 
-export { lines, floats, varList, typeList }
+export { sampleState }

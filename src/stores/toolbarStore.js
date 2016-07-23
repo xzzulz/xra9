@@ -1,4 +1,4 @@
-import { codeState, codeUtil, codeDo } from './codeStore.js'
+import { codeUtil, codeDo } from './codeStore.js'
 
 
 var toolbarStoreClass = function() {
