@@ -35,9 +35,34 @@ var codeStoreClass = function() {
     },
 
     setToken( data ) {
-      var token = state.lines[ state.cursor.y ].tokens[ state.cursor.x ] = new tokenClass( data.id, data.name )
+      state.lines[ state.cursor.y ].tokens[ state.cursor.x ] = new tokenClass( data.id, data.name )
+      this.setContextOptions( state.cursor )
       signal.trigger('forceUpdateCursorToken')
       signal.trigger( 'updateOptionkit' )
+    },
+
+    setContextOptions( loc ) {
+      var token = state.lines[ loc.y ].tokens[ loc.x ]
+
+      if ( token.group == 'block' ) {
+        var tokenAbove = this.getToken({ x: loc.x, y: loc.y - 1 })
+        if ( ! tokenAbove ) return
+        var type = 0 // basic
+        switch ( tokenAbove.id ) {
+          case 22:
+            token.options.type = 1; break
+          case 21:
+            token.options.type = 2; break
+          case 30:
+            token.options.type = 3; break
+        }
+
+      }
+    },
+
+    getToken( loc ) {
+      var tokenData = state.lines[ loc.y ].tokens[ loc.x ]
+      return tokenData ? tokenData : null
     },
 
     grabToken( loc ) {

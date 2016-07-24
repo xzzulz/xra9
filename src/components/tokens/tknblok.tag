@@ -12,11 +12,11 @@ import { codeInfo } from '../../stores/codeInfo.js'
 
 
   <script>
-
+    var barColor = ''
 
     this.on("update", () => {
       if ( this.id != 13 ) return
-      this.bar.style.height = 100 * this.options.h + '%'
+      this.bar.style.height = 56 * this.options.h + 'px'
       this.block.style.width = 100 * this.options.w + '%'
       this.block.style.height = 100 * this.options.h + '%'
       switch ( this.options.lvl ) {
@@ -37,7 +37,30 @@ import { codeInfo } from '../../stores/codeInfo.js'
           this.block.style.zIndex = 4
           break
       }
+
+      switch ( this.options.type ) {
+        case 0:
+          barColor = '#0c1d37'; break
+        case 1:
+          barColor = '#2d0050'; break
+        case 2:
+          barColor = '#431f44'; break
+        case 3:
+          this.setLoopBar(); break
+      }
+      this.bar.style.backgroundColor = barColor
+
     })
+
+    this.setLoopBar = () => {
+      this.bar.style.backgroundColor = ''
+      this.bar.style.borderColor = '#390b15'
+      this.bar.style.borderStyle = 'solid'
+      this.bar.style.borderWidth = '8px'
+      this.bar.style.borderRadius = '16px'
+      this.bar.style.left = '12px'
+      this.bar.style.height = 56 * this.options.h - 16 + 'px'
+    }
 
   </script>
 
@@ -56,7 +79,6 @@ import { codeInfo } from '../../stores/codeInfo.js'
       top: 0;
       width: 25%;
       height: 100%;
-      background-color: #0c1d37;
       z-index: 10;
     }
     #block {

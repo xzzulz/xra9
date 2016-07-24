@@ -230,13 +230,19 @@ var loopTokenClass = function( parPoints, parLen ) {
   this.parLen = parLen ? parLen : 0
 }
 
-// Token object creator
+// blokTokenClass
+// type is an integer indicating the type of block, as follows:
+// 0 basic
+// 1 if
+// 2 match
+// 3 loop
 //
 // name: (string) text name
-var blokTokenClass = function( w, h, lvl ) {
+var blokTokenClass = function( w, h, lvl, type ) {
   this.w = w ? w : 1
   this.h = h ? h : 1
   this.lvl = lvl ? lvl : 1
+  this.type = type ? type : 0
 }
 
 // Token object creator
