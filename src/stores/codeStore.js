@@ -1,7 +1,7 @@
-import { sampleState } from '../sampleData/sampleCodeData.js'
 import { scopeClass, lineClass, tokenClass, stepClass, floatClass, floatTokenClass } from '../stores/codeClasses.js'
 import { toolbarDo } from './toolbarStore.js'
-
+import { sampleState } from '../sampleData/sampleCodeData.js'
+import { code01 } from '../sampleData/code01.js'
 
 
 
@@ -219,7 +219,7 @@ var codeStoreClass = function() {
       if ( token.group == 'comment' ) {
         token.options.width += data
         if ( token.options.width < 1 ) token.options.width = 1
-        if ( token.options.width > 8 ) token.options.width = 8
+        if ( token.options.width > 12 ) token.options.width = 12
         signal.trigger('updateCursorToken')
       }
     },
@@ -339,7 +339,7 @@ function loadCode() {
 var codeStore = new codeStoreClass()
 
 //codeStore.mutations.setData( lines, floats, varList, typeList )
-codeStore.setState( sampleState )
+codeStore.setState( code01 )
 
 var codeState = codeStore.state
 var codeDo = codeStore.do

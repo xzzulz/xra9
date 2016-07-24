@@ -370,14 +370,16 @@ var lines = [
   line7,
   line8,
 ]
+
+lines = []
 var alin
-for ( var i=0; i<16; i++ ) {
+for ( var i=1; i<48; i++ ) {
   alin = new lineClass([])
   for (var j = 0; j < 32; j++) {
     alin.tokens.push( new tokenClass( 0, '' ) )
   }
   lines.push( alin )
-  if ( i%8 == 0 ) lines.push( new lineClass([]) )
+  if ( i%12 == 0 ) lines.push( new lineClass([]) )
 }
 
 
