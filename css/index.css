@@ -1,0 +1,47 @@
+
+body{
+  font: 15px ubuntu;
+  background-color: #131719;
+  margin:0;
+  color: #748396;
+  overflow: hidden;
+}
+
+codepanel {
+  font: 10.6px "ubuntu mono";
+}
+
+
+::-webkit-scrollbar {
+  width: .7vw;
+  height: .7vw;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #333e52;
+  border: 0px none #852b2b;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #333e52;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #333e52;
+}
+::-webkit-scrollbar-track {
+  background: #131618;
+  border: 0px none #ffffff;
+  border-radius: 0px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #131618;
+}
+::-webkit-scrollbar-track:active {
+  background: #131618;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
