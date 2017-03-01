@@ -1,5 +1,7 @@
 # xra9
 
+![xoL](http://lignixz.github.io/xoL/res/xol.png)
+
 [xoL prototype first](http://lignixz.github.io/xra9/)
 
 This xoL prototype one is now obsolete. Prototype second will be based on a redesign of xoL, with some fundamental improvements.
