@@ -1,6 +1,6 @@
 # xoL xra9
 
-![xoL](http://lignixz.github.io/xoL/res/xol.png)
+![xoL](http://lignixz.github.io/xoL/img/xol01.svg)
 
 click on the link to see the prototype in action:
 [xoL prototype first](http://lignixz.github.io/xra9/)
