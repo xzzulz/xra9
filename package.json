@@ -11,7 +11,7 @@
     "serve": "webpack-dev-server --hot",
     "dev": "npm-run-all html css serve"
   },
-  "author": "nzonbi",
+  "author": "xzzulz",
   "license": "No license",
   "dependencies": {
     "npm-run-all": "^1.3.2",
